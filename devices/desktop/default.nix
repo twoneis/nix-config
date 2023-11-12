@@ -1,6 +1,7 @@
-{ config, pkgs }: {
+{ config, ... }: {
   imports = [
     ../../modules/system
+    ../../modules/games
 
     ./hardware-config.nix
   ];

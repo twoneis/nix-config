@@ -2,13 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs }: {
-
-  imports =
-    [ # Include the results of the hardware scan.
-      ./packages.nix
-    ];
-
+{ pkgs, ... }: {
   # Enable nix flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -48,13 +42,6 @@
 
   # Remove XTerm
   services.xserver.excludePackages = [ pkgs.xterm ];
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  # Don't pull unnecessary packages
-  services.gnome.core-utilities.enable = false;
-  environment.gnome.excludePackages = [ pkgs.gnome-tour ];
 
   # Configure keymap in X11
   services.xserver = {

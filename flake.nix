@@ -12,7 +12,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager }:
+  outputs = { nixpkgs, home-manager, ... }:
   let
     x86 = "x86_64-linux";
   in {
