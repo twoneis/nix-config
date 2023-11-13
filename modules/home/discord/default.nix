@@ -1,5 +1,5 @@
 { ... }: {
-  programs.discoss = {
+  programs.discocss = {
     enable = true;
     css = import ./rosepine.css;
   };
