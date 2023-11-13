@@ -10,6 +10,7 @@
     ./gdb
     ./git
     ./media
+    ./notes
     ./terminal
     ./utils
   ];
