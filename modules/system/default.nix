@@ -17,9 +17,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Select kernel version
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-
   # Enable networking
   networking.networkmanager.enable = true;
 

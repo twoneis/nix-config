@@ -1,9 +1,12 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
   imports = [
     ./hardware-config.nix
   ];
 
   networking.hostName = "desktop";
+
+  # Select kernel version
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # Enable OpenGL
   hardware.opengl = {
