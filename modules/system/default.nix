@@ -69,7 +69,7 @@
   users.users.twoneis = {
     isNormalUser = true;
     description = "twoneis";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "surface-control" ];
   };
 
   # Allow unfree packages
