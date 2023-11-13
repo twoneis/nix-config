@@ -1,6 +1,10 @@
 { ... }: {
   programs.thunderbird = {
     enable = true;
-    profiles = [ "default" ];
+    profiles = {
+      "default" = {
+        isDefault = true;
+      };
+    };
   };
 }
