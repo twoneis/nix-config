@@ -69,7 +69,6 @@
     isNormalUser = true;
     description = "twoneis";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = import ./packages/user-core-packages.nix pkgs ++ import ./packages/user-game-packages.nix pkgs;
   };
 
   # Allow unfree packages

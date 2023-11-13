@@ -27,7 +27,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.twoneis = import ./home;
+              users.twoneis = import ./modules/home;
             };
           }
         ];
@@ -43,7 +43,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.twoneis = import ./home;
+              users.twoneis = import ./modules/home;
             };
           }
         ];
