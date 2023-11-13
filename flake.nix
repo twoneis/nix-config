@@ -15,12 +15,14 @@
   outputs = { nixpkgs, home-manager, ... }:
   let
     x86 = "x86_64-linux";
+    common = ./modules/system;
   in {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit x86; };
 
         modules = [
+          common
           ./devices/desktop
 
           home-manager.nixosModules.home-manager {
@@ -37,6 +39,7 @@
         specialArgs = { inherit x86; };
 
         modules = [
+          common
           ./devices/surface
 
           home-manager.nixosModules.home-manager {

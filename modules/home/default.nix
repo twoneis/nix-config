@@ -8,7 +8,6 @@
     ./email
     ./gdb
     ./git
-    ./gnome
     ./media
     ./terminal
     ./utils

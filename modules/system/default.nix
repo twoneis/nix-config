@@ -3,6 +3,10 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { pkgs, ... }: {
+  imports = [
+    ../gnome
+  ];
+
   # Enable nix flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

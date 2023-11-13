@@ -6,7 +6,7 @@
   services.gnome.core-utilities.enable = false;
   environment.gnome.excludePackages = [ pkgs.gnome-tour ];
 
-  home.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     gnomeExtensions.paperwm
     gnome.gnome-characters
   ];
