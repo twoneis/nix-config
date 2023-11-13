@@ -1,0 +1,22 @@
+theme = "rosepine"
+[editor]
+auto-format = true
+cursorline = true
+line-number = "relative"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.soft-wrap]
+enable = true
+
+[editor.whitespace]
+render = "all"
+
+[keys.normal]
+h = "move_char_left"
+n = "move_line_down"
+s = "move_char_right"
+t = "move_line_up"

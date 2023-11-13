@@ -1,0 +1,205 @@
+attribute = "iris"
+constant = "#9ccfd8"
+"constant.builtin" = "#ebbcba"
+"constant.character" = "#f6c177"
+"constant.character.escape" = "#31748f"
+"constant.numeric" = "#f6c177"
+constructor = "#9ccfd8"
+debug = "#ebbcba"
+diff = "#26233a"
+"diff.delta" = "#524f67"
+"diff.minus" = "#eb6f92"
+"diff.plus" = "#9ccfd8"
+error = "#eb6f92"
+function = "#ebbcba"
+"function.builtin" = "#eb6f92"
+hint = "#c4a7e7"
+info = "#9ccfd8"
+keyword = "#31748f"
+"keyword.operator" = "#908caa"
+label = "#9ccfd8"
+"markup.heading.marker" = "#6e6a86"
+"markup.link" = "#c4a7e7"
+"markup.link.label" = "#908caa"
+"markup.link.text" = "#e0def4"
+"markup.list" = "#6e6a86"
+"markup.quote" = "#908caa"
+"markup.raw" = "#908caa"
+namespace = "#c4a7e7"
+operator = "#908caa"
+punctuation = "#908caa"
+special = "#ebbcba"
+string = "#f6c177"
+tag = "#9ccfd8"
+type = "#9ccfd8"
+variable = "#e0def4"
+"variable.builtin" = "#eb6f92"
+"variable.parameter" = "#c4a7e7"
+warning = "#f6c177"
+
+[comment]
+fg = "#6e6a86"
+modifiers = ["italic"]
+
+[diagnostic.underline]
+color = "#908caa"
+style = "curl"
+
+["diagnostic.error".underline]
+color = "#eb6f92"
+style = "curl"
+
+["diagnostic.hint".underline]
+color = "#c4a7e7"
+style = "curl"
+
+["diagnostic.info".underline]
+color = "#9ccfd8"
+style = "curl"
+
+["diagnostic.warning".underline]
+color = "#f6c177"
+style = "curl"
+
+["markup.bold"]
+modifiers = ["bold"]
+
+["markup.heading"]
+fg = "#c4a7e7"
+modifiers = ["bold"]
+
+["markup.heading.1"]
+fg = "iris"
+modifiers = ["bold"]
+
+["markup.heading.2"]
+fg = "#9ccfd8"
+modifiers = ["bold"]
+
+["markup.heading.3"]
+fg = "#ebbcba"
+modifiers = ["bold"]
+
+["markup.heading.4"]
+fg = "#f6c177"
+modifiers = ["bold"]
+
+["markup.heading.5"]
+fg = "#31748f"
+modifiers = ["bold"]
+
+["markup.heading.6"]
+fg = "#9ccfd8"
+modifiers = ["bold"]
+
+["markup.italic"]
+modifiers = ["italic"]
+
+["markup.link.url"]
+fg = "#c4a7e7"
+
+["markup.link.url".underline]
+color = "#c4a7e7"
+style = "line"
+
+["ui.background"]
+bg = "#191724"
+
+["ui.background.separator"]
+bg = "#191724"
+
+["ui.cursor"]
+bg = "#524f67"
+fg = "#e0def4"
+
+["ui.cursor.match"]
+bg = "#403d52"
+fg = "#e0def4"
+
+["ui.cursor.primary"]
+bg = "#6e6a86"
+fg = "#e0def4"
+
+["ui.cursorline.primary"]
+bg = "#21202e"
+
+["ui.cursorline.secondary"]
+bg = "#1f1d2e"
+
+["ui.help"]
+bg = "#26233a"
+fg = "#908caa"
+
+["ui.linenr"]
+fg = "#6e6a86"
+
+["ui.linenr.selected"]
+fg = "#e0def4"
+
+["ui.menu"]
+bg = "#1f1d2e"
+fg = "#908caa"
+
+["ui.menu.scroll"]
+bg = "#403d52"
+fg = "#6e6a86"
+
+["ui.menu.selected"]
+fg = "#e0def4"
+
+["ui.popup"]
+bg = "#1f1d2e"
+
+["ui.popup.info"]
+bg = "#1f1d2e"
+
+["ui.selection"]
+bg = "#26233a"
+
+["ui.selection.primary"]
+bg = "#403d52"
+
+["ui.statusline"]
+bg = "#1f1d2e"
+fg = "#908caa"
+
+["ui.statusline.inactive"]
+bg = "#1f1d2e"
+fg = "#6e6a86"
+
+["ui.statusline.insert"]
+bg = "#252937"
+fg = "#9ccfd8"
+
+["ui.statusline.normal"]
+bg = "#2f2834"
+fg = "#ebbcba"
+
+["ui.statusline.select"]
+bg = "#2b2539"
+fg = "#c4a7e7"
+
+["ui.text"]
+fg = "#e0def4"
+
+["ui.text.focus"]
+bg = "#26233a"
+
+["ui.text.info"]
+fg = "#908caa"
+
+["ui.virtual.indent-guide"]
+fg = "#6e6a86"
+
+["ui.virtual.inlay-hint"]
+fg = "#908caa"
+
+["ui.virtual.ruler"]
+bg = "#26233a"
+
+["ui.virtual.whitespace"]
+fg = "#524f67"
+
+["ui.window"]
+bg = "#191724"
+fg = "#26233a"

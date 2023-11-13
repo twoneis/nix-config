@@ -7,7 +7,7 @@
   programs.helix = {
     enable = true;
     defaultEditor = true;
-    settings = import ./helix-config.nix;
-    themes = ./helix-theme.nix;
+    settings = ./config.toml;
+    themes = ./rosepine.toml;
   };
 }
