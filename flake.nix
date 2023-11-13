@@ -10,9 +10,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-hardware = {
+      url = "github:nixos/nixos-hardware/master";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, nixos-hardware, ... }:
   let
     x86 = "x86_64-linux";
     common = ./modules/system;
@@ -41,6 +45,7 @@
         modules = [
           common
           ./devices/surface
+          nixos-hardware.nixosModules.microsoft-surface-pro-intel
 
           home-manager.nixosModules.home-manager {
             home-manager = {
