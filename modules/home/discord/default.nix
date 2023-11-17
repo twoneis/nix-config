@@ -1,6 +1,3 @@
-{ ... }: {
-  programs.discocss = {
-    enable = true;
-    css = import ./rosepine.css;
-  };
+{ pkgs, ... }: {
+  home.packages = with pkgs; [discord];
 }
