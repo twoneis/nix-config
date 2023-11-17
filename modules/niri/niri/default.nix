@@ -13,13 +13,13 @@
 
 rustPlatform.buildRustPackage {
   pname = "niri";
-  version = "unstable-2023-10-31";
+  version = "unstable-2023-11-17";
 
   src = fetchFromGitHub {
     owner = "YaLTeR";
     repo = "niri";
-    rev = "8679eaf34a791fcbb3048a77cfb22540a0d24792";
-    hash = "sha256-QYH3sG1TKJbKBeZdI9FtmJuY5DFmMdOJviYPrPK8FHo=";
+    rev = "19cafffe0f3f1eefc6984dc446134b0fd93d1e28";
+    hash = "sha256-mDeJh3N6Zt3FNpyFmRkY8zOLIBad3CoV45WjB+RUkhA=";
   };
 
   cargoLock = {
