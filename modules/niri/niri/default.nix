@@ -22,10 +22,11 @@ rustPlatform.buildRustPackage {
     hash = "sha256-mDeJh3N6Zt3FNpyFmRkY8zOLIBad3CoV45WjB+RUkhA=";
   };
 
+
   cargoLock = {
     lockFile = ./Cargo.lock;
     outputHashes = {
-      "smithay-0.3.0" = "sha256-cRBJ8r2fQ8d97DADOxfmUF5JYcOHQ05u8tMhVXmbrbE=";
+      "smithay-0.3.0" = "sha256-1BEJEdmGCt6jtPEcBt4R1d/LdKWLLJYJpcOn4SbvkRk=";
     };
   };
 
