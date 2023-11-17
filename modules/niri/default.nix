@@ -1,5 +1,5 @@
-{ ... }: {
+{ pkgs, ... }: {
   environment.systemPackages = [
-    import ./niri
+    (pkgs.callPackage ./niri {})
   ];
 }

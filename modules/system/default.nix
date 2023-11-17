@@ -4,6 +4,7 @@
 
 { pkgs, ... }: {
   imports = [
+    ../niri
     ../gnome
   ];
 
