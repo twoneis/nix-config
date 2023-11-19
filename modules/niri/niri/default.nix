@@ -1,15 +1,6 @@
-{ rustPlatform
+{ pkgs
+, rustPlatform
 , fetchFromGitHub
-, pkg-config
-, libxkbcommon
-, pipewire
-, systemd
-, seatd
-, udev
-, wayland
-, libinput
-, mesa
-, libglvnd
 }:
 
 rustPlatform.buildRustPackage {
@@ -32,11 +23,11 @@ rustPlatform.buildRustPackage {
   };
 
   nativeBuildInputs = [
-    pkg-config
+    pkgs.pkg-config
     rustPlatform.bindgenHook
   ];
 
-  buildInputs = [
+  buildInputs = with pkgs; [
     libxkbcommon
     pipewire
     systemd
@@ -46,6 +37,12 @@ rustPlatform.buildRustPackage {
     libinput
     libglvnd
     mesa # libgbm
+    xwayland
+    fontconfig
+  ];
+
+  runtimeDependencies = with pkgs; [
+    libglvnd
   ];
 
   RUSTFLAGS = map (a: "-C link-arg=${a}") [
@@ -110,7 +107,7 @@ rustPlatform.buildRustPackage {
       Exec=niri-session
       Type=Application
       DesktopNames=niri
-      '';
+    '';
     niriPortals = ''
       [preferred]
       default=gnome;gtk;
@@ -139,7 +136,7 @@ rustPlatform.buildRustPackage {
       echo "${niriPortals}" > $out/share/wayland-sessions/niri-portals.conf
       mkdir -p $out/lib/systemd/user
       echo "${niriService}" > $out/lib/systemd/user/niri.service
-    '';
+  '';
 
   passthru.providedSessions = [ "niri" ];
 }
