@@ -43,6 +43,7 @@ rustPlatform.buildRustPackage {
 
   runtimeDependencies = with pkgs; [
     libglvnd
+    mesa
   ];
 
   RUSTFLAGS = map (a: "-C link-arg=${a}") [

@@ -16,12 +16,12 @@
     };
 
     niri = {
-      url = "github:twoneis/niri";
+      url = "github:pop-os/cosmic-comp";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, niri, ... }@inputs:
   let
     x86 = "x86_64-linux";
     common = ./modules/system;
