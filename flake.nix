@@ -16,7 +16,7 @@
     };
 
     niri = {
-      url = "github:pop-os/cosmic-comp";
+      url = "github:twoneis/niri";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
