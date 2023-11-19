@@ -1,3 +1,5 @@
 { niri, ... }: {
-  services.xserver.displayManager.sessionPackages = [ niri.niri ];
+  services.xserver.displayManager.sessionPackages = [
+    niri
+  ];
 }
