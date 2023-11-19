@@ -4,11 +4,13 @@
 , pkg-config
 , libxkbcommon
 , pipewire
+, systemd
 , seatd
 , udev
 , wayland
 , libinput
 , mesa
+, libglvnd
 }:
 
 rustPlatform.buildRustPackage {
@@ -38,11 +40,18 @@ rustPlatform.buildRustPackage {
   buildInputs = [
     libxkbcommon
     pipewire
+    systemd
     seatd
     udev
     wayland
     libinput
     mesa # libgbm
+  ];
+
+  runtimeDependencies = [
+    wayland
+    mesa
+    libglvnd
   ];
 
   meta = with lib; {
