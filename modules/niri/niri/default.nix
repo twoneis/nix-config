@@ -1,5 +1,4 @@
-{ lib
-, rustPlatform
+{ rustPlatform
 , fetchFromGitHub
 , pkg-config
 , libxkbcommon
@@ -45,21 +44,14 @@ rustPlatform.buildRustPackage {
     udev
     wayland
     libinput
+    libglvnd
     mesa # libgbm
   ];
 
-  runtimeDependencies = [
-    wayland
-    mesa
-    libglvnd
+  RUSTFLAGS = map (a: "-C link-arg=${a}") [
+    "-Wl,--push-state,--no-as-needed"
+    "-lEGL"
+    "-lwayland-client"
+    "-Wl,--pop-state"
   ];
-
-  meta = with lib; {
-    description = "A scrollable-tiling Wayland compositor";
-    homepage = "https://github.com/YaLTeR/niri";
-    license = licenses.gpl3Only;
-    maintainers = with maintainers; [ iogamaster ];
-    mainProgram = "niri";
-    inherit (wayland.meta) platforms;
-  };
 }
