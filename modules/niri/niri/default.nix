@@ -55,5 +55,25 @@ rustPlatform.buildRustPackage {
     "-Wl,--pop-state"
   ];
 
+  postInstall =
+  let
+    niriSession = ''
+      [Desktop Entry]
+      Name=niri
+      Comment=Scrolling wayland compositor
+      Exec=niri
+      Type=Application
+      '';
+    niriPortals = ''
+      [preferred]
+      default=gnome;gtk;      
+    '';
+  in ''
+      mkdir -p $out/share/wayland-sessions
+      echo "${niriSession}" > $out/share/wayland-sessions/niri.desktop
+      mkdir -p $out/xdg-desktop-portal
+      echo "${niriSession}" > $out/share/wayland-sessions/niri-portals.conf
+    '';
+
   passthru.providedSessions = [ "niri" ];
 }
