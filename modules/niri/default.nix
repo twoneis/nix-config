@@ -1,27 +1,3 @@
-{ pkgs, ... }: 
-let
-  niri = pkgs.callPackage ./niri {};
-in {
-  environment.systemPackages = [niri];
-  services.xserver.displayManager.sessionPackages = [
-    niri
-    /*
-    ((pkgs.callPackage ./niri {}).overrideAttrs (prevAttrs: rec {
-      postInstall =
-      let
-        niriSession = ''
-          [Desktop Entry]
-          Name=niri
-          Comment=Scrolling wayland compositor
-          Exec=niri
-          Type=Application
-          '';
-      in ''
-          mkdir -p $out/share/wayland-sessions
-          echo "${niriSession}" > $out/share/wayland-sessions/niri.desktop
-        '';
-      passthru.providedSessions = [ "niri" ];
-    }))
-    */
-  ];
+{ niri, ... }: {
+  services.xserver.displayManager.sessionPackages = [ niri.niri ];
 }

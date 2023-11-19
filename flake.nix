@@ -14,6 +14,11 @@
     nixos-hardware = {
       url = "github:nixos/nixos-hardware/master";
     };
+
+    niri = {
+      url = "github:twoneis/niri";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, home-manager, nixos-hardware, ... }:
