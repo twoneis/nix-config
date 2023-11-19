@@ -70,16 +70,16 @@
         "rust": "rust"
       },
       "locked": {
-        "lastModified": 1700158862,
-        "narHash": "sha256-mtBzW2UoW0FXLuVuinSUFVOW/1wKo/7nlxq7ZIzpBr0=",
-        "owner": "pop-os",
-        "repo": "cosmic-comp",
-        "rev": "92c16bd4adabbd00123284176a2e4cc52b5131c7",
+        "lastModified": 1700429886,
+        "narHash": "sha256-LUfJ60RDU1t4STTXg6GOBYMWs5gUsHrk0QX1+b9lXZ8=",
+        "owner": "twoneis",
+        "repo": "niri",
+        "rev": "003c6f7e6be9ed3898042fae9087218d3eaa4b34",
         "type": "github"
       },
       "original": {
-        "owner": "pop-os",
-        "repo": "cosmic-comp",
+        "owner": "twoneis",
+        "repo": "niri",
         "type": "github"
       }
     },
