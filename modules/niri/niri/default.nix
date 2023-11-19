@@ -66,12 +66,12 @@ rustPlatform.buildRustPackage {
       '';
     niriPortals = ''
       [preferred]
-      default=gnome;gtk;      
+      default=gnome;gtk;
     '';
   in ''
       mkdir -p $out/share/wayland-sessions
       echo "${niriSession}" > $out/share/wayland-sessions/niri.desktop
-      mkdir -p $out/xdg-desktop-portal
+      mkdir -p $out/share/xdg-desktop-portal
       echo "${niriPortals}" > $out/share/wayland-sessions/niri-portals.conf
     '';
 
