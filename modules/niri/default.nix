@@ -1,6 +1,11 @@
 { pkgs, ... }: 
-{
+let
+  niri = pkgs.callPackage ./niri {};
+in {
+  environment.systemPackages = [niri];
   services.xserver.displayManager.sessionPackages = [
+    niri
+    /*
     ((pkgs.callPackage ./niri {}).overrideAttrs (prevAttrs: rec {
       postInstall =
       let
@@ -17,5 +22,6 @@
         '';
       passthru.providedSessions = [ "niri" ];
     }))
+    */
   ];
 }

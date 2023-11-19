@@ -54,4 +54,6 @@ rustPlatform.buildRustPackage {
     "-lwayland-client"
     "-Wl,--pop-state"
   ];
+
+  passthru.providedSessions = [ "niri" ];
 }
