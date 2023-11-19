@@ -53,7 +53,6 @@ rustPlatform.buildRustPackage {
     "-lEGL"
     "-lwayland-client"
     "-Wl,--pop-state"
-    "--release"
   ];
 
   postInstall =
@@ -129,10 +128,11 @@ rustPlatform.buildRustPackage {
 
       [Service]
       Type=notify
-      ExecStart=/usr/bin/niri
+      ExecStart=/usr/bin/env niri
     '';
   in ''
       echo "${niriSession}" > $out/bin/niri-session
+      chmod a=xr $out/bin/niri-session
       mkdir -p $out/share/wayland-sessions
       echo "${niriDesktop}" > $out/share/wayland-sessions/niri.desktop
       mkdir -p $out/share/xdg-desktop-portal
