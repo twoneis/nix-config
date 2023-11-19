@@ -19,21 +19,19 @@
       url = "github:twoneis/niri";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    cosmic-comp = {
-      url = "github:pop-os/cosmic-comp";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { nixpkgs, home-manager, nixos-hardware, niri, ... }:
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs:
   let
     x86 = "x86_64-linux";
     common = ./modules/system;
   in {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit x86; };
+        specialArgs = {
+          inherit x86;
+          inputs = inputs;
+        };
 
         modules = [
           common
@@ -50,7 +48,10 @@
       };
 
       surface = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit x86; };
+        specialArgs = {
+          inherit x86;
+          inputs = inputs;
+        };
 
         modules = [
           common
