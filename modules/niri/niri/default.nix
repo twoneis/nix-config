@@ -72,7 +72,7 @@ rustPlatform.buildRustPackage {
       mkdir -p $out/share/wayland-sessions
       echo "${niriSession}" > $out/share/wayland-sessions/niri.desktop
       mkdir -p $out/xdg-desktop-portal
-      echo "${niriSession}" > $out/share/wayland-sessions/niri-portals.conf
+      echo "${niriPortals}" > $out/share/wayland-sessions/niri-portals.conf
     '';
 
   passthru.providedSessions = [ "niri" ];
