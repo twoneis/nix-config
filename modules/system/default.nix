@@ -7,6 +7,16 @@
     ../gnome
   ];
 
+  #Optimise nix store
+  nix = {
+    optimise.automatic = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
+  };
+
   # Enable nix flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
