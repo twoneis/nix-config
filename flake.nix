@@ -14,6 +14,10 @@
     nixos-hardware = {
       url = "github:nixos/nixos-hardware/master";
     };
+
+    nix-doom-emacs = {
+      url = "github:nix-community/nix-doom-emacs";
+    };
   };
 
   outputs = { nixpkgs, home-manager, nixos-hardware, ... }:
