@@ -3,5 +3,6 @@
     steam
     prismlauncher-qt5
     lutris
+    winePackages.stagingFull
   ];
 }

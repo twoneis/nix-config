@@ -1,3 +1,3 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [discord];
+  home.packages = with pkgs; [armcord];
 }

@@ -21,7 +21,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, niri, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nixos-hardware, ... }:
   let
     x86 = "x86_64-linux";
     common = ./modules/system;
@@ -30,7 +30,6 @@
       desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit x86;
-          inputs = inputs;
         };
 
         modules = [
@@ -50,7 +49,6 @@
       surface = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit x86;
-          inputs = inputs;
         };
 
         modules = [

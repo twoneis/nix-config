@@ -15,6 +15,8 @@
     driSupport32Bit = true;
   };
 
+  hardware.pulseaudio.support32Bit = true;
+
   # Load nvidia driver
   services.xserver.videoDrivers = ["nvidia"];
 
