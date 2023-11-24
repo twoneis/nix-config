@@ -5,6 +5,7 @@
 { pkgs, ... }: {
   imports = [
     ../gnome
+    ../virt
   ];
 
   #Optimise nix store
