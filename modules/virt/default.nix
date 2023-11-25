@@ -1,4 +1,16 @@
 { pkgs, ... }: {
+  boot = {
+    kernelModules = [
+      "vfio_pci"
+      "vfio"
+      "vfio_iommu_type1"
+      "vfio_virqfd"
+    ];
+    kernelParams = [
+      "amd_iommu=on"
+    ];
+  };
+
   programs.dconf.enable = true;
 
   users.users.twoneis.extraGroups = [ "libvirtd" ];
