@@ -11,6 +11,7 @@
     ./git
     ./media
     ./notes
+    ./r
     ./terminal
     ./utils
   ];
