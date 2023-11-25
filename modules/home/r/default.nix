@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     R
-    rstudio
+    rstudioWrapper
     pandoc
     texlive.combined.scheme-full
   ];

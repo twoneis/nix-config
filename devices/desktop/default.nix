@@ -25,8 +25,8 @@
     powerManagement.enable = false;
     powerManagement.finegrained = false;
     open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    nvidiaSettings = false;
+    package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
   };
 
   # This value determines the NixOS release from which the default
