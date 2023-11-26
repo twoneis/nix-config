@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     vlc
-    spotify
+    spotifywm
     image-roll
   ];
 }
