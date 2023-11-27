@@ -20,7 +20,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixos-hardware, ... }:
+  outputs = { nixpkgs, home-manager, nixos-hardware, nur, ... }:
   let
     x86 = "x86_64-linux";
     common = ./modules/system;
@@ -36,6 +36,9 @@
           ./devices/desktop
 
           home-manager.nixosModules.home-manager {
+            nixpkgs.overlays = [
+              nur.overlay
+            ];
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;

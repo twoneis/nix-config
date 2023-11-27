@@ -6,6 +6,7 @@
         id = 0;
 
         search.default = "Startpage";
+        search.privateDefault = "DuckDuckGo";
         search.engines = {
           "Startpage" = {
             urls = [{
@@ -61,6 +62,33 @@
               ];
             }];
           };
+        };
+        search.force = true;
+        search.order = [
+          "Startpage"
+          "DuckDuckGo"
+          "Google"
+          "Wikipedai"
+          "YouTube"
+          "Nix Packages"
+        ];
+
+        bookmarks = { };
+
+        settings = {
+          "browser.startup.blankWindow" = true;
+          "browser.startup.page" = 0;
+          "extensions.pocket.enabled" = false;
+          "identity.fxaccounts.enabled" = false;
+          "browser.tabs.closeWindowWithLastTab" = false;
+          "browser.bookmarks.addedImportButton" = false;
+          "dom.security.https_only_mode" = true;
+          "browser.newtabpage.enabled" = false;
+          "browser.shell.checkDefaultBrowser" = false;
+          "signon.rememberSignons" = false;
+          "browser.preferences.moreFromMozilla" = false;
+          "browser.toolbars.bookmarks.visibility" = "never";
+          "extensions.pictureinpicture.enable_picture_in_picture_overrides" = false;
         };
 
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
