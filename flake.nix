@@ -14,6 +14,10 @@
     nixos-hardware = {
       url = "github:nixos/nixos-hardware/master";
     };
+
+    nur = {
+      url = "github:nix-community/nur";
+    };
   };
 
   outputs = { nixpkgs, home-manager, nixos-hardware, ... }:

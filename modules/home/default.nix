@@ -1,5 +1,6 @@
-{ ... }: {
+{ ... }@inputs: {
   imports = [
+    inputs.nur.hmModules.nur
     ./art
     ./browser
     ./chat
