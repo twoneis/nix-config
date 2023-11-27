@@ -77,7 +77,7 @@
 
         settings = {
           "browser.startup.blankWindow" = true;
-          "browser.startup.page" = 0;
+          "browser.startup.page" = 3;
           "extensions.pocket.enabled" = false;
           "identity.fxaccounts.enabled" = false;
           "browser.tabs.closeWindowWithLastTab" = false;
@@ -88,7 +88,7 @@
           "signon.rememberSignons" = false;
           "browser.preferences.moreFromMozilla" = false;
           "browser.toolbars.bookmarks.visibility" = "never";
-          "extensions.pictureinpicture.enable_picture_in_picture_overrides" = false;
+          "media.videocontrols.picture-in-picture.enabled" = false;
         };
 
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
