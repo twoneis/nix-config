@@ -89,6 +89,7 @@
           "browser.preferences.moreFromMozilla" = false;
           "browser.toolbars.bookmarks.visibility" = "never";
           "media.videocontrols.picture-in-picture.enabled" = false;
+          "browser.translation.enable" = false;
         };
 
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
