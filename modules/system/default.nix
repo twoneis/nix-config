@@ -5,6 +5,7 @@
 { pkgs, ... }: {
   imports = [
     ../gnome
+    ../virt
   ];
 
   #Optimise nix store
@@ -79,7 +80,7 @@
   users.users.twoneis = {
     isNormalUser = true;
     description = "twoneis";
-    extraGroups = [ "networkmanager" "wheel" "surface-control" ];
+    extraGroups = [ "networkmanager" "wheel" "surface-control" "docker" ];
   };
 
   # Allow unfree packages
