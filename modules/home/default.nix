@@ -4,6 +4,7 @@
     ./browser
     ./chat
     ./discord
+    ./direnv
     ./editor
     ./email
     ./games
