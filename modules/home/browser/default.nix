@@ -5,9 +5,14 @@
       "default" = {
         id = 0;
 
-        search.default = "Startpage";
-        search.privateDefault = "DuckDuckGo";
+        search.default = "DuckDuckGoo";
+        search.privateDefault = "DuckDuckGoo";
         search.engines = {
+          "DuckDuckGo".metaData.hidden = true;
+          "Google".metaData.hidden = true;
+          "Amazon.com".metaData.hidden = true;
+          "Bing".metaData.hidden = true;
+          "Wikipedia (en)".metaData.hidden = true;
           "Startpage" = {
             urls = [{
               template = "https://startpage.com/do/search";
@@ -17,7 +22,7 @@
             }];
             definedAliases = [ "@sp" ];
           };
-          "DuckDuckGo" = {
+          "DuckDuckGoo" = {
             urls = [{
               template = "https://duckduckgo.com/";
               params = [
@@ -26,7 +31,7 @@
             }];
             definedAliases = [ "@ddg" ];
           };
-          "Google" = {
+          "Googlee" = {
             urls = [{
               template = "https://google.com/search";
               params = [
@@ -61,14 +66,15 @@
                 { name = "query"; value = "{searchTerms}"; }
               ];
             }];
+            definedAliases = [ "@np" ];
           };
         };
         search.force = true;
         search.order = [
           "Startpage"
-          "DuckDuckGo"
-          "Google"
-          "Wikipedai"
+          "DuckDuckGoo"
+          "Googlee"
+          "Wikipedia"
           "YouTube"
           "Nix Packages"
         ];
@@ -90,6 +96,8 @@
           "browser.toolbars.bookmarks.visibility" = "never";
           "media.videocontrols.picture-in-picture.enabled" = false;
           "browser.translation.enable" = false;
+          "media.cache_readhead_limit" = 9999;
+          "media.cache_resume_threshold" = 9999;
         };
 
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
