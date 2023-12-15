@@ -106,6 +106,7 @@
           ublock-origin
           consent-o-matic
           pronoundb
+          web-scrobbler
         ];
       };
     };
