@@ -8,6 +8,8 @@
 
   environment.systemPackages = with pkgs; [
     gnomeExtensions.paperwm
+    gnomeExtensions.appindicator
+    gnomeExtensions.undecorate
     gnome.gnome-characters
   ];
 }
