@@ -59,6 +59,9 @@
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
 
           home-manager.nixosModules.home-manager {
+            nixpkgs.overlays = [
+              nur.overlay
+            ];
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
