@@ -1,3 +1,5 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [armcord];
+  home.packages = with pkgs; [
+    webcord
+  ];
 }
