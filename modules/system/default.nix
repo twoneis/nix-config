@@ -5,7 +5,6 @@
 { pkgs, ... }: {
   imports = [
     ../gnome
-    ../niri
     ../virt
   ];
 

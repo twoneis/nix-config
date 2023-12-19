@@ -18,14 +18,9 @@
     nur = {
       url = "github:nix-community/nur";
     };
-
-    niri = {
-      url = "github:twoneis/niri/nixify";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { nixpkgs, home-manager, nixos-hardware, nur, niri, ... }:
+  outputs = { nixpkgs, home-manager, nixos-hardware, nur, ... }:
   let
     x86 = "x86_64-linux";
     common = ./modules/system;
@@ -42,7 +37,6 @@
 
           home-manager.nixosModules.home-manager {
             nixpkgs.overlays = [
-              niri.overlay
               nur.overlay
             ];
             home-manager = {
