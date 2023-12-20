@@ -4,5 +4,6 @@
     prismlauncher-qt5
     lutris
     winePackages.stagingFull
+    r2modman
   ];
 }

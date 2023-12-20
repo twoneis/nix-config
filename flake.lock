@@ -20,43 +20,6 @@
         "type": "github"
       }
     },
-    "niri": {
-      "inputs": {
-        "nix-filter": "nix-filter",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1703000056,
-        "narHash": "sha256-d4LrEmhj9w26SknUadcIM7Y1rllMxArKdFCyspADBn4=",
-        "owner": "twoneis",
-        "repo": "niri",
-        "rev": "fa2a60977e8d96738cd96a532244798028282eb7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "twoneis",
-        "ref": "nixify",
-        "repo": "niri",
-        "type": "github"
-      }
-    },
-    "nix-filter": {
-      "locked": {
-        "lastModified": 1701697642,
-        "narHash": "sha256-L217WytWZHSY8GW9Gx1A64OnNctbuDbfslaTEofXXRw=",
-        "owner": "numtide",
-        "repo": "nix-filter",
-        "rev": "c843418ecfd0344ecb85844b082ff5675e02c443",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "nix-filter",
-        "type": "github"
-      }
-    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1702453208,
@@ -107,7 +70,6 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "niri": "niri",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nur": "nur"

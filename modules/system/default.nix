@@ -8,6 +8,12 @@
     ../virt
   ];
 
+  # Allow packages from nixpkgs
+  nixpks.config = {
+    permittedInsecurePackages = ["electron-25.9.0"]; # Used for r2modman
+    allowUnfree = true;
+  };
+
   #Optimise nix store
   nix = {
     optimise.automatic = true;
@@ -82,9 +88,6 @@
     description = "twoneis";
     extraGroups = [ "networkmanager" "wheel" "surface-control" "docker" ];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # Configure fonts
   fonts.packages = with pkgs; [
