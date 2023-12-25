@@ -18,10 +18,6 @@
     nur = {
       url = "github:nix-community/nur";
     };
-
-    # niri  = {
-    #   url = "github:twoneis/niri";
-    # };
   };
 
   outputs = { nixpkgs, home-manager, nixos-hardware, nur, ... }:
@@ -42,7 +38,6 @@
           home-manager.nixosModules.home-manager {
             nixpkgs.overlays = [
               nur.overlay
-              # niri.overlay
             ];
             home-manager = {
               useGlobalPkgs = true;
@@ -66,7 +61,6 @@
           home-manager.nixosModules.home-manager {
             nixpkgs.overlays = [
               nur.overlay
-              # niri.overlay
             ];
             home-manager = {
               useGlobalPkgs = true;
