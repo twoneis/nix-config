@@ -43,7 +43,6 @@
           home-manager.nixosModules.home-manager {
             nixpkgs.overlays = [
               nur.overlay
-              talon-nix.overlays
             ];
             home-manager = {
               useGlobalPkgs = true;
@@ -65,10 +64,7 @@
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
 
           home-manager.nixosModules.home-manager {
-            nixpkgs.overlays = [
-              nur.overlay
-              talon-nix.overlays
-            ];
+            nixpkgs.overlays = [ nur.overlay talon-nix.overlays.default ];
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
