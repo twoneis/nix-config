@@ -4,8 +4,10 @@
 
 { pkgs, ... }: {
   imports = [
+    ./audio.nix
+    ./fonts.nix
+    ./docker.nix
     ../gnome
-    ../virt
   ];
 
   # Allow packages from nixpkgs
@@ -70,40 +72,13 @@
   # Enable CUPS to print documents.
   services.printing.enable = false;
 
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  # Security
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    #jack.enable = true;
-  };
-  environment.systemPackages = with pkgs; [
-    pamixer
-  ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.twoneis = {
     isNormalUser = true;
     description = "twoneis";
     extraGroups = [ "networkmanager" "wheel" "surface-control" "docker" ];
-  };
-
-  # Configure fonts
-  fonts.packages = with pkgs; [
-    alegreya
-    alegreya-sans
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
-  ];
-
-  fonts.fontconfig = {
-    defaultFonts = {
-      serif = [ "Alegreya" ];
-      sansSerif = [ "Alegreya Sans" ];
-      monospace = [ "Fira Code Nerd Font" ];
-    };
   };
 }
