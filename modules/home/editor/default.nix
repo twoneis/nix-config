@@ -5,4 +5,10 @@
     extraPackages = with pkgs; [ nil marksman ];
     settings = import ./helix-config.nix;
   };
+
+  programs.vscode = {
+    enable = true;
+    enableUpdateCheck = false;
+    package = pkgs.vscodium;
+  };
 }
