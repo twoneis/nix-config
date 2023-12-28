@@ -1,9 +1,22 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [
     ./hardware-config.nix
   ];
 
   networking.hostName = "surface";
+
+  # Enable OpenGL
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+    ];
+  };
 
   services.auto-cpufreq = {
     enable = true;
