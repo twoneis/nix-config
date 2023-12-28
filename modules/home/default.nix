@@ -1,20 +1,20 @@
 { ... }: {
   imports = [
-    # ./art
+    ./art
     ./browser
-    # ./chat
+    ./chat
     ./discord
     ./direnv
     ./editor
-    # ./email
+    ./email
     ./games
     ./gdb
     ./git
     ./media
-    # ./notes
+    ./notes
     ./terminal
     ./utils
-    # ./voice
+    ./voice
   ];
 
   home = {
