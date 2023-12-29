@@ -14,7 +14,6 @@
     ./notes
     ./terminal
     ./utils
-    ./voice
   ];
 
   home = {

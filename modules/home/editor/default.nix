@@ -8,7 +8,6 @@
 
   programs.vscode = {
     enable = true;
-    enableUpdateCheck = false;
-    package = pkgs.vscodium;
+    package = pkgs.vscodium.fhsWithPackages (pkgs: with pkgs; [talon]);
   };
 }
