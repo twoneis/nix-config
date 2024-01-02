@@ -18,14 +18,9 @@
     nur = {
       url = "github:nix-community/nur";
     };
-
-    talon-nix = {
-      url = "github:nix-community/talon-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { nixpkgs, home-manager, nixos-hardware, nur, talon-nix, ... }:
+  outputs = { nixpkgs, home-manager, nixos-hardware, nur, ... }:
   let
     x86 = "x86_64-linux";
     common = ./modules/system;
@@ -64,7 +59,9 @@
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
 
           home-manager.nixosModules.home-manager {
-            nixpkgs.overlays = [ nur.overlay talon-nix.overlays.default ];
+            nixpkgs.overlays = [
+              nur.overlay 
+            ];
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
