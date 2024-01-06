@@ -16,17 +16,23 @@
     nur = {
       url = "github:nix-community/nur";
     };
+
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nixos-hardware, nur, ... }:
+  outputs = { nixpkgs, home-manager, nixos-hardware, nur, niri, ... }:
   {
     nixosConfigurations = {
       desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./modules/system
           ./devices/desktop
 
+          ./modules/system
+          niri.nixosModules.default
           home-manager.nixosModules.home-manager {
             nixpkgs.overlays = [
               nur.overlay
@@ -43,10 +49,11 @@
       surface = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./modules/system
           ./devices/surface
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
 
+          ./modules/system
+          niri.nixosModules.default
           home-manager.nixosModules.home-manager {
             nixpkgs.overlays = [
               nur.overlay 

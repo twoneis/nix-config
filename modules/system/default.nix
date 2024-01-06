@@ -7,8 +7,8 @@
     ./audio.nix
     ./fonts.nix
     ./docker.nix
-    ./virt.nix
     ../gnome
+    ../niri
   ];
 
   # Allow packages from nixpkgs
