@@ -39,6 +39,7 @@
       efiSupport = true;
       device = "nodev";
       useOSProber = true;
+      gfxmodeEfi = "text";
     };
   };
 
