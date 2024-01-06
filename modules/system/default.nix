@@ -40,6 +40,7 @@
       device = "nodev";
       useOSProber = true;
       gfxmodeEfi = "text";
+      gfxmodeBios = "text";
     };
   };
 
