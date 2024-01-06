@@ -5,6 +5,9 @@
 
   networking.hostName = "surface";
 
+  # Add user to surface control group for surface linux
+  users.users.twoneis.extraGroups = [ "surface-control" ];
+
   # Enable OpenGL
   hardware.opengl = {
     enable = true;

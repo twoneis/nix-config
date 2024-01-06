@@ -7,6 +7,7 @@
     ./audio.nix
     ./fonts.nix
     ./docker.nix
+    ./virt.nix
     ../gnome
   ];
 
@@ -79,6 +80,6 @@
   users.users.twoneis = {
     isNormalUser = true;
     description = "twoneis";
-    extraGroups = [ "networkmanager" "wheel" "surface-control" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" ];
   };
 }
