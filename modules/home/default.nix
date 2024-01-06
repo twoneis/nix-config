@@ -7,7 +7,6 @@
     ./direnv
     ./editor
     ./email
-    ./games
     ./gdb
     ./git
     ./media

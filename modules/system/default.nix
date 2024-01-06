@@ -13,7 +13,6 @@
 
   # Allow packages from nixpkgs
   nixpkgs.config = {
-    permittedInsecurePackages = ["electron-25.9.0"]; # Used for r2modman
     allowUnfree = true;
   };
 
