@@ -32,18 +32,6 @@
   # Disable documentation
   documentation.nixos.enable = false;
 
-  # Bootloader.
-  boot.loader = {
-    grub = {
-      enable = true;
-      efiSupport = true;
-      device = "nodev";
-      useOSProber = true;
-      font = null;
-      splashImage = null;
-    };
-  };
-
   # Enable networking
   networking.networkmanager.enable = true;
 

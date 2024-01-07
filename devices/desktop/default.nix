@@ -8,6 +8,18 @@
   # Select kernel version
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
+  # Bootloader.
+  boot.loader = {
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+      useOSProber = true;
+      font = null;
+      splashImage = null;
+    };
+  };
+
   # Enable OpenGL
   hardware.opengl = {
     enable = true;

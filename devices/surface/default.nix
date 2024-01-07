@@ -8,6 +8,13 @@
   # Add user to surface control group for surface linux
   users.users.twoneis.extraGroups = [ "surface-control" ];
 
+  # Bootloader.
+  boot.loader = {
+    systemd-boot = {
+      enable = true;
+    };
+  };
+
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
