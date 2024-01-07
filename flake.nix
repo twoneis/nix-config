@@ -24,8 +24,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixos-hardware, nur, niri, ... }:
-  {
+  outputs = { nixpkgs, home-manager, nixos-hardware, nur, niri, ... }: {
     nixosConfigurations = let
       commonModules = [
           ./modules/system
