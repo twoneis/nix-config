@@ -27,8 +27,6 @@
     driSupport32Bit = true;
   };
 
-  hardware.pulseaudio.support32Bit = true;
-
   # Load nvidia driver
   services.xserver.videoDrivers = ["nvidia"];
 
@@ -38,7 +36,7 @@
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = false;
-    package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 
   # This value determines the NixOS release from which the default
