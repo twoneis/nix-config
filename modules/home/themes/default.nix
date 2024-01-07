@@ -7,7 +7,6 @@
 
   gtk = {
     enable = true;
-    font.name = "Alegreya Sans";
     theme.name = "Adwaita Dark";
   };
 }
