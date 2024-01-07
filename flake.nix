@@ -20,31 +20,36 @@
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.niri-src.url = "github:YaLTeR/niri";
+      inputs.niri-src.url = "github:YaLTeR/niri/v0.1.0-alpha.3";
     };
   };
 
   outputs = { nixpkgs, home-manager, nixos-hardware, nur, niri, ... }:
   {
-    nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./devices/desktop
-
+    nixosConfigurations = let
+      commonModules = [
           ./modules/system
+
           niri.nixosModules.default
+
           home-manager.nixosModules.home-manager {
             nixpkgs.overlays = [
               nur.overlay
             ];
+
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
               users.twoneis = import ./modules/home;
             };
           }
-        ];
+      ];
+    in {
+      desktop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./devices/desktop
+        ] ++ commonModules;
       };
 
       surface = nixpkgs.lib.nixosSystem {
@@ -52,20 +57,7 @@
         modules = [
           ./devices/surface
           nixos-hardware.nixosModules.microsoft-surface-pro-intel
-
-          ./modules/system
-          niri.nixosModules.default
-          home-manager.nixosModules.home-manager {
-            nixpkgs.overlays = [
-              nur.overlay 
-            ];
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.twoneis = import ./modules/home;
-            };
-          }
-        ];
+        ] ++ commonModules;
       };
     };
   };
