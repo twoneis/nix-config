@@ -11,6 +11,7 @@
     ./git
     ./media
     ./terminal
+    ./themes
     ./utils
   ];
 
