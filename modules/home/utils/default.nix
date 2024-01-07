@@ -6,8 +6,17 @@
     tree
   ];
 
+  programs.man = {
+    enable = true;
+  };
+
   programs.bottom = {
     enable = true;
+  };
+
+  programs.lsd = {
+    enable = true;
+    enableAliases = true;
   };
 
   programs.hyfetch = {
