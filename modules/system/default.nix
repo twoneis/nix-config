@@ -7,8 +7,8 @@
     ./audio.nix
     ./fonts.nix
     ./docker.nix
-    ../gnome
-    ../niri
+    ./gnome
+    ./niri
   ];
 
   # Allow packages from nixpkgs
@@ -18,12 +18,12 @@
 
   #Optimise nix store
   nix = {
-    optimise.automatic = true;
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 30d";
+      options = "--delete-older-than 7d";
     };
+    settings.auto-optimise-store = true;
   };
 
   # Enable nix flakes
