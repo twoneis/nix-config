@@ -4,6 +4,7 @@
     man-pages-posix
     gnome.nautilus
     tree
+    zip
   ];
 
   programs.man = {
