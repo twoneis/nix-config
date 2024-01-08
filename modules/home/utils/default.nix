@@ -5,6 +5,7 @@
     gnome.nautilus
     tree
     zip
+    unzip
   ];
 
   programs.man = {
