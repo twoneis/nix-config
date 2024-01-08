@@ -1,7 +1,10 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    vlc
     spotify
     image-roll
   ];
+
+  programs.mpv = {
+    enable = true;
+  };
 }
