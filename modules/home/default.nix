@@ -9,6 +9,7 @@
     ./email
     ./gdb
     ./git
+    ./kdeconnect
     ./media
     ./terminal
     ./themes
