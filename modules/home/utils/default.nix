@@ -6,6 +6,7 @@
     tree
     zip
     unzip
+    xorg.xeyes
   ];
 
   programs.man = {
