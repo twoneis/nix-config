@@ -20,7 +20,7 @@
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.niri-src.url = "github:YaLTeR/niri/v0.1.0-alpha.3";
+      inputs.niri-src.url = "github:YaLTeR/niri";
     };
   };
 
