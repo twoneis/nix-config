@@ -275,11 +275,11 @@
     "niri-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1704955426,
-        "narHash": "sha256-jNw4oGvE4j7+rvZ8YCbutLB4o0fHSa2IkZCsWiMiEIk=",
+        "lastModified": 1704983454,
+        "narHash": "sha256-hJybJBcmPj2YZexFd3XAUwnmht9PkfzET1uE0SvKQ+o=",
         "owner": "YaLTeR",
         "repo": "niri",
-        "rev": "236abd9d9da14d614f9f36f1469ff90f441ba167",
+        "rev": "f4e04ac910ff0d643e28f9e0521b13cf50201115",
         "type": "github"
       },
       "original": {

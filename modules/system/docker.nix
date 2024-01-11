@@ -1,6 +1,6 @@
 { ... }: {
   virtualisation.podman = {
-    enabel = true;
+    enable = true;
     dockerCompat = true;
   };
 }
