@@ -1,4 +1,6 @@
 { ... }: {
-  virtualisation.docker.enable = true;
-  users.users.twoneis.extraGroups = [ "docker" ];
+  virtualisation.podman = {
+    enabel = true;
+    dockerCompat = true;
+  };
 }
