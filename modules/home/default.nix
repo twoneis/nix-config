@@ -10,6 +10,7 @@
     ./gdb
     ./git
     ./media
+    ./shell
     ./terminal
     ./themes
     ./utils
