@@ -1,7 +1,8 @@
 { ... }: {
   home.shellAliases = {
     ga = "git add -A";
-    gc = "git commit -am ";
+    gc = "git commit -m ";
+    gca = "git add -A && git commit -am ";
     gp = "git push";
     gpl = "git pull --recurse-submodules";
 
