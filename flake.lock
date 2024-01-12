@@ -253,7 +253,9 @@
       "inputs": {
         "crate2nix": "crate2nix",
         "flake-parts": "flake-parts_2",
-        "niri-src": "niri-src",
+        "niri-src": [
+          "niri-src"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ]
@@ -275,15 +277,15 @@
     "niri-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1704983454,
-        "narHash": "sha256-hJybJBcmPj2YZexFd3XAUwnmht9PkfzET1uE0SvKQ+o=",
-        "owner": "YaLTeR",
+        "lastModified": 1704996612,
+        "narHash": "sha256-cVc4UPEOBsXUezJI7vKLUpdmcfZfvvs9rtsqruR6bJw=",
+        "owner": "yalter",
         "repo": "niri",
-        "rev": "f4e04ac910ff0d643e28f9e0521b13cf50201115",
+        "rev": "78aa08b100f87fbde3738c78db5a8942e7e9b991",
         "type": "github"
       },
       "original": {
-        "owner": "YaLTeR",
+        "owner": "yalter",
         "repo": "niri",
         "type": "github"
       }
@@ -385,11 +387,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1704977430,
-        "narHash": "sha256-PY4s6niV5T5DvA6ECEfhMBSo2DtgzBo7cy+ebzt2pDo=",
+        "lastModified": 1705002794,
+        "narHash": "sha256-kOd7hd8A1sGFZSYJGn+cEH3RSpGVAQ004Pd1lZabuIo=",
         "owner": "nix-community",
         "repo": "nur",
-        "rev": "9fc1df5c3c1599c59668083fae4a9ea6ed9897d1",
+        "rev": "753418854902ccec235420cf3ee6b8bb9da3de67",
         "type": "github"
       },
       "original": {
@@ -436,6 +438,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "niri": "niri",
+        "niri-src": "niri-src",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_3",
         "nur": "nur"
