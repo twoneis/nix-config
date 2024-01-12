@@ -277,11 +277,11 @@
     "niri-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1704996612,
-        "narHash": "sha256-cVc4UPEOBsXUezJI7vKLUpdmcfZfvvs9rtsqruR6bJw=",
+        "lastModified": 1705034902,
+        "narHash": "sha256-SFhzdJ3dSPS06beud4sfe+bRgOOgxUTtQQ/izjnDfb8=",
         "owner": "yalter",
         "repo": "niri",
-        "rev": "78aa08b100f87fbde3738c78db5a8942e7e9b991",
+        "rev": "d39f1897c7c28d262ff574d43891175958d675c8",
         "type": "github"
       },
       "original": {
@@ -387,11 +387,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1705002794,
-        "narHash": "sha256-kOd7hd8A1sGFZSYJGn+cEH3RSpGVAQ004Pd1lZabuIo=",
+        "lastModified": 1705103180,
+        "narHash": "sha256-x2G8SU5aflDGqzNHqWaXyyp/F128pee/W3oRWxX5M5s=",
         "owner": "nix-community",
         "repo": "nur",
-        "rev": "753418854902ccec235420cf3ee6b8bb9da3de67",
+        "rev": "973c862015c5d83fbc757451ab4beb2854c24599",
         "type": "github"
       },
       "original": {
