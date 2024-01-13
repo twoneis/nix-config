@@ -7,9 +7,8 @@
     ./audio.nix
     ./docker.nix
     ./fonts.nix
-    ./virt.nix
     ./gnome
-    # ./niri
+    ./niri
   ];
 
   # Allow packages from nixpkgs
@@ -22,7 +21,7 @@
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 30d";
+      options = "--delete-older-than 1w";
     };
     settings.auto-optimise-store = true;
   };
