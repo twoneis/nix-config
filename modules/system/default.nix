@@ -5,11 +5,12 @@
 { pkgs, ... }: {
   imports = [
     ./audio.nix
-    ./docker.nix
+    ./containers.nix
     ./fonts.nix
     ./gnome
     ./niri
   ];
+
 
   # Allow packages from nixpkgs
   nixpkgs.config = {
