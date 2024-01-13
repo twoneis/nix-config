@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
   imports = [
     ./hardware-config.nix
+    ./options.nix
   ];
 
   networking.hostName = "desktop";
