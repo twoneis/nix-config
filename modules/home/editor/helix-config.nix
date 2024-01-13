@@ -23,7 +23,7 @@
     n = "move_line_down";
     s = "move_char_right";
 
-    f = "search_next";
-    F = "search_prev";
+    C-n = "search_next";
+    C-t = "search_prev";
   };
 }
