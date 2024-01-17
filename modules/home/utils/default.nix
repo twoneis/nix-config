@@ -3,6 +3,7 @@
     man-pages
     man-pages-posix
     gnome.nautilus
+    baobab
     tree
     zip
     unzip
