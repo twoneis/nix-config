@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     dorion
+    abaddon
   ];
 
   home.file = {
