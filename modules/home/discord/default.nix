@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     dorion
+    webcord
   ];
 
   home.file = {
