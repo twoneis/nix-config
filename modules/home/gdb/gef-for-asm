@@ -1,9 +1,9 @@
 [context]
 clear_screen = True
 enable = True
-grow_stack_down = False
+grow_stack_down = True
 ignore_registers = 
-layout = source regs stack memory
+layout = source regs stack
 libc_args = False
 libc_args_path = 
 nb_lines_backtrace = 10
