@@ -4,5 +4,6 @@
     defaultEditor = true;
     extraPackages = with pkgs; [ nil marksman ];
     settings = import ./helix-config.nix;
+    languages = import ./helix-languages.nix;
   };
 }
