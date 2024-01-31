@@ -83,5 +83,9 @@
       description = "twoneis";
       extraGroups = [ "networkmanager" "wheel" ];
     };
+
+    # Use zsh
+    programs.zsh.enable = true;
+    users.defaultUserShell = pkgs.zsh;
   };
 }
