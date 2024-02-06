@@ -67,8 +67,12 @@
     services.xserver = {
       enable = true;
       excludePackages = [ pkgs.xterm ];
+    };
+
+    # Configure xkb
+    services.xserver.xkb = {
       layout = "us";
-      xkbVariant = "";
+      variant = "";
     };
 
     # Enable CUPS to print documents.
