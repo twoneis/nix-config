@@ -4,14 +4,16 @@
 
 { pkgs, lib, ... }: {
   options = {
-    withNiri = with lib; mkEnableOption "Enable niri";
-    withGnome = with lib; mkEnableOption "Enable gnome";
+    withNiri = with lib; mkEnableOption "Enable Niri";
+    withGnome = with lib; mkEnableOption "Enable Gnome";
     withVM = with lib; mkEnableOption "Enable VM related configuration";
+    withDistrobox = with lib; mkEnableOption "Enable Distrobox";
   };
 
   imports = [
     ./audio.nix
     ./containers.nix
+    ./distrobox.nix
     ./fonts.nix
     ./gnome
     ./niri
