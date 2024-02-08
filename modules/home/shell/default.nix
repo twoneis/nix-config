@@ -11,7 +11,7 @@
     gp = "git push";
     gpl = "git pull --recurse-submodules";
 
-    nrb = "sudo nixos-rebuild switch --flake .";
+    nrb = "sudo nixos-rebuild switch --flake . --cores 0";
     nd = "nix develop";
 
     neofetch = "hyfetch";
