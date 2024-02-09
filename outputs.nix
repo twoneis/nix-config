@@ -26,7 +26,6 @@
       system = "x86_64-linux";
       modules = [
         ./devices/surface
-        nixos-hardware.nixosModules.microsoft-surface-pro-intel
       ] ++ commonModules;
     };
   };
