@@ -21,6 +21,11 @@
   ];
 
   config = {
+
+    networking.extraHosts = 
+    ''
+      10.10.11.245 surveillance.htb
+    '';
     # Allow packages from nixpkgs
     nixpkgs.config = {
       allowUnfree = true;
