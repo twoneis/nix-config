@@ -2,4 +2,4 @@
   home.packages = with pkgs; [
     webcord
   ];
-m
+}
