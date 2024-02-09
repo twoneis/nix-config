@@ -4,6 +4,9 @@
     ./options.nix
   ];
 
+  # Select kernel version
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+
   networking.hostName = "surface";
 
   # Add user to surface control group for surface linux
