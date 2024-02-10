@@ -5,11 +5,14 @@
   ];
 
   home.shellAliases = {
-    ga = "git add -A";
+    ga = "git add";
     gc = "git commit -m ";
     gca = "git add -A && git commit -am ";
+    gs = "git stash";
+    gsp = "git stash pop";
     gp = "git push";
     gpl = "git pull --recurse-submodules";
+    gst = "git status";
 
     nrb = "sudo nixos-rebuild switch --flake . --cores 0";
     nd = "nix develop";
