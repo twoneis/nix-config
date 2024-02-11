@@ -1,4 +1,8 @@
 { pkgs, ... }: {
+  imports = [
+    ./access-point.nix
+  ];
+
   # Allow ssh access
   services.openssh = {
     enable = true;
