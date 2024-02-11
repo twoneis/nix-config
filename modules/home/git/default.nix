@@ -11,6 +11,6 @@
 
   programs.gh = {
     enable = true;
-    gitCredentialHelper.enabel = true;
+    gitCredentialHelper.enable = true;
   };
 }
