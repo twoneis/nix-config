@@ -1,6 +1,6 @@
 { nixpkgs, home-manager, nixos-hardware, nur, niri, ... }@inputs: {
   nixosConfigurations = let
-    commonModules = [
+    clientModules = [
         ./modules/system
         niri.nixosModules.default
         home-manager.nixosModules.home-manager {
@@ -14,19 +14,29 @@
           };
         }
     ];
+    serverModules = [
+      ./modules/server
+    ];
   in {
     desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./devices/desktop
-      ] ++ commonModules;
+      ] ++ clientModules;
     };
 
     surface = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./devices/surface
-      ] ++ commonModules;
+      ] ++ clientModules;
+    };
+
+    zotac-mini = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./devices/zotac-mini
+      ] ++ serverModules;
     };
   };
 }
