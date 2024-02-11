@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   imports = [
-    ./access-point.nix
+    # ./access-point.nix
   ];
 
   # Allow ssh access
