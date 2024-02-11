@@ -3,6 +3,7 @@
     ./art
     ./browser
     ./chat
+    ./cursor
     ./discord
     ./direnv
     ./editor
