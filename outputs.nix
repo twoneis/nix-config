@@ -16,6 +16,13 @@
     ];
     serverModules = [
       ./modules/server
+      home-manager.nixosModules.home-manager {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          user.twoneis = import ./modules/server-home;
+        };
+      }
     ];
   in {
     desktop = nixpkgs.lib.nixosSystem {
