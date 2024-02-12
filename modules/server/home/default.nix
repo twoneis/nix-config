@@ -1,9 +1,9 @@
 { ... }: {
   imports = [
-    ../home/direnv
-    ../home/editor
-    ../home/git
-    ../home/shell
+    ../../system/home/direnv
+    ../../system/home/editor
+    ../../system/home/git
+    ../../system/home/shell
     ./server-utils
   ];
 

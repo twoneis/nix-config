@@ -10,7 +10,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.twoneis = import ./modules/home;
+            users.twoneis = import ./modules/system/home;
           };
         }
     ];
@@ -20,7 +20,7 @@
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
-          users.twoneis = import ./modules/server-home;
+          users.twoneis = import ./modules/server/home;
         };
       }
     ];
