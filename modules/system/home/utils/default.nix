@@ -23,6 +23,10 @@
     enableAliases = true;
   };
 
+  programs.zoxide = {
+    enable = true;
+  };
+
   programs.hyfetch = {
     enable = true;
     settings = {
