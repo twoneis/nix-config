@@ -11,6 +11,7 @@
     ./gdb
     ./git
     ./media
+    ./notes
     ./shell
     ./terminal
     ./themes
