@@ -4,9 +4,6 @@
     ./options.nix
   ];
 
-  # Select kernel version
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-
   networking.hostName = "surface";
 
   # Add user to surface control group for surface linux
@@ -32,18 +29,11 @@
     ];
   };
 
-  services.auto-cpufreq = {
-    enable = true;
-    settings = {
-      battery = {
-        governor = "powersaver";
-        turbo = "never";
-      };
-      charger = {
-        governor = "performance";
-        turbo = "auto";
-      };
-    };
+  services.thermald.enable = true;
+
+  microsoft-surface = {
+    ipts.enable = true;
+    surface-control.enable = true;
   };
 
   # This value determines the NixOS release from which the default
