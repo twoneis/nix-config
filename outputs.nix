@@ -2,7 +2,7 @@
   nixosConfigurations = let
     clientModules = [
         ./modules/system
-        niri.nixosModules.default
+        niri.nixosModules.niri
         home-manager.nixosModules.home-manager {
           nixpkgs.overlays = [
             nur.overlay
