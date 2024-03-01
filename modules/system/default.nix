@@ -8,6 +8,7 @@
     withGnome = with lib; mkEnableOption "Enable Gnome";
     withVM = with lib; mkEnableOption "Enable VM related configuration";
     withDistrobox = with lib; mkEnableOption "Enable Distrobox";
+    withGames = with lib; mkEnableOption "Enable games";
   };
 
   imports = [
@@ -15,6 +16,7 @@
     ./containers.nix
     ./distrobox.nix
     ./fonts.nix
+    ./games.nix
     ./gnome
     ./niri
     ./virt.nix
