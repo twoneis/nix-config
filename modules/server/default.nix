@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     # ./access-point.nix
+    ./calibre.nix
   ];
 
   # Allow ssh access
