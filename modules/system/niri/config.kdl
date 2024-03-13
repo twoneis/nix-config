@@ -40,8 +40,8 @@ layout {
     focus-ring {
         width 4
 
-        active-gradient from="#80c8ff" to="#bbddff" angle=45
-        inactive-color "#505050"
+        active-gradient from="#31748f" to="#9ccfd8" angle=135
+        inactive-color "#c4a7e7"
     }
 
     preset-column-widths {
