@@ -13,4 +13,10 @@
       };
     };
   };
+
+  services.mako = {
+    enable = true;
+    backgroundColor = "#191724ee";
+    borderColor = "#26233a";
+  };
 }
