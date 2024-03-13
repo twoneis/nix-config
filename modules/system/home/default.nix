@@ -11,6 +11,7 @@
     ./gdb
     ./git
     ./media
+    ./niri-setup
     ./notes
     ./shell
     ./terminal

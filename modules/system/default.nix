@@ -15,6 +15,8 @@
     ./virt.nix
   ];
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   networking.extraHosts = 
   ''
     10.10.11.245 surveillance.htb
