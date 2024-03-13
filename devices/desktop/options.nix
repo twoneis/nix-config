@@ -1,5 +1,5 @@
 { ... }: {
-  withNiri = false;
+  withNiri = true;
   withGnome = true;
   withNvidia = true;
   withVM = false;
