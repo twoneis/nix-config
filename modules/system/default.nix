@@ -15,6 +15,8 @@
     ./virt.nix
   ];
 
+  services.xserver.displayManager.gdm.enable = true;
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   networking.extraHosts = 
