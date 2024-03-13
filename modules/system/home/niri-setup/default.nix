@@ -14,6 +14,25 @@
     };
   };
 
+  programs.waybar = {
+    enable = true;
+    settings = {
+      mainBar = {
+        layer = "top";
+        position = "top";
+        modules-left = [
+          
+        ];
+        modules-center = [
+          "Clock"
+        ];
+        modules-right = [
+          
+        ];
+      };
+    };
+  };
+
   services.mako = {
     enable = true;
     backgroundColor = "#191724ee";
