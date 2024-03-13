@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ lib, config, pkgs, ... }: lib.mkIf (config.withNiri) {
   home.packages = with pkgs; [
     polkit_gnome
     dconf
