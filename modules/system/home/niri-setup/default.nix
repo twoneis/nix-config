@@ -1,4 +1,8 @@
 { pkgs, ... }: {
+  home.packages = with pkgs; [
+    polkit_gnome
+  ];
+
   programs.fuzzel= {
     enable = true;
     settings = {
