@@ -1,6 +1,7 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./hardware-config.nix
+    ./nvidia.nix
     ./options.nix
   ];
 
@@ -26,18 +27,6 @@
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
-  };
-
-  # Load nvidia driver
-  services.xserver.videoDrivers = ["nvidia"];
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    open = false;
-    nvidiaSettings = false;
-    package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
   };
 
   hardware.bluetooth = {

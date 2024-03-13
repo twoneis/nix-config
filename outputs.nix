@@ -1,7 +1,9 @@
-{ nixpkgs, home-manager, nixos-hardware, nur, niri, ... }@inputs: {
+{ nixpkgs, home-manager, nixos-hardware, nur, niri, ... }: {
   nixosConfigurations = let
+
     clientModules = [
         ./modules/system
+        ./options.nix
         niri.nixosModules.niri
         home-manager.nixosModules.home-manager {
           nixpkgs.overlays = [
@@ -14,8 +16,10 @@
           };
         }
     ];
+
     serverModules = [
       ./modules/server
+      ./options.nix
       home-manager.nixosModules.home-manager {
         home-manager = {
           useGlobalPkgs = true;
@@ -24,6 +28,7 @@
         };
       }
     ];
+
   in {
     desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
