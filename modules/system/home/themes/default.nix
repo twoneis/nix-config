@@ -1,4 +1,8 @@
 { pkgs, ... }: {
+  home.packages = with pkgs; [
+    dconf
+  ];
+
   qt = {
     enable = true;
     platformTheme = "gtk3";
@@ -16,5 +20,14 @@
       gtk-application-prefer-dark-theme = true;
     };
     theme.name = "Adwaita Dark";
+  };
+
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+    };
   };
 }
