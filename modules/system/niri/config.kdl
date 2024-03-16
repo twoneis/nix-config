@@ -66,6 +66,8 @@ hotkey-overlay {
     skip-at-startup
 }
 
+spawn-at-startup "waybar"
+
 binds {
     Mod+T { spawn "alacritty"; }
     Mod+B { spawn "firefox"; }
