@@ -41,7 +41,7 @@
           "clock"
         ];
         modules-right = [
-          
+          "battery"
         ];
       };
     };
