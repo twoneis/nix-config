@@ -95,4 +95,7 @@
   # Use zsh
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
+
+  # Allow swaylock to PAM authentication
+  security.pam.services.swaylock = {};
 }
