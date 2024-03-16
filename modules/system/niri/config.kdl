@@ -137,5 +137,4 @@ binds {
 
     Mod+Shift+L { spawn "swaylock"; }
     Mod+Shift+Q { quit; }
-    Mod+Ctrl+Shift+Q { spawn "shutdow" "-h" "now"; }
 }
