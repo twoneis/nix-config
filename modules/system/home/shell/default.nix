@@ -26,7 +26,7 @@
 
   programs.zsh = {
     enable = true;
-    autosuggestions.enable = true;
+    autosuggestion.enable = true;
     enableVteIntegration = true;
     history.ignoreAllDups = true;
     historySubstringSearch.enable = true;
