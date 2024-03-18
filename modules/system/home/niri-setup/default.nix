@@ -1,17 +1,7 @@
 { lib, osConfig, pkgs, ... }: lib.mkIf (osConfig.withNiri) {
   home.packages = with pkgs; [
     polkit_gnome
-    dconf
   ];
-
-  dconf = {
-    enable = true;
-    settings = {
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
-      };
-    };
-  };
 
   programs.fuzzel= {
     enable = true;
