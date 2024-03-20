@@ -79,7 +79,7 @@
         binds = {
           "Mod+T".spawn = "alacritty";
           "Mod+B".spawn = "firefox";
-          "Mod+S".spawn = "fuzzle -I";
+          "Mod+S".spawn = ["fuzzel" "-I"];
 
           "XF86AudioRaiseVolume".spawn = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+";
           "XF86AudioLowerVolume".spawn = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
