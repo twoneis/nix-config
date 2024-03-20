@@ -1,33 +1,26 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [
-    dconf
-  ];
-
-  qt = {
-    enable = true;
-    platformTheme = "gtk3";
-    style.package = pkgs.adwaita-qt;
-    style.name = "adwaita-dark";
-  };
-
-  gtk = {
-    enable = true;
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = true;
-    };
-    gtk2.extraConfig = "gtk-application-prefer-dark-theme=1\n";
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = true;
-    };
-    theme.name = "Adwaita Dark";
-  };
-
-  dconf = {
-    enable = true;
-    settings = {
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
+  stylix = {
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
+    fonts = {
+      serif = {
+        package = pkgs.alegreya;
+        name = "Alegreya";
       };
+      sansSerif = {
+        package = pkgs.alegreya;
+        name = "Alegreya Sans";
+      };
+      monospace = {
+        package = pkgs.fira-code;
+        name = "Fira Code";
+      };
+      emoji = {
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Color Emoji";
+      };
+    };
+    cursor = {
+      size = 24;
     };
   };
 }

@@ -21,6 +21,10 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix = {
+      url = "github:danth/stylix";
+    };
   };
 
   outputs = inputs: import ./outputs.nix inputs;

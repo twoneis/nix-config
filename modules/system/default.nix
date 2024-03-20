@@ -8,12 +8,13 @@
     ./bluetooth.nix
     ./containers.nix
     ./distrobox.nix
-    ./fonts.nix
     ./games.nix
     ./gnome
     ./niri
     ./virt.nix
   ];
+
+  stylix.image = ../../wallpaper/wallpaper.png;
 
   services.xserver.displayManager.gdm.enable = true;
 

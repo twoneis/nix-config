@@ -17,8 +17,8 @@
       efiSupport = true;
       device = "nodev";
       useOSProber = true;
-      font = null;
-      splashImage = null;
+      # font = null;
+      # splashImage = null;
     };
   };
 

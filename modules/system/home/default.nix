@@ -3,7 +3,7 @@
     ./art
     ./browser
     ./chat
-    ./cursor
+    # ./cursor
     ./discord
     ./direnv
     ./editor
@@ -27,13 +27,4 @@
   };
 
   programs.home-manager.enable = true;
-
-  dconf = {
-    enable = true;
-    settings = {
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
-      };
-    };
-  };
 }

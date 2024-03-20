@@ -1,10 +1,11 @@
-{ nixpkgs, home-manager, nixos-hardware, nur, niri, ... }: {
+{ nixpkgs, home-manager, nixos-hardware, nur, niri, stylix, ... }: {
   nixosConfigurations = let
 
     clientModules = [
         ./modules/system
         ./options.nix
         niri.nixosModules.niri
+        stylix.nixosModules.stylix
         home-manager.nixosModules.home-manager {
           nixpkgs.overlays = [
             nur.overlay
