@@ -11,10 +11,9 @@
     ./games.nix
     ./gnome
     ./niri
+    ./stylix.nix
     ./virt.nix
   ];
-
-  stylix.image = ../../wallpaper/wallpaper.png;
 
   services.xserver.displayManager.gdm.enable = true;
 

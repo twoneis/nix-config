@@ -15,7 +15,6 @@
     ./notes
     ./shell
     ./terminal
-    ./themes
     ./utils
   ];
 

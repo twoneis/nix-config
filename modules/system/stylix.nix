@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   stylix = {
+    image = ../../wallpaper/wallpaper.png;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     fonts = {
       serif = {
