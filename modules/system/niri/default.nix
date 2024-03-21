@@ -74,7 +74,7 @@
 
         spawn-at-startup = [
           { command = ["waybar"]; }
-          { command = ["swaybg" "-i" "${../../../wallpaper/wallpaper.png}"]; }
+          { command = ["swaybg" "-i" "${../../../wallpaper/wallpaper.png}" "-m" "fill"]; }
         ];
 
         binds = {
