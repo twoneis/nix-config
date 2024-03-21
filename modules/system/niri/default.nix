@@ -1,4 +1,4 @@
-{ lib, config, ... }: lib.mkIf (config.withNiri) {
+{ lib, config, pkgs, ... }: lib.mkIf (config.withNiri) {
   programs.niri.enable = true;
   home-manager.users.twoneis = {
     programs.niri = {
@@ -74,6 +74,7 @@
 
         spawn-at-startup = [
           { command = ["waybar"]; }
+          { command = ["swaybg" "-i" "${../../../wallpaper/wallpaper.png}"]; }
         ];
 
         binds = {
