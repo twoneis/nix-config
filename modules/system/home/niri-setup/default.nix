@@ -1,4 +1,6 @@
-{ lib, osConfig, pkgs, ... }: lib.mkIf (osConfig.withNiri) {
+{ lib, osConfig, pkgs, ... }: let
+  theme = import ../../../../colors.nix;
+in lib.mkIf (osConfig.withNiri) {
   home.packages = with pkgs; [
     polkit_gnome
     swaybg
@@ -7,14 +9,14 @@
   programs.fuzzel= {
     enable = true;
     settings = {
-      colors = {
-        background = "191724ee";
-        text = "e0def4ff";
-        match = "eb6f92ff";
-        selection = "524f67ee";
-        selection-text = "e0def4ff";
-        selection-match = "eb6f92ff";
-        border = "26233aff";
+      colors = with lib; with strings; {
+        background = concatStrings [ theme.base.hex "ee" ];
+        text = concatStrings [ theme.text.hex "ff" ];
+        match = concatStrings [ theme.gold.hex "ff" ];
+        selection = concatStrings [theme.highlight-med.hex "ee" ];
+        selection-text = concatStrings [ theme.text.hex "ff" ];
+        selection-match = concatStrings [ theme.gold.hex "ff" ];
+        border = concatStrings [ theme.overlay.hex "ff" ];
       };
     };
   };
@@ -26,28 +28,34 @@
         layer = "top";
         position = "top";
         modules-left = [
-          
+          "network"
         ];
         modules-center = [
           "clock"
         ];
         modules-right = [
+          "temperature"
+          "cpu"
+          "memory"
           "battery"
         ];
       };
     };
+    # style = import ./waybar-style.nix;
   };
 
   services.mako = {
     enable = true;
-    backgroundColor = "#191724ee";
-    borderColor = "#26233a";
+    defaultTimeout = 5;
+    backgroundColor = theme.base.hex;
+    borderColor = theme.muted.hex;
+    textColor = theme.text.hex;
   };
 
   programs.swaylock = {
     enable = true;
     package = pkgs.swaylock-effects;
-    settings = {
+    settings = with lib; with strings; {
       ignore-empty-password = true;
       screenshots = true;
       clock = true;
@@ -56,27 +64,27 @@
       indicator-caps-lock = true;
       indicator-radius = 100;
       indicator-thickness = 4;
-      inside-color = "#26233aaa";
-      inside-clear-color = "#908caaaa";
-      inside-caps-lock-color = "#ebbcbaaa";
-      inside-ver-color = "#9ccfd8aa";
-      inside-wrong-color = "#eb6f92aa";
+      inside-color = concatStrings [ theme.overlay.hex "aa" ];
+      inside-clear-color = concatStrings [ theme.subtle.hex "aa" ];
+      inside-caps-lock-color = concatStrings [ theme.rose.hex "aa" ];
+      inside-ver-color = concatStrings [ theme.foam.hex "aa" ];
+      inside-wrong-color = concatStrings [ theme.love.hex "aa" ];
       line-uses-inside = true;
-      ring-color = "#1f1d2e";
-      ring-clear-color = "#6e6a86";
-      ring-caps-lock-color = "#f6c177";
-      ring-ver-color = "#31748f";
-      ring-wrong-color = "#eb6f92";
-      seperator-color = "#191724";
-      key-hl-color = "#c4a7e7";
-      bs-hl-color = "#eb6f92";
-      caps-lock-key-hl-color = "#c4a7e7";
-      caps-lock-bs-hl-color = "#eb6f92";
-      text-color = "#e0def4";
-      text-clear-color = "#e0def4";
-      text-caps-lock-color = "#e0def4";
-      text-ver-color = "#e0def4";
-      text-wrong-color = "#e0def4";
+      ring-color = theme.surface.hex;
+      ring-clear-color = theme.muted.hex;
+      ring-caps-lock-color = theme.gold.hex;
+      ring-ver-color = theme.pine.hex;
+      ring-wrong-color = theme.love.hex;
+      seperator-color = theme.base.hex;
+      key-hl-color = theme.iris.hex;
+      bs-hl-color = theme.love.hex;
+      caps-lock-key-hl-color = theme.iris.hex;
+      caps-lock-bs-hl-color = theme.love.hex;
+      text-color = theme.text.hex;
+      text-clear-color = theme.text.hex;
+      text-caps-lock-color = theme.text.hex;
+      text-ver-color = theme.text.hex;
+      text-wrong-color = theme.text.hex;
       effect-blur = "30x10";
     };
   };
