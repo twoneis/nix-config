@@ -3,6 +3,6 @@
   withGnome = true;
   withNvidia = true;
   withVM = false;
-  withDistrobox = true;
+  withDistrobox = false;
   withGames = false;
 }
