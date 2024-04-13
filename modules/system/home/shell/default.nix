@@ -14,6 +14,8 @@
     gpl = "git pull --recurse-submodules";
     gst = "git status";
 
+    repl = "nix repl --expr 'import <nixpkgs>{}'";
+
     nrb = "sudo nixos-rebuild switch --flake . --cores 0";
     nd = "nix develop";
 

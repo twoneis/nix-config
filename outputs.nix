@@ -1,4 +1,4 @@
-{ nixpkgs, home-manager, nixos-hardware, nur, niri, ... }: {
+{ nixpkgs, home-manager, nixos-hardware, nur, niri, ... }@inputs: {
   nixosConfigurations = let
 
     clientModules = [
@@ -32,9 +32,12 @@
   in {
     desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = {
+        inherit inputs;
+      };
       modules = [
         ./devices/desktop
-      ] ++ clientModules;
+        ] ++ clientModules;
     };
 
     surface = nixpkgs.lib.nixosSystem {

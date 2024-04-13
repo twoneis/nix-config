@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }: {
+{ inputs, pkgs, ... }: {
   imports = [
     ./audio.nix
     ./bluetooth.nix
@@ -17,12 +17,16 @@
 
   services.xserver.displayManager.gdm.enable = true;
 
+  # Wayland in electron
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   networking.extraHosts = 
   ''
     10.10.11.245 surveillance.htb
   '';
+
+  nix.nixPath = ["nixpgks=${inputs.nixpkgs}"];
+
   # Allow packages from nixpkgs
   nixpkgs.config = {
     allowUnfree = true;
