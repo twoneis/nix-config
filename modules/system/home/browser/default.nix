@@ -68,6 +68,16 @@
             }];
             definedAliases = [ "@np" ];
           };
+          "Github" = {
+            urls = [{
+              template = "https://github.com/search";
+              params = [
+                { name = "q"; value = "{searchTerms}"; }
+                { name = "type"; value = "repositories"; }
+              ];
+            }];
+            definedAliases = [ "@gh" ];
+          };
         };
         search.force = true;
         search.order = [
@@ -77,6 +87,7 @@
           "Wikipedia"
           "YouTube"
           "Nix Packages"
+          "Github"
         ];
 
         bookmarks = { };
