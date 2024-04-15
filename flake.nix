@@ -18,7 +18,7 @@
     };
 
     niri = {
-      url = "github:twoneis/niri-flake";
+      url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
