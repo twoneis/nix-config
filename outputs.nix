@@ -42,6 +42,9 @@
 
     surface = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = {
+        inherit inputs;
+      };
       modules = [
         ./devices/surface
         nixos-hardware.nixosModules.microsoft-surface-pro-intel
@@ -50,6 +53,9 @@
 
     zotac-mini = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = {
+        inherit inputs;
+      };
       modules = [
         ./devices/zotac-mini
       ] ++ serverModules;
