@@ -120,7 +120,6 @@
           web-scrobbler
           return-youtube-dislikes
           youtube-nonstop
-          youtube-shorts-block
           enhancer-for-youtube
         ];
       };
