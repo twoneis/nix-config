@@ -1,6 +1,6 @@
 { ... }: {
   withNiri = true;
-  withGnome = true;
+  withGnome = false;
   withVM = false;
   withDistrobox = false;
 }
