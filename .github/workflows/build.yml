@@ -1,8 +1,9 @@
 name: CI
 
 on:
-  push:
-  pull_request:
+  workflow_dispatch: # allows manual triggering
+  schedule:
+    - cron: '5 0 * * 6' # runs weekly on Saturday at 00:05 (give time for flake lock update)
 
 env: 
   TARGET_FLAKE: github:${{ github.repository }}/${{ inputs.sha || github.sha }}
