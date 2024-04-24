@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+env: 
+  TARGET_FLAKE: github:${{ github.repository }}/${{ inputs.sha || github.sha }}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: "write"
+      contents: "read"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - uses: DeterminateSystems/flake-checker-action@main
+      - name: Run `nix build`
+        run: GC_DONT_GC=1 nix build --accept-flake-config --show-trace --log-lines
+          10000 --fallback "$TARGET_FLAKE#"'nixosConfigurations.surface.config.boot.kernelPackages.kernel'
