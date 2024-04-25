@@ -2,7 +2,6 @@
   programs.niri.enable = true;
   environment.systemPackages = with pkgs; [
     brightnessctl
-    waybar
     swaybg
     pamixer
   ];

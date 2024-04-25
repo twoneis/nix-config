@@ -2,7 +2,6 @@
   theme = import ../../../../colors.nix;
 in lib.mkIf (osConfig.withNiri) {
   home.packages = with pkgs; [
-    swaybg
     iwgtk
     blueberry
   ];
