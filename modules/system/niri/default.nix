@@ -1,5 +1,11 @@
-{ lib, config, ... }: lib.mkIf (config.withNiri) {
+{ lib, config, pkgs, ... }: lib.mkIf (config.withNiri) {
   programs.niri.enable = true;
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+    waybar
+    swaybg
+    pamixer
+  ];
   home-manager.users.twoneis = {
     programs.niri = {
       settings = {
@@ -77,6 +83,7 @@
           { command = ["swaybg" "-i" "${../../../wallpaper/wallpaper.png}" "-m" "fill"]; }
           { command = ["pamixer" "--set-volume" "0"]; }
           { command = ["systemctl" "--user" "restart" "spotifyd.service"]; }
+          { command = ["brightnessctl" "s" "50"]; }
         ];
 
         binds = {
@@ -86,6 +93,8 @@
 
           "XF86AudioRaiseVolume".action.spawn = ["pamixer" "-i" "5"];
           "XF86AudioLowerVolume".action.spawn = ["pamixer" "-d" "5"];
+          "XF86MonBrightnessDown".action.spawn = ["brightnessctl" "-n=10%" "s" "5%-"];
+          "XF86MonBrightnessUp".action.spawn = ["brightnessctl" "s" "5%+"];
 
           "Mod+Backspace".action.close-window = [];
 
