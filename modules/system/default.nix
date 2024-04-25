@@ -26,7 +26,13 @@
   #    ACTION=="add", SUBSYSTEMS=="usb", SUBSYSTEM=="block", ENV{ID_FS_USAGE}=="filesystem", RUN{program}+="${pkgs.systemd}/bin/systemd-mount --no-block --automount=yes --collect $devnode /media"
   # '';
 
-  services.xserver.displayManager.gdm.enable = true;
+  environment.systemPackages = with pkgs; [ sddm-chili-theme ];
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    wayland.compositor = "kwin";
+    theme = "chili";
+  };
 
   # Wayland in electron
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
