@@ -84,8 +84,8 @@
           "Mod+B".action.spawn = "firefox";
           "Mod+S".action.spawn = ["fuzzel" "-I" "-T" "alacritty"];
 
-          "XF86AudioRaiseVolume".action.spawn = "pamixer -i 5";
-          "XF86AudioLowerVolume".action.spawn = "pamixer -d 5";
+          "XF86AudioRaiseVolume".action.spawn = ["pamixer" "-i" "5"];
+          "XF86AudioLowerVolume".action.spawn = ["pamixer" "-d" "5"];
 
           "Mod+Backspace".action.close-window = [];
 
