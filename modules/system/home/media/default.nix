@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, osConfig, ... }: {
   home.packages = with pkgs; [
     image-roll
   ];
@@ -11,7 +11,7 @@
     enable = true;
     settings = {
       global = {
-        device_name = "desktop";
+        device_name = osConfig.networking.hostName;
         bitrate = 160;
         volume_normalisation = true;
         autoplay = false;
