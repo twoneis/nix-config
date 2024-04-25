@@ -75,6 +75,8 @@
         spawn-at-startup = [
           { command = ["waybar"]; }
           { command = ["swaybg" "-i" "${../../../wallpaper/wallpaper.png}" "-m" "fill"]; }
+          { command = ["pamixer" "--set-volume" "0"]; }
+          { command = ["systemctl" "--user" "restart" "spotifyd.service"]; }
         ];
 
         binds = {
@@ -82,8 +84,8 @@
           "Mod+B".action.spawn = "firefox";
           "Mod+S".action.spawn = ["fuzzel" "-I" "-T" "alacritty"];
 
-          "XF86AudioRaiseVolume".action.spawn = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+";
-          "XF86AudioLowerVolume".action.spawn = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
+          "XF86AudioRaiseVolume".action.spawn = "pamixer -i 5";
+          "XF86AudioLowerVolume".action.spawn = "pamixer -d 5";
 
           "Mod+Backspace".action.close-window = [];
 

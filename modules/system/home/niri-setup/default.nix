@@ -2,8 +2,9 @@
   theme = import ../../../../colors.nix;
 in lib.mkIf (osConfig.withNiri) {
   home.packages = with pkgs; [
-    polkit_gnome
     swaybg
+    iwgtk
+    blueberry
   ];
 
   programs.fuzzel= {
@@ -34,9 +35,7 @@ in lib.mkIf (osConfig.withNiri) {
           "clock"
         ];
         modules-right = [
-          "temperature"
-          "cpu"
-          "memory"
+          "wireplumber"
           "battery"
         ];
       };
