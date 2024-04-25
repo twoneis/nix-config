@@ -83,7 +83,7 @@
           { command = ["swaybg" "-i" "${../../../wallpaper/wallpaper.png}" "-m" "fill"]; }
           { command = ["pamixer" "--set-volume" "0"]; }
           { command = ["systemctl" "--user" "restart" "spotifyd.service"]; }
-          { command = ["brightnessctl" "s" "50"]; }
+          { command = ["brightnessctl" "s" "50%"]; }
         ];
 
         binds = {
