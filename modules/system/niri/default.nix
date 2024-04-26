@@ -81,14 +81,14 @@
           { command = ["waybar"]; }
           { command = ["swaybg" "-i" "${../../../wallpaper/wallpaper.png}" "-m" "fill"]; }
           { command = ["pamixer" "--set-volume" "0"]; }
-          { command = ["systemctl" "--user" "restart" "spotifyd.service"]; }
           { command = ["brightnessctl" "s" "50%"]; }
+          { command = ["systemctl" "--user" "restart" "spotifyd.service"]; }
         ];
 
         binds = {
           "Mod+T".action.spawn = "alacritty";
           "Mod+B".action.spawn = "firefox";
-          "Mod+S".action.spawn = ["fuzzel" "-I" "-T" "alacritty"];
+          "Mod+S".action.spawn = ["fuzzel" "-I" "-T" "alacritty" "-p" ""];
 
           "XF86AudioRaiseVolume".action.spawn = ["pamixer" "-i" "5"];
           "XF86AudioLowerVolume".action.spawn = ["pamixer" "-d" "5"];
