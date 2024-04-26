@@ -4,7 +4,7 @@
     ./options.nix
   ];
 
-  networking.hostName = "surface";
+  networking.hostName = "akarso";
 
   # Add user to surface control group for surface linux
   users.users.twoneis.extraGroups = [ "surface-control" ];

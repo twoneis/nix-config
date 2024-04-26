@@ -5,7 +5,7 @@
     ./options.nix
   ];
 
-  networking.hostName = "desktop";
+  networking.hostName = "ellaca";
 
   # Select kernel version
   boot.kernelPackages = pkgs.linuxPackages_zen;

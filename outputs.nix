@@ -30,34 +30,39 @@
     ];
 
   in {
-    desktop = nixpkgs.lib.nixosSystem {
+    # AMD Ryzen 5600X
+    # nvidia GeForce GTX 1060 (6GB)
+    ellaca = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
         inherit inputs;
       };
       modules = [
-        ./devices/desktop
+        ./devices/ellaca
         ] ++ clientModules;
     };
 
-    surface = nixpkgs.lib.nixosSystem {
+    # Surface Pro 7 (i5 128GB)
+    akarso = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
         inherit inputs;
       };
       modules = [
-        ./devices/surface
+        ./devices/akarso
         nixos-hardware.nixosModules.microsoft-surface-pro-intel
       ] ++ clientModules;
     };
 
-    zotac-mini = nixpkgs.lib.nixosSystem {
+    # Zotac Mini
+    # (Name should be used for an ARM device instead once i get one)
+    creosote = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
         inherit inputs;
       };
       modules = [
-        ./devices/zotac-mini
+        ./devices/creosote
       ] ++ serverModules;
     };
   };

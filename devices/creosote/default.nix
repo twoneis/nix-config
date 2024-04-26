@@ -5,7 +5,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
-  networking.hostName = "zotac-mini";
+  networking.hostName = "creosote";
 
   boot.loader = {
     systemd-boot = {
