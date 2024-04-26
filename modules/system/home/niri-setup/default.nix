@@ -1,11 +1,6 @@
 { lib, osConfig, pkgs, ... }: let
   theme = import ../../../../colors.nix;
 in lib.mkIf (osConfig.withNiri) {
-  home.packages = with pkgs; [
-    iwgtk
-    blueberry
-  ];
-
   programs.fuzzel= {
     enable = true;
     settings = {

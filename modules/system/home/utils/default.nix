@@ -7,7 +7,7 @@
     tree
     zip
     unzip
-    xorg.xeyes
+    blueberry
   ];
 
   programs.man = {

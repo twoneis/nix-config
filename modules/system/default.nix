@@ -5,7 +5,6 @@
 { inputs, pkgs, ... }: {
   imports = [
     ./audio.nix
-    ./bluetooth.nix
     ./containers.nix
     ./distrobox.nix
     ./fonts.nix
