@@ -42,7 +42,7 @@
     10.10.11.245 surveillance.htb
   '';
 
-  nix.nixPath = ["nixpgks=${inputs.nixpkgs}"];
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   # Allow packages from nixpkgs
   nixpkgs.config = {
