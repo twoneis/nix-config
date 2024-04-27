@@ -8,8 +8,6 @@ jobs:
   lockfile:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v1
       - name: Update flake.lock
@@ -19,5 +17,3 @@ jobs:
           pr-title: "Update flake.lock"
           pr-labels: automated
           commit-msg: "update"
-          git-author-name: 'github-actions[bot]'
-          git-author-email: 'github-action[bot]@users.noreply.github.com'
