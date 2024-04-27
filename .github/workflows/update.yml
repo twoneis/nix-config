@@ -15,6 +15,7 @@ jobs:
       - name: Update flake.lock
         uses: DeterminateSystems/update-flake-lock@v21
         with:
+          token: ${{ secrets.GH_TOKEN_FOR_UPDATES }}
           pr-title: "Update flake.lock"
           pr-labels: automated
           commit-msg: "update"
