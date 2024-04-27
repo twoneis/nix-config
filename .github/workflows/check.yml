@@ -7,8 +7,8 @@ on:
     branches: [main]
 
 jobs:
-  build:
-    name: Check nix flake
+  check:
+    name: check-flake
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
