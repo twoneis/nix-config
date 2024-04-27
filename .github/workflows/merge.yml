@@ -7,7 +7,7 @@ on:
 jobs:
   merge:
     runs-on: ubuntu-latest
-    if: ${{ github.actor == 'twoneis' }} && ${{ github.event.pull_request.title == 'Update flake.lock' }}
+    if: ${{ github.actor == 'github-actions[bot]' }} && ${{ github.event.pull_request.title == 'Update flake.lock' }}
 
     steps:
       - name: Approve PR
