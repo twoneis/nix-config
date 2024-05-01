@@ -27,13 +27,13 @@
         outputs."eDP-1" = {
             scale = 1.0;
             mode = {
-              width = 1920;
-              height = 1080;
-              refresh = 60.00;
+              width = 2736;
+              height = 1824;
+              refresh = 59.959;
             };
             position = {
-              x=1280;
-              y=0 ;
+              x=0;
+              y=1200;
             };
         };
 
@@ -45,7 +45,7 @@
               refresh = 59.940;
             };
             position = {
-              x=1280;
+              x=0;
               y=0;
             };
         };
