@@ -19,7 +19,7 @@
       efiSupport = true;
       efiInstallAsRemovable = true;
       useOSProber = true;
-      # device = "nodev";
+      device = "nodev";
       font = null;
       splashImage = null;
     };
