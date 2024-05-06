@@ -17,7 +17,7 @@
     grub = {
       enable = true;
       efiSupport = true;
-      device = "nodev";
+      device = "/dev/nvme0n1p1";
       useOSProber = true;
       font = null;
       splashImage = null;
