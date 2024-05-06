@@ -18,7 +18,7 @@
               };
             };
             crypt = {
-              size = "-16G";
+              end = "-16G";
               content = {
                 type = "luks";
                 name = "crypt";
