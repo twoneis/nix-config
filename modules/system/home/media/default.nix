@@ -1,6 +1,6 @@
 { pkgs, osConfig, ... }: {
   home.packages = with pkgs; [
-    image-roll
+    loupe
   ];
 
   programs.mpv = {
