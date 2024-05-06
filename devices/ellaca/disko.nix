@@ -1,7 +1,7 @@
 {
   disko.devices = {
     disk = {
-      ssd1 = {
+      ssd0 = {
         type = "disk";
         device = "/dev/nvme0n1";
         content = {
@@ -34,7 +34,7 @@
           };
         };
       };
-      hdd1 = {
+      hdd0 = {
         type = "disk";
         device = "/dev/sda";
         content = {
@@ -60,12 +60,13 @@
           canmount = "off";
           "com.sun:auto-snapshot" = "false";
         };
+        mountpoint = "/";
         postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank";
 
         datasets = {
-          root = {
+          home = {
             type = "zfs_fs";
-            mountpoint = "/";
+            mountpoint = "/home";
           };
           nix = {
             type = "zfs_fs";
