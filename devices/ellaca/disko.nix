@@ -57,7 +57,7 @@
         mode = "";
         rootFsOptions = {
           compression = "zstd";
-          canmount = "off";
+          canmount = "on";
           "com.sun:auto-snapshot" = "false";
         };
         mountpoint = "/";
@@ -87,7 +87,7 @@
         mode = "";
         rootFsOptions = {
           compression = "zstd";
-          canmount = "off";
+          canmount = "on";
           "com.sun:auto-snapshot" = "false";
         };
         postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank";
