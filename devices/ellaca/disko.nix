@@ -7,8 +7,8 @@
         content = {
           type = "gpt";
           partitions = {
-            efi = {
-              size = "1G";
+            ESP = {
+              size = "64M";
               type = "EF00";
               priority = 0;
               content = {
@@ -17,7 +17,7 @@
                 mountpoint = "/boot";
               };
             };
-            root = {
+            zfs = {
               end = "-16G";
               content = {
                 type = "zfs";
@@ -40,7 +40,7 @@
         content = {
           type = "gpt";
           partitions = {
-            store = {
+            zfs = {
               size = "100%";
               content = {
                 type = "zfs";
@@ -57,7 +57,6 @@
         mode = "";
         rootFsOptions = {
           compression = "zstd";
-          canmount = "on";
           "com.sun:auto-snapshot" = "false";
         };
         mountpoint = "/";
@@ -67,10 +66,12 @@
           nix = {
             type = "zfs_fs";
             mountpoint = "/nix";
+            options."com.sun:auto-snapshot" = "true";
           };
           persist = {
             type = "zfs_fs";
             mountpoint = "/persist";
+            options."com.sun:auto-snapshot" = "true";
           };
         };
       };
@@ -79,7 +80,6 @@
         mode = "";
         rootFsOptions = {
           compression = "zstd";
-          canmount = "on";
           "com.sun:auto-snapshot" = "false";
         };
         postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank";
