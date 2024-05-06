@@ -58,47 +58,47 @@
           };
         };
       };
-      zpool = {
-        zroot = {
-          type = "zpool";
-          mode = "";
-          rootFsOptions = {
-            compression = "zstd";
-            canmount = "off";
-            "com.sun:auto-snapshot" = "false";
-          };
-          postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank";
+    };
+    zpool = {
+      zroot = {
+        type = "zpool";
+        mode = "";
+        rootFsOptions = {
+          compression = "zstd";
+          canmount = "off";
+          "com.sun:auto-snapshot" = "false";
+        };
+        postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank";
 
-          datasets = {
-            root = {
-              type = "zfs_fs";
-              mountpoint = "/";
-            };
-            nix = {
-              type = "zfs_fs";
-              mountpoint = "/nix";
-            };
-            persist = {
-              type = "zfs_fs";
-              mountpoint = "/persist";
-            };
+        datasets = {
+          root = {
+            type = "zfs_fs";
+            mountpoint = "/";
+          };
+          nix = {
+            type = "zfs_fs";
+            mountpoint = "/nix";
+          };
+          persist = {
+            type = "zfs_fs";
+            mountpoint = "/persist";
           };
         };
-        zstore = {
-          type = "zpool";
-          mode = "";
-          rootFsOptions = {
-            compression = "zstd";
-            canmount = "off";
-            "com.sun:auto-snapshot" = "false";
-          };
-          postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank";
+      };
+      zstore = {
+        type = "zpool";
+        mode = "";
+        rootFsOptions = {
+          compression = "zstd";
+          canmount = "off";
+          "com.sun:auto-snapshot" = "false";
+        };
+        postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank";
 
-          datasets = {
-            persist = {
-              type = "zfs_fs";
-              mountpoint = "/persist/ext";
-            };
+        datasets = {
+          persist = {
+            type = "zfs_fs";
+            mountpoint = "/persist/ext";
           };
         };
       };

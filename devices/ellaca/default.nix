@@ -7,6 +7,7 @@
   ];
 
   networking.hostName = "ellaca";
+  networking.hostId = "656c6c61";
 
   # Select kernel version
   boot.kernelPackages = pkgs.linuxPackages_zen;
