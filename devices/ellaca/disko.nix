@@ -17,19 +17,11 @@
                 mountpoint = "/boot";
               };
             };
-            crypt = {
+            root = {
               end = "-16G";
               content = {
-                type = "luks";
-                name = "crypt";
-                passwordFile = "/tmp/secret.key";
-                settings = {
-                  allowDiscards = true;
-                };
-                content = {
-                  type = "zfs";
-                  pool = "zroot";
-                };
+                type = "zfs";
+                pool = "zroot";
               };
             };
             swap = {
