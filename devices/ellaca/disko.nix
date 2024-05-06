@@ -64,6 +64,10 @@
         postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot@blank$' || zfs snapshot zroot@blank";
 
         datasets = {
+          root = {
+            type = "zfs_fs";
+            mountpoint = "/";
+          };
           home = {
             type = "zfs_fs";
             mountpoint = "/home";
