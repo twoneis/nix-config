@@ -10,6 +10,7 @@
             efi = {
               size = "512M";
               type = "EF00";
+              priority = 0;
               content = {
                 type = "filesystem";
                 format = "vfat";
@@ -17,7 +18,7 @@
               };
             };
             crypt = {
-              size = "100%";
+              size = "-16G";
               content = {
                 type = "luks";
                 name = "crypt";
@@ -31,6 +32,13 @@
                 };
               };
             };
+            swap = {
+              size = "100%";
+              content = {
+                type = "swap";
+                resumeDevice = true;
+              };
+            };
           };
         };
       };
@@ -40,19 +48,10 @@
         content = {
           type = "gpt";
           partitions = {
-            crypt = {
+            store = {
               size = "100%";
-              content = {
-                type = "luks";
-                name = "crypt";
-                passwordFile = "/tmp/secret.key";
-                settings = {
-                  allowDiscards = true;
-                };
-                content = {
-                  type = "zfs";
-                  pool = "zstore";
-                };
+              type = "zfs";
+              pool = "zstore";
               };
             };
           };
