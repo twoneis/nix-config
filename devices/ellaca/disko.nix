@@ -68,6 +68,7 @@
                     mountOptions = [ "compress=zstd" "noatime" ];
                     mountpoint = "/ext";
                   };
+                };
               };
             };
           };
