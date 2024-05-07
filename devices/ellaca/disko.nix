@@ -20,7 +20,7 @@
               };
             };
             root = {
-              end = "-16G";
+              size = "100%";
               content = {
                 type = "btrfs";
                 extraArgs = [ "-f" ]; # Override existing partition

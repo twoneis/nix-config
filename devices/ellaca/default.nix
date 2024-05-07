@@ -16,7 +16,7 @@
     grub = {
       enable = true;
       efiSupport = true;
-      device = "nodev";
+      efiInstallAsRemovable = true;
       useOSProber = true;
       font = null;
       splashImage = null;
