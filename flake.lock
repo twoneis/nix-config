@@ -98,26 +98,6 @@
         "type": "github"
       }
     },
-    "disko": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1715070411,
-        "narHash": "sha256-5CNvkH0Nf7yMwgKhjUNg/lUK40C7DXB4zKOuA2jVO90=",
-        "owner": "nix-community",
-        "repo": "disko",
-        "rev": "4677f6c53482a8b01ee93957e3bdd569d51261d6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "disko",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "locked": {
         "lastModified": 1696426674,
@@ -434,11 +414,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1715113425,
-        "narHash": "sha256-eUP1YApWNiTxwGvOwpwomiTMO3pYo0mKHj8jF+lSRyk=",
+        "lastModified": 1715118353,
+        "narHash": "sha256-3TqhtMk0arxsDHagrK4TbnqJnHvnPlgt9PXaioP8+84=",
         "owner": "nix-community",
         "repo": "nur",
-        "rev": "f2400f2299b96a4083dbf94c7d1ef8709790666a",
+        "rev": "dbfe43f42385384352f1d6f7fe2ace2208e88517",
         "type": "github"
       },
       "original": {
@@ -483,7 +463,6 @@
     },
     "root": {
       "inputs": {
-        "disko": "disko",
         "home-manager": "home-manager",
         "niri": "niri",
         "nixos-hardware": "nixos-hardware",
