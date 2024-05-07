@@ -1,7 +1,7 @@
 {
   disko.devices = {
     disk = {
-      vdb = {
+      vda = {
         type = "disk";
         device = "/dev/nvme0n1";
         content = {
@@ -39,21 +39,35 @@
                     mountOptions = [ "compress=zstd" "noatime" ];
                     mountpoint = "/nix";
                   };
-                  # Subvolume for the swapfile
-                  "/swap" = {
-                    mountpoint = "/.swapvol";
-                    swap = {
-                      swapfile.size = "20M";
-                      swapfile2.size = "20M";
-                      swapfile2.path = "rel-path";
-                    };
-                  };
                 };
                 swap = {
                   swapfile = {
                     size = "16G";
                   };
                 };
+              };
+            };
+          };
+        };
+      };
+      vdb = {
+        type = "disk";
+        device = "/dev/sda";
+        content = {
+          type = "gpt";
+          partitions = {
+            root = {
+              size = "100%";
+              content = {
+                type = "btrfs";
+                extraArgs = [ "-f" ]; # Override existing partition
+                # Subvolumes must set a mountpoint in order to be mounted,
+                # unless their parent is mounted
+                subvolumes = {
+                  "/ext" = {
+                    mountOptions = [ "compress=zstd" "noatime" ];
+                    mountpoint = "/ext";
+                  };
               };
             };
           };
