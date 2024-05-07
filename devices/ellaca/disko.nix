@@ -40,6 +40,8 @@
                     mountpoint = "/nix";
                   };
                 };
+
+                mountpoint = "/pratition-root";
                 swap = {
                   swapfile = {
                     size = "16G";
