@@ -5,27 +5,27 @@
   boot.extraModulePackages = [ ];
 
   fileSystems = {
+    "/boot" = {
+      device = "/dev/disk/by-uuid/646D-4793";
+      fsType = "vfat";
+    };
     "/" = {
-      device = "/dev/nvme0n1p2";
+      device = "/dev/disk/by-uuid/1a5777297-4ed3-48d7-adc7-a937fa93d868";
       fsType = "btrfs";
       options = [ "subvol=rootfs" "compress=zstd" "noatime" ];
     };
-    "/boot" = {
-      device = "/dev/nvme0n1p1";
-      fsType = "vfat";
-    };
     "/nix" = {
-      device = "/dev/nvme0n1p2";
+      device = "/dev/disk/by-uuid/1a5777297-4ed3-48d7-adc7-a937fa93d868";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
     "/persist" = {
-      device = "/dev/nvme0n1p2";
+      device = "/dev/disk/by-uuid/1a5777297-4ed3-48d7-adc7-a937fa93d868";
       fsType = "btrfs";
       options = [ "subvol=persist" "compress=zstd" "noatime" ];
     };
     "/ext" = {
-      device = "/dev/sda1";
+      device = "/dev/disk/by-uuid/89112638-6953-48a7-9b2f-dd61ce9fe8b0";
       fsType = "btrfs";
       options = [ "subvol=ext" "compress=zstd" "noatime" ];
     };
