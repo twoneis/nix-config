@@ -13,7 +13,7 @@
     files = [
       "/etc/machine-id"
     ];
-    user.twoneis = {
+    users.twoneis = {
       directories = [
         "Documents"
         "uni"
