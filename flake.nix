@@ -21,10 +21,6 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    impermanence = {
-      url = "github:nix-community/impermanence";
-    };
   };
 
   outputs = inputs: import ./outputs.nix inputs;

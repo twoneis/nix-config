@@ -1,4 +1,4 @@
-{ nixpkgs, home-manager, nixos-hardware, nur, niri, impermanence, ... }@inputs: {
+{ nixpkgs, home-manager, nixos-hardware, niri, ... }@inputs: {
   nixosConfigurations = {
     # AMD Ryzen 5600X
     # nvidia GeForce GTX 1060 (6GB)
@@ -11,10 +11,8 @@
         ./devices/ellaca
         ./modules/system
         ./modules/system/home
-        ./modules/system/persist
         ./options.nix
         niri.nixosModules.niri
-        impermanence.nixosModules.impermanence
         home-manager.nixosModules.home-manager
       ];
     };
