@@ -1,35 +1,5 @@
-{ nixpkgs, home-manager, nixos-hardware, nur, niri, ... }@inputs: {
-  nixosConfigurations = let
-
-    clientModules = [
-        ./modules/system
-        ./options.nix
-        niri.nixosModules.niri
-        home-manager.nixosModules.home-manager {
-          nixpkgs.overlays = [
-            nur.overlay
-          ];
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.twoneis = import ./modules/system/home;
-          };
-        }
-    ];
-
-    serverModules = [
-      ./modules/server
-      ./options.nix
-      home-manager.nixosModules.home-manager {
-        home-manager = {
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          users.twoneis = import ./modules/server/home;
-        };
-      }
-    ];
-
-  in {
+{ nixpkgs, home-manager, nixos-hardware, nur, niri, impermanence, ... }@inputs: {
+  nixosConfigurations = {
     # AMD Ryzen 5600X
     # nvidia GeForce GTX 1060 (6GB)
     ellaca = nixpkgs.lib.nixosSystem {
@@ -39,7 +9,20 @@
       };
       modules = [
         ./devices/ellaca
-      ] ++ clientModules;
+        ./modules/system
+        ./modules/system/persist
+        ./options.nix
+        niri.nixosModules.niri
+        impermanence.nixosModules.impermanence
+        home-manager.nixosModules.home-manager {
+          nixpkgs.overlays = [ nur.overlay ];
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.twoneis = import ./modules/system/home;
+          };
+        }
+      ];
     };
 
     # Surface Pro 7 (i5 128GB)
@@ -50,8 +33,19 @@
       };
       modules = [
         ./devices/akarso
+        ./modules/system
+        ./options.nix
         nixos-hardware.nixosModules.microsoft-surface-pro-intel
-      ] ++ clientModules;
+        niri.nixosModules.niri
+        home-manager.nixosModules.home-manager {
+          nixpkgs.overlays = [ nur.overlay ];
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.twoneis = import ./modules/system/home;
+          };
+        }
+      ];
     };
 
     # Zotac Mini
@@ -63,7 +57,16 @@
       };
       modules = [
         ./devices/creosote
-      ] ++ serverModules;
+        ./modules/server
+        ./options.nix
+        home-manager.nixosModules.home-manager {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.twoneis = import ./modules/server/home;
+          };
+        }
+      ];
     };
   };
 }
