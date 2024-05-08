@@ -39,7 +39,7 @@
       };
       modules = [
         ./devices/ellaca
-        ] ++ clientModules;
+      ] ++ clientModules;
     };
 
     # Surface Pro 7 (i5 128GB)
