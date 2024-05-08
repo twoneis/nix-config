@@ -31,10 +31,6 @@
                     mountOptions = [ "compress=zstd" "noatime" ];
                     mountpoint = "/";
                   };
-                  "/home" = {
-                    mountOptions = [ "compress=zstd" "noatime" ];
-                    mountpoint = "/home";
-                  };
                   "/nix" = {
                     mountOptions = [ "compress=zstd" "noatime" ];
                     mountpoint = "/nix";
@@ -45,7 +41,6 @@
                   };
                 };
 
-                mountpoint = "/pratition-root";
                 swap = {
                   swapfile = {
                     size = "16G";

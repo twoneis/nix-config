@@ -6,31 +6,26 @@
 
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/7d29fef5-9fdf-43b4-ad17-a94774f802b5";
+      device = "/dev/nvme0n1p2";
       fsType = "btrfs";
       options = [ "subvol=rootfs" "compress=zstd" "noatime" ];
     };
     "/boot" = {
-      device = "/dev/disk/by-uuid/DCD8-29D7";
+      device = "/dev/nvme0n1p1";
       fsType = "vfat";
     };
     "/nix" = {
-      device = "/dev/disk/by-uuid/7d29fef5-9fdf-43b4-ad17-a94774f802b5";
+      device = "/dev/nvme0n1p2";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
     "/persist" = {
-      device = "/dev/disk/by-uuid/7d29fef5-9fdf-43b4-ad17-a94774f802b5";
+      device = "/dev/nvme0n1p2";
       fsType = "btrfs";
-      options = [ "subvol=persistent" "compress=zstd" "noatime" ];
-    };
-    "/home" = {
-      device = "/dev/disk/by-uuid/7d29fef5-9fdf-43b4-ad17-a94774f802b5";
-      fsType = "btrfs";
-      options = [ "subvol=home" "compress=zstd" "noatime" ];
+      options = [ "subvol=persist" "compress=zstd" "noatime" ];
     };
     "/ext" = {
-      device = "/dev/disk/by-uuid/90aa2cba-41dc-4efb-b509-822d1e2bc525";
+      device = "/dev/sda1";
       fsType = "btrfs";
       options = [ "subvol=ext" "compress=zstd" "noatime" ];
     };
