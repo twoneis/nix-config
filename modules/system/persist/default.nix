@@ -20,6 +20,7 @@
         "code"
         # a lot of firefox settings that can't/aren't currently declared properly
         ".mozilla"
+        ".local/share/keyrings"
       ];
     };
   };
