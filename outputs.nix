@@ -10,18 +10,12 @@
       modules = [
         ./devices/ellaca
         ./modules/system
+        ./modules/system/home
         ./modules/system/persist
         ./options.nix
         niri.nixosModules.niri
         impermanence.nixosModules.impermanence
-        home-manager.nixosModules.home-manager {
-          nixpkgs.overlays = [ nur.overlay ];
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.twoneis = import ./modules/system/home;
-          };
-        }
+        home-manager.nixosModules.home-manager
       ];
     };
 
@@ -34,17 +28,11 @@
       modules = [
         ./devices/akarso
         ./modules/system
+        ./modules/system/home
         ./options.nix
         nixos-hardware.nixosModules.microsoft-surface-pro-intel
         niri.nixosModules.niri
-        home-manager.nixosModules.home-manager {
-          nixpkgs.overlays = [ nur.overlay ];
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.twoneis = import ./modules/system/home;
-          };
-        }
+        home-manager.nixosModules.home-manager
       ];
     };
 
@@ -58,14 +46,7 @@
       modules = [
         ./devices/creosote
         ./modules/server
-        ./options.nix
-        home-manager.nixosModules.home-manager {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.twoneis = import ./modules/server/home;
-          };
-        }
+        home-manager.nixosModules.home-manager
       ];
     };
   };

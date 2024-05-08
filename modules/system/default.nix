@@ -14,6 +14,11 @@
     ./virt.nix
   ];
 
+  # Overlays for nixpkgs
+  nixpkgs.overlays = [
+    inputs.nur.overlay
+  ];
+
   # Needed for some nautilus features like auto-mount and trash
   services.gvfs.enable = true;
 
