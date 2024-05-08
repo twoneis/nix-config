@@ -17,7 +17,7 @@
       enable = true;
       efiSupport = true;
       efiInstallAsRemovable = true;
-      # device = "nodev";
+      device = "nodev";
       useOSProber = true;
       font = null;
       splashImage = null;
