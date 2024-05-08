@@ -19,7 +19,7 @@
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
-    "/persistent" = {
+    "/persist" = {
       device = "/dev/disk/by-uuid/7d29fef5-9fdf-43b4-ad17-a94774f802b5";
       fsType = "btrfs";
       options = [ "subvol=persistent" "compress=zstd" "noatime" ];
