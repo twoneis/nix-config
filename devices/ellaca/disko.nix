@@ -39,6 +39,10 @@
                     mountOptions = [ "compress=zstd" "noatime" ];
                     mountpoint = "/nix";
                   };
+                  "/persistent" = {
+                    mountOptions = [ "compress=zstd" "noatime" ];
+                    mountpoint = "/persistent";
+                  };
                 };
 
                 mountpoint = "/pratition-root";
