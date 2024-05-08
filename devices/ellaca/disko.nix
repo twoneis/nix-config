@@ -41,7 +41,7 @@
                   };
                 };
 
-                mountpoint = "/rootfs";
+                mountpoint = "/partition-root";
                 swap = {
                   swapfile = {
                     size = "16G";

@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   imports = [
     ./hardware-config.nix
-    ./disko.nix
     ./nvidia.nix
     ./options.nix
   ];
