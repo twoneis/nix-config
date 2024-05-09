@@ -5,9 +5,6 @@
     gnome.nautilus
   ];
 
-  # Needed for some features in nautilus such as auto-mounting and trash
-  osConfig.services.gvfs.enable = true;
-
   programs.pandoc = {
     enable = true;
   };
@@ -16,7 +13,6 @@
     enable = true;
   };
 
-  osConfig.networking.firewall.allowedTCPPorts = [ 57621 ];
   services.spotifyd = {
     enable = true;
     settings = {

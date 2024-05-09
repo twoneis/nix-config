@@ -25,6 +25,11 @@
     };
   };
 
+  # 57621: spotifyd
+  networking.firewall.allowedTCPPorts = [
+    57621
+  ];
+
   nix = {
     nixPath = ["nixpkgs=${inputs.nixpkgs}"];
     gc = {
@@ -90,7 +95,8 @@
     };
   };
 
-  services.printing.enable = false;
+  # Needed for some features in nautilus such as auto-mounting and trash
+  services.gvfs.enable = true;
 
   security.rtkit.enable = true;
 

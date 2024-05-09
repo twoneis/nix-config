@@ -1,12 +1,12 @@
 { config, ... }: let
   imp = if config.minimal then [
+    ./utils
+  ] else [
     ./browser
     ./communication
     ./niri-setup
     ./programs
     ./themes
-    ./utils
-  ] else [
     ./utils
   ];
 in {
