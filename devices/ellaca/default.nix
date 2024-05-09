@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   imports = [
     ./hardware-config.nix
-    ./nvidia.nix
     ./options.nix
   ];
 
@@ -28,11 +27,6 @@
     enable = true;
     driSupport = true;
     driSupport32Bit = true;
-  };
-
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
   };
 
   # This value determines the NixOS release from which the default
