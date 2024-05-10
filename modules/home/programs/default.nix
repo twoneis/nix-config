@@ -3,6 +3,7 @@
     krita
     loupe
     gnome.nautilus
+    anki-bin
   ];
 
   programs.pandoc = {
