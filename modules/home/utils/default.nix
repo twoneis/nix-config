@@ -3,8 +3,10 @@
     man-pages
     man-pages-posix
     tree
+    file
     zip
     unzip
+    gnutar
     thefuck
   ];
 
