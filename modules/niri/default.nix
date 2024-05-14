@@ -4,6 +4,9 @@
     brightnessctl
     swaybg
     pamixer
+    xwayland
+    i3
+    rofi
   ];
   home-manager.users.twoneis = {
     programs.niri = {
@@ -89,6 +92,7 @@
           "Mod+T".action.spawn = "alacritty";
           "Mod+B".action.spawn = "firefox";
           "Mod+S".action.spawn = ["fuzzel" "-I" "-T" "alacritty" "-p" ""];
+          "Mod+X".action.spawn = ["sh" "-c" "Xwayland & env DISPLAY=:0 i3"];
 
           "XF86AudioRaiseVolume".action.spawn = ["pamixer" "-i" "5"];
           "XF86AudioLowerVolume".action.spawn = ["pamixer" "-d" "5"];
