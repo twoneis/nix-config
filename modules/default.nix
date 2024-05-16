@@ -75,6 +75,8 @@
       alegreya
       alegreya-sans
       (nerdfonts.override { fonts = [ "FiraCode" ]; })
+      roboto
+      ubuntu_font_family
     ];
     fontconfig = {
       defaultFonts = {
