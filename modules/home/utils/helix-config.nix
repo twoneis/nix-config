@@ -4,19 +4,34 @@
   editor = {
     line-number = "relative";
     cursorline = true;
-    auto-format = true;
     soft-wrap.enable = true;
-
-    lsp.display-inlay-hints = true;
-
+    color-modes = true;
     whitespace.render = "all";
+
+    indent-guides = {
+      render = true;
+      skip-levels = 1;
+    };
+
+    auto-format = true;
+
+    lsp = {
+      display-inlay-hints = true;
+    };
+
+    gutters = [ "diagnostics" "line-numbers" "diff" ];
+
+    statusline = {
+      left = [ "mode" "spinner" "version-control" ];
+      center = [ "file-modification-indicator" "read-only-indicator" "file-name" ];
+      right = [ "diagnostics" "position" ];
+    };
 
     cursor-shape = {
       insert = "bar";
       normal = "block";
       select = "underline";
     };
-
   };
 
   keys.normal  = {
