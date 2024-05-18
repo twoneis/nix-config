@@ -8,11 +8,6 @@
     color-modes = true;
     whitespace.render = "all";
 
-    indent-guides = {
-      render = true;
-      skip-levels = 1;
-    };
-
     auto-format = true;
 
     lsp = {
