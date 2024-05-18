@@ -21,6 +21,14 @@
     enable = true;
   };
 
+  programs.less = {
+    enable = true;
+    keys = ''
+      t back-line
+      n forw-line
+    '';
+  };
+
   programs.git = {
     enable = true;
     userName = "twoneis";
