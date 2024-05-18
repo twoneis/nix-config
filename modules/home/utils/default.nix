@@ -8,6 +8,7 @@
     unzip
     gnutar
     thefuck
+    halp
   ];
 
   home.file = {
