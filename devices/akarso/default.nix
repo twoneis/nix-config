@@ -2,6 +2,7 @@
   imports = [
     ./hardware-config.nix
     ./options.nix
+    ./disko.nix
   ];
 
   networking.hostName = "akarso";
@@ -12,6 +13,7 @@
     systemd-boot = {
       enable = true;
     };
+    efi.canTouchEfiVariables = true;
   };
 
   hardware.opengl = {

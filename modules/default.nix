@@ -87,16 +87,6 @@
     };
   };
 
-  services.xserver = {
-    enable = true;
-    excludePackages = [ pkgs.xterm ];
-    displayManager.gdm.enable = true;
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
-  };
-
   # Needed for some features in nautilus such as auto-mounting and trash
   services.gvfs.enable = true;
 
@@ -110,8 +100,8 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
+  programs.fish.enable = true;
+  users.defaultUserShell = pkgs.fish;
 
   security.pam.services.swaylock = {};
 }

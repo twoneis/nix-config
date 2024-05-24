@@ -2,12 +2,8 @@
   programs.niri.enable = true;
   environment.systemPackages = with pkgs; [
     brightnessctl
-    swaybg
-    pamixer
-    xwayland
-    i3
-    rofi
   ];
+
   home-manager.users.twoneis = {
     programs.niri = {
       settings = {
@@ -36,7 +32,7 @@
             };
             position = {
               x=0;
-              y=1200;
+              y=0;
             };
         };
 
@@ -48,7 +44,7 @@
               refresh = 59.940;
             };
             position = {
-              x=0;
+              x=2736;
               y=0;
             };
         };
@@ -74,6 +70,11 @@
             gaps = 4;
         };
 
+        window-rule = {
+          geometry-corner-radius = 8;
+          clip-to-geometry = true;
+        };
+
         prefer-no-csd = true;
 
         screenshot-path = "~/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S.png";
@@ -82,20 +83,17 @@
 
         spawn-at-startup = [
           { command = ["waybar"]; }
-          { command = ["swaybg" "-i" "${../../wallpaper/wallpaper.png}" "-m" "fill"]; }
-          { command = ["pamixer" "--set-volume" "0"]; }
+          { command = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0"]; }
           { command = ["brightnessctl" "s" "50%"]; }
-          { command = ["systemctl" "--user" "restart" "spotifyd.service"]; }
         ];
 
         binds = {
           "Mod+T".action.spawn = "alacritty";
           "Mod+B".action.spawn = "firefox";
           "Mod+S".action.spawn = ["fuzzel" "-I" "-T" "alacritty" "-p" ""];
-          "Mod+X".action.spawn = ["sh" "-c" "Xwayland & env DISPLAY=:0 i3"];
 
-          "XF86AudioRaiseVolume".action.spawn = ["pamixer" "-i" "5"];
-          "XF86AudioLowerVolume".action.spawn = ["pamixer" "-d" "5"];
+          "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "5%+"];
+          "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"];
           "XF86MonBrightnessDown".action.spawn = ["brightnessctl" "-n=10%" "s" "5%-"];
           "XF86MonBrightnessUp".action.spawn = ["brightnessctl" "s" "5%+"];
 

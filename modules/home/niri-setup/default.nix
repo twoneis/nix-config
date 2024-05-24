@@ -23,26 +23,72 @@ in lib.mkIf (osConfig.withNiri) {
         layer = "top";
         position = "top";
         modules-left = [
-          "network"
+          "memory"
+          "cpu"
         ];
         modules-center = [
           "clock"
         ];
         modules-right = [
+          "network"
           "wireplumber"
           "battery"
         ];
+        "cpu" = {
+          interval = 10;
+          format = "{usage}% ";
+        };
+        "memory" = {
+          interval = 30;
+          format = "{percentage}% ";
+        };
+        "clock" = {
+          format = "{:%H:%M}";
+          format-alt = "{:%a, %Y-%m-%d}";
+        };
+        "battery" = {
+          states = {
+            good = 80;
+            warning = 50;
+            critical = 20;
+          };
+          format = "{icon}";
+          format-alt = "{capacity}%";
+          format-icons = ["" "" "" "" ""];
+          tooltip = false;
+        };
+        "network" = {
+          format-wifi = "{icon}";
+          format-alt = "{essid}";
+          format-ethernet = "󰈁";
+          format-disconnected = "󰤭";
+          format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
+          tooltip = false;
+        };
+        "wireplumber" = {
+          format = "{icon}";
+          format-alt = "{volume}%";
+          format-muted = "";
+          format-icons = ["" "" ""];
+          tooltip = false;
+        };
       };
     };
-    # style = import ./waybar-style.nix;
+    style = builtins.readFile(./waybar.css);
   };
 
   services.mako = {
     enable = true;
-    defaultTimeout = 5;
+    defaultTimeout = 5000;
+    maxHistory = 20;
+    maxVisible = 3;
+    font = "AlegreyaSans";
     backgroundColor = theme.base.hex;
     borderColor = theme.muted.hex;
     textColor = theme.text.hex;
+    borderSize = 1;
+    borderRadius = 8;
+    icons = false;
   };
 
   programs.swaylock = {

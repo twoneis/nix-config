@@ -108,16 +108,8 @@
   # For direnv and shell aliases the shell needs to be managed by hm
   programs.bash.enable = true;
 
-  programs.zsh = {
+  programs.fish = {
     enable = true;
-    autosuggestion.enable = true;
-    enableVteIntegration = true;
-    history.ignoreAllDups = true;
-    historySubstringSearch.enable = true;
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" "thefuck" ];
-      theme = "bira";
-    };
+    plugins = with pkgs.fishPlugins; [ pure ];
   };
 }
