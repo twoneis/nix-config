@@ -89,10 +89,7 @@
 
   home.shellAliases = {
     ga = "git add";
-    gc = "git commit -m ";
-    gca = "git add -A && git commit -am ";
-    gs = "git stash";
-    gsp = "git stash pop";
+    gc = "git commit";
     gp = "git push";
     gpl = "git pull --recurse-submodules";
     gst = "git status";
