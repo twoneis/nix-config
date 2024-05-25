@@ -1,4 +1,4 @@
-{ nixpkgs, disko, home-manager, nixos-hardware, niri, ... }@inputs: {
+{ nixpkgs, home-manager, nixos-hardware, niri, ... }@inputs: {
   nixosConfigurations = {
     # AMD Ryzen 5600X
     # nvidia GeForce GTX 1060 (6GB)
@@ -26,7 +26,6 @@
         ./devices/akarso
         ./modules
         ./options.nix
-        disko.nixosModules.disko
         nixos-hardware.nixosModules.microsoft-surface-pro-intel
         niri.nixosModules.niri
         home-manager.nixosModules.home-manager
