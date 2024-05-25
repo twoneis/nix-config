@@ -80,7 +80,6 @@ in lib.mkIf (osConfig.withNiri) {
   services.mako = {
     enable = true;
     defaultTimeout = 5000;
-    maxHistory = 20;
     maxVisible = 3;
     font = "AlegreyaSans";
     backgroundColor = theme.base.hex;
