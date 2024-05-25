@@ -9,7 +9,10 @@
       settings = {
         input = {
             keyboard = { 
-                xkb = { };
+                xkb = {
+                  layout = "us";
+                  options = "compose:ralt";
+                };
             };
             touchpad = {
                 tap = true;
@@ -69,6 +72,18 @@
             default-column-width = { proportion = 0.25; };
             gaps = 4;
         };
+
+        window-rules = [
+          {
+            geometry-corner-radius = {
+              top-left = 8.0;
+              top-right = 8.0;
+              bottom-left = 8.0;
+              bottom-right= 8.0;
+            };
+            clip-to-geometry = true;
+          }
+        ];
 
         prefer-no-csd = true;
 
