@@ -2,7 +2,6 @@
   imports = [
     ./hardware-config.nix
     ./options.nix
-    ./disko.nix
   ];
 
   networking.hostName = "akarso";
