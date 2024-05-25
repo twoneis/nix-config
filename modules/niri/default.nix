@@ -70,11 +70,6 @@
             gaps = 4;
         };
 
-        window-rule = {
-          geometry-corner-radius = 8;
-          clip-to-geometry = true;
-        };
-
         prefer-no-csd = true;
 
         screenshot-path = "~/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S.png";
