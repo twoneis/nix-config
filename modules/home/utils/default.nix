@@ -110,5 +110,10 @@
     plugins = with pkgs.fishPlugins; [
       { name = "tide"; src = pure.src; }
     ];
+    functions = {
+      start = "
+        niri-session
+      ";
+    };
   };
 }
