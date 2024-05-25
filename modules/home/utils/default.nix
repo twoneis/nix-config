@@ -107,5 +107,8 @@
 
   programs.fish = {
     enable = true;
+    plugins = with pkgs.fishPlugins; [
+      { name = "tide"; src = pure.src; }
+    ];
   };
 }
