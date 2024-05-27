@@ -25,6 +25,7 @@ in lib.mkIf (osConfig.withNiri) {
         modules-left = [
           "memory"
           "cpu"
+          "temperature"
         ];
         modules-center = [
           "clock"
@@ -36,7 +37,13 @@ in lib.mkIf (osConfig.withNiri) {
         ];
         "cpu" = {
           interval = 10;
-          format = "{usage}% ";
+          format = "{usage}%";
+        };
+        "temperature" = {
+          hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
+          format = "{temperatureC}°C ";
+          interval = 10;
+          tooltip = false;
         };
         "memory" = {
           interval = 30;

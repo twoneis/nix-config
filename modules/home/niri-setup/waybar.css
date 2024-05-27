@@ -26,11 +26,15 @@ window#waybar {
 
 #clock,
 #battery,
-#cpu,
 #memory,
 #network,
+#temperature,
 #wireplumber {
     padding: 0 15px;
+}
+
+#cpu {
+    padding: 0 0 0 15px;
 }
 
 /*-----Indicators----*/
@@ -41,5 +45,9 @@ window#waybar {
 	color: #eb6f92;
 }
 #battery.critical:not(.charging) {
+    color: #eb6f92;
+}
+
+#temperature.critical {
     color: #eb6f92;
 }
