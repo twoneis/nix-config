@@ -11,7 +11,6 @@
 
     withVM = mkEnableOption "Enable VM related configuration";
     withContainers = mkEnableOption "Enable container support";
-    withDistrobox = mkEnableOption "Enable Distrobox";
     withGames = mkEnableOption "Enable games";
   };
 }

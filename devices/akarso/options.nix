@@ -10,6 +10,5 @@
 
   withVM = false;
   withContainers = false;
-  withDistrobox = false;
   withGames = false;
 }

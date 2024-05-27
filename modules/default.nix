@@ -7,7 +7,6 @@
     ./audio
     ./bluetooth
     ./containers
-    ./distrobox
     ./games
     ./gnome
     ./home
