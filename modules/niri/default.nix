@@ -2,6 +2,7 @@
   programs.niri.enable = true;
   environment.systemPackages = with pkgs; [
     brightnessctl
+    swaybg
   ];
 
   home-manager.users.twoneis = {
@@ -95,6 +96,7 @@
           { command = ["waybar"]; }
           { command = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0"]; }
           { command = ["brightnessctl" "s" "50%"]; }
+          { command = ["swaybg" "-c" "000000"]; }
         ];
 
         binds = {
