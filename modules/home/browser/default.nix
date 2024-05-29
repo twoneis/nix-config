@@ -5,8 +5,8 @@
       "default" = {
         id = 0;
 
-        search.default = "DuckDuckGoo";
-        search.privateDefault = "DuckDuckGoo";
+        search.default = "Startpage";
+        search.privateDefault = "Startpage";
         search.engines = {
           "DuckDuckGo".metaData.hidden = true;
           "Google".metaData.hidden = true;
