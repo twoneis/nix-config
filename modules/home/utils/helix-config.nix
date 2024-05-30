@@ -38,4 +38,11 @@
     C-n = "search_next";
     C-t = "search_prev";
   };
+
+  keys.select = {
+    h = "extend_char_left";
+    t = "extend_line_up";
+    n = "extend_line_down";
+    s = "extend_char_right";
+  };
 }
