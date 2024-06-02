@@ -96,7 +96,7 @@
           { command = ["waybar"]; }
           { command = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0"]; }
           { command = ["brightnessctl" "s" "50%"]; }
-          { command = ["swaybg" "-c" "000000"]; }
+          { command = ["swaybg" "-c" "1f1d2e"]; }
         ];
 
         binds = {

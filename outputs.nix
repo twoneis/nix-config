@@ -31,5 +31,20 @@
         home-manager.nixosModules.home-manager
       ];
     };
+
+    # Zotac Mini
+    pleniscenta = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = {
+        inherit inputs;
+      };
+      modules = [
+        ./devices/pleniscenta
+        ./modules
+        ./options.nix
+        niri.nixosModules.niri
+        home-manager.nixosModules.home-manager
+      ];
+    };
   };
 }
