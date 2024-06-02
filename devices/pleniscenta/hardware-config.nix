@@ -2,12 +2,15 @@
   boot = {
     initrd = {
       availableKernelModules = [ "ahci" "xhci_pci" "ums_realtek" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
-      kernelModules = [ ];
+      kernelModules = [ "iwlwifi" ];
       luks.devices."root".device = "/dev/disk/by-uuid/470a6d23-9f08-4c4d-afbb-63d6df1ab6a6";
     };
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
   };
+
+  hardware.enableRedistributableFirmware = true;
+  hardware.enableAllFirmware = true;
 
   fileSystems = {
     "/boot" = {

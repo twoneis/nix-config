@@ -24,12 +24,6 @@
     };
   };
 
-  # 57621: spotifyd
-  networking.firewall.allowedTCPPorts = [
-    57621
-  ];
-
-  networking.wireless.iwd.enable = true;
 
   nix = {
     nixPath = ["nixpkgs=${inputs.nixpkgs}"];
@@ -47,11 +41,15 @@
   documentation.nixos.enable = false;
 
   networking = {
-    networkmanager.enable = true;
+    wireless.iwd.enable = true;
     extraHosts = 
     ''
       10.10.11.245 surveillance.htb
     '';
+    # 57621: spotifyd
+    firewall.allowedTCPPorts = [
+      57621
+    ];
   };
 
   time.timeZone = "Europe/Amsterdam";
