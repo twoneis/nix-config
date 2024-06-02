@@ -29,6 +29,8 @@
     57621
   ];
 
+  networking.wireless.iwd.enable = true;
+
   nix = {
     nixPath = ["nixpkgs=${inputs.nixpkgs}"];
     gc = {
