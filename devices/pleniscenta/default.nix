@@ -4,7 +4,7 @@
     ./options.nix
   ];
 
-  networking.hostName = "akarso";
+  networking.hostName = "pleniscenta";
 
   boot.loader = {
     systemd-boot = {
