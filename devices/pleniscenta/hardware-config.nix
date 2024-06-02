@@ -10,21 +10,21 @@
 
   fileSystems = {
     "/boot" = {
-      device = "/dev/disk/by-uuid/A7FE-359B";
+      device = "/dev/disk/by-uuid/4A39-D0DF";
       fsType = "vfat";
     };
     "/" = {
-      device = "/dev/disk/by-uuid/542f188a-bcca-438a-97d3-fdaff0cacd83";
+      device = "/dev/disk/by-uuid/4bd7389a-464c-4bd1-b515-7f578400d4ea";
       fsType = "btrfs";
       options = [ "subvol=root" "compress=zstd" "noatime" ];
     };
     "/nix" = {
-      device = "/dev/disk/by-uuid/542f188a-bcca-438a-97d3-fdaff0cacd83";
+      device = "/dev/disk/by-uuid/4bd7389a-464c-4bd1-b515-7f578400d4ea";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
     "/persist" = {
-      device = "/dev/disk/by-uuid/542f188a-bcca-438a-97d3-fdaff0cacd83";
+      device = "/dev/disk/by-uuid/4bd7389a-464c-4bd1-b515-7f578400d4ea";
       fsType = "btrfs";
       options = [ "subvol=persist" "compress=zstd" "noatime" ];
     };
