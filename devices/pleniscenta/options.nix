@@ -5,7 +5,7 @@
   withBluetooth = true;
   withNvidia = false;
 
-  withNiri = true;
+  withNiri = false;
   withGnome = false;
 
   withVM = false;
