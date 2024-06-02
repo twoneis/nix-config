@@ -3,6 +3,7 @@
     initrd = {
       availableKernelModules = [ "ahci" "xhci_pci" "ums_realtek" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
       kernelModules = [ ];
+      luks.devices.cryptroot.device = "/dev/disk/by-uuid/XXXX-XXXX";
     };
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
@@ -14,19 +15,21 @@
       fsType = "vfat";
     };
     "/" = {
-      device = "/dev/disk/by-uuid/4bd7389a-464c-4bd1-b515-7f578400d4ea";
+      device = "/dev/disk/by-uuid/";
       fsType = "btrfs";
       options = [ "subvol=root" "compress=zstd" "noatime" ];
     };
     "/nix" = {
-      device = "/dev/disk/by-uuid/4bd7389a-464c-4bd1-b515-7f578400d4ea";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
     "/persist" = {
-      device = "/dev/disk/by-uuid/4bd7389a-464c-4bd1-b515-7f578400d4ea";
       fsType = "btrfs";
       options = [ "subvol=persist" "compress=zstd" "noatime" ];
+    };
+    "/swap" = {
+      fsType = "btrfs";
+      options = [ "subvol=swap" "noatime" ];
     };
   };
 
