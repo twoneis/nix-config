@@ -13,9 +13,6 @@
     efi.canTouchEfiVariables = true;
   };
 
-  services.zfs.autoScrub.enable = true;
-  services.zfs.trim.enable = true;
-
   hardware.opengl = {
     enable = true;
     driSupport = true;

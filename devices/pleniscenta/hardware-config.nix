@@ -6,25 +6,27 @@
     };
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
-    supportedFilesystems = [ "zfs" ];
   };
 
   fileSystems = {
     "/boot" = {
-      device = "/dev/disk/by-uuid/4A39-D0DF";
+      device = "/dev/disk/by-uuid/A7FE-359B";
       fsType = "vfat";
     };
     "/" = {
-      device = "zpool/root";
-      fsType = "zfs";
+      device = "/dev/disk/by-uuid/542f188a-bcca-438a-97d3-fdaff0cacd83";
+      fsType = "btrfs";
+      options = [ "subvol=root" "compress=zstd" "noatime" ];
     };
     "/nix" = {
-      device = "zpool/nix";
-      fsType = "zfs";
+      device = "/dev/disk/by-uuid/542f188a-bcca-438a-97d3-fdaff0cacd83";
+      fsType = "btrfs";
+      options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
     "/persist" = {
-      device = "zpool/persist";
-      fsType = "zfs";
+      device = "/dev/disk/by-uuid/542f188a-bcca-438a-97d3-fdaff0cacd83";
+      fsType = "btrfs";
+      options = [ "subvol=persist" "compress=zstd" "noatime" ];
     };
   };
 
