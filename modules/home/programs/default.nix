@@ -4,6 +4,7 @@
     loupe
     gnome.nautilus
     anki-bin
+    libreoffice-qt6-fresh
   ];
 
   programs.pandoc = {
