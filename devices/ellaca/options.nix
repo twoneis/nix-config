@@ -9,6 +9,6 @@
   withGnome = false;
 
   withVM = false;
-  withContainers = false;
+  withContainers = true;
   withGames = false;
 }
