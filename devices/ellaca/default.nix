@@ -1,39 +1,69 @@
 { pkgs, ... }: {
   imports = [
-    ./hardware-config.nix
     ./options.nix
   ];
 
-  networking.hostName = "ellaca";
+  nixpkgs.hostPlatform = "x86_64-linux";
 
-  # Select kernel version
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  networking = {
+    hostName = "ellaca";
+    useDHCP = true;
+  };
 
-  # Bootloader.
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub = {
-      enable = true;
-      efiSupport = true;
-      device = "nodev";
-      useOSProber = true;
-      font = null;
-      splashImage = null;
+  boot = {
+    initrd = {
+      availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
+    };
+
+    kernelModules = [ "kvm-amd" ];
+    kernelPackages = pkgs.linuxPackages_zen;
+
+    loader = {
+      efi.canTouchEfiVariables = true;
+      grub = {
+        enable = true;
+        efiSupport = true;
+        device = "nodev";
+        useOSProber = true;
+        font = null;
+        splashImage = null;
+      };
     };
   };
 
-  # Enable OpenGL
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+  fileSystems = {
+    "/boot" = {
+      device = "/dev/disk/by-uuid/7ABC-9C12";
+      fsType = "vfat";
+    };
+    "/" = {
+      device = "/dev/disk/by-uuid/b6e6bca7-1435-4b41-b174-8550eace7c32";
+      fsType = "btrfs";
+      options = [ "subvol=rootfs" "compress=zstd" "noatime" ];
+    };
+    "/nix" = {
+      device = "/dev/disk/by-uuid/b6e6bca7-1435-4b41-b174-8550eace7c32";
+      fsType = "btrfs";
+      options = [ "subvol=nix" "compress=zstd" "noatime" ];
+    };
+    "/ext" = {
+      device = "/dev/disk/by-uuid/3ed92a26-775a-4e39-ac1c-84b2822cd3dd";
+      fsType = "btrfs";
+      options = [ "subvol=ext" "compress=zstd" "noatime" ];
+    };
   };
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  hardware = {
+    enableRedistributableFirmware = true;
+    enableAllFirmware = true;
+    cpu.amd.updateMicrocode = true;
+
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+    };
+  };
+
+  system.stateVersion = "23.05";
 }
