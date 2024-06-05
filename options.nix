@@ -1,6 +1,6 @@
 { lib, ... }: {
   options = with lib; {
-    minimal = mkEnableOption "Minimal setup with only cli utilities";
+    minimalHome = mkEnableOption "Minimal home manager configuration with only cli utilities";
 
     withAudio = mkEnableOption "Enable support for audio";
     withBluetooth = mkEnableOption "Enable bluetooth";

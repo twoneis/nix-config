@@ -1,5 +1,5 @@
 { config, ... }: let
-  imp = if config.minimal then [
+  imp = if config.minimalHome then [
     ./utils
   ] else [
     ./browser
