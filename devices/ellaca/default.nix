@@ -5,10 +5,7 @@
 
   nixpkgs.hostPlatform = "x86_64-linux";
 
-  networking = {
-    hostName = "ellaca";
-    useDHCP = true;
-  };
+  networking.hostName = "ellaca";
 
   boot = {
     initrd = {

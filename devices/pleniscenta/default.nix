@@ -5,10 +5,7 @@
 
   nixpkgs.hostPlatform = "x86_64-linux";
 
-  networking = {
-    hostName = "pleniscenta";
-    useDHCP = true;
-  };
+  networking.hostName = "pleniscenta";
 
   boot = {
     initrd = {

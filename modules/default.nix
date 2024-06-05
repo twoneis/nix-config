@@ -41,6 +41,7 @@
   documentation.nixos.enable = false;
 
   networking = {
+    useDHCP = true;
     wireless.iwd.enable = true;
     extraHosts = 
     ''
