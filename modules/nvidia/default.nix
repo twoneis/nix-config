@@ -1,5 +1,4 @@
 { lib, config, ... }: lib.mkIf (config.withNvidia) {
-  # Load nvidia driver
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
