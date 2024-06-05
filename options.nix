@@ -2,7 +2,7 @@
   options = with lib; {
     minimal = mkEnableOption "Minimal setup with only cli utilities";
 
-   withAudio = mkEnableOption "Enable support for audio";
+    withAudio = mkEnableOption "Enable support for audio";
     withBluetooth = mkEnableOption "Enable bluetooth";
     withNvidia = mkEnableOption "Enable proprietary nvidia drivers";
 
