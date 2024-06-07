@@ -1,9 +1,14 @@
 { pkgs, osConfig, ... }: {
+  imports = [
+    ./firefox.nix
+  ];
+
   home.packages = with pkgs; [
-    krita
+    signal-desktop
+    vesktop
+    fractal
     loupe
     gnome.nautilus
-    anki-bin
     libreoffice-qt6-fresh
   ];
 
@@ -24,6 +29,15 @@
         volume_normalisation = true;
         autoplay = false;
         zeroconf_port = 57621;
+      };
+    };
+  };
+
+  programs.thunderbird = {
+    enable = true;
+    profiles = {
+      "default" = {
+        isDefault = true;
       };
     };
   };

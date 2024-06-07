@@ -2,8 +2,6 @@
   imp = if config.minimalHome then [
     ./utils
   ] else [
-    ./browser
-    ./communication
     ./niri-setup
     ./programs
     ./themes
