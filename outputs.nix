@@ -34,5 +34,20 @@
         home-manager.nixosModules.home-manager
       ];
     };
+
+    # Lenovo Thinkpad
+    inkvine = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = {
+        inherit inputs;
+      };
+      modules = [
+        ./devices/inkvine
+        ./modules
+        ./options.nix
+        niri.nixosModules.niri
+        home-manager.nixosModules.home-manager
+      ];
+    };
   };
 }
