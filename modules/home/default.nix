@@ -1,18 +1,18 @@
-{ config, ... }: let
-  imp = if config.minimalHome then [
-    ./utils
-  ] else [
-    ./niri-setup
-    ./programs
-    ./themes
-    ./utils
-  ];
-in {
+{ config, ... }: {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     users.twoneis = {
-      imports = imp;
+      imports = [
+        ./utils
+      ] ++ (if config.withNiri then [
+        ./niri-setup
+        ./themes
+      ] else []) ++ (if config.withGnome then [
+        ./themes
+      ] else []) ++ (if config.full then [
+        ./programs
+      ] else []);
 
       home = {
         username = "twoneis";

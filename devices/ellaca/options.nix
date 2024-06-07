@@ -1,5 +1,5 @@
 { ... }: {
-  minimalHome = false;
+  full = false;
 
   withAudio = true;
   withBluetooth = true;
