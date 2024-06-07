@@ -1,5 +1,5 @@
 { ... }: {
-  full = true;
+  full = false;
 
   withAudio = true;
   withBluetooth = true;
