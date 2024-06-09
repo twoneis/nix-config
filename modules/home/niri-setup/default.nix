@@ -40,7 +40,7 @@ in lib.mkIf (osConfig.withNiri) {
           format = "{usage}%";
         };
         "temperature" = {
-          hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
+          hwmon-path = "/sys/class/hwmon/hwmon4/temp1_input";
           format = "{temperatureC}°C ";
           interval = 10;
           tooltip = false;
