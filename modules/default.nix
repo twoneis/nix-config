@@ -76,6 +76,11 @@
 
   security.rtkit.enable = true;
 
+  services.upower = {
+    enable = true;
+  };
+
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   users.users.twoneis = {

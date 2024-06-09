@@ -11,10 +11,6 @@
     halp
   ];
 
-  services.upower = {
-    enable = true;
-  };
-
   home.file = {
     ".gdbinit" = {
       source = ./gdbinit;
