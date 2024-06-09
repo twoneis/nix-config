@@ -9,6 +9,7 @@
     gnutar
     thefuck
     halp
+    lshw
   ];
 
   home.file = {
