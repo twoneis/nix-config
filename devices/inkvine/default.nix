@@ -3,7 +3,10 @@
     ./options.nix
   ];
 
-  nixpkgs.hostPlatform = "x86_64-linux";
+  nixpkgs = {
+    hostPlatform = "x86_64-linux";
+    config.nvidia.acceptLicense = true;
+  };
 
   networking = {
     hostName = "inkvine";
@@ -52,7 +55,11 @@
   services = {
     thermald.enable = true;
     upower.enable = true;
-    xserver.videoDrivers = ["nvidia"];
+    xserver = {
+      enable = true;
+      displayManager.gdm.enable = true;
+      videoDrivers = ["nvidia"];
+    };
   };
 
   hardware = {
@@ -62,7 +69,6 @@
 
     nvidia =  {
       modesetting.enable = true;
-      nvidiaSettings = false;
       package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
 
       prime = {
