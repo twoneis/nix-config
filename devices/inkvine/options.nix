@@ -1,11 +1,11 @@
 { ... }: {
-  full = false;
+  full = true;
 
   withAudio = true;
   withBluetooth = true;
   withNvidia = false;
 
-  withNiri = false;
+  withNiri = true;
   withGnome = false;
 
   withVM = false;
