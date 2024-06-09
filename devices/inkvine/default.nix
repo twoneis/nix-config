@@ -52,6 +52,7 @@
   services = {
     thermald.enable = true;
     upower.enable = true;
+    xserver.videoDrivers = ["nvidia"];
   };
 
   hardware = {
