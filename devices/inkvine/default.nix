@@ -12,7 +12,7 @@
   boot = {
     initrd = {
       availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "sd_mod" "sr_mod" "rtsx_pci_sdmmc" ];
-      luks.devices.cryptroot.device = "/dev/disk/by-uuid/a553c11a-f6f4-4d67-a2d1-ede2615bce3d";
+      luks.devices.root.device = "/dev/disk/by-uuid/a553c11a-f6f4-4d67-a2d1-ede2615bce3d";
     };
 
     kernelModules = [ "kvm-intel" ];
