@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   imports = [
     ./options.nix
   ];
@@ -58,6 +58,19 @@
     enableRedistributableFirmware = true;
     enableAllFirmware = true;
     cpu.intel.updateMicrocode = true;
+
+    nvidia =  {
+      modesetting.enable = true;
+      nvidiaSettings = false;
+      package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
+
+      prime = {
+        intelBusId = "PCI:0:2:0";
+        nvidiaBusId = "PCI:1:0:0";
+
+        sync.enable = true;
+      };
+    };
 
     opengl = {
       enable = true;
