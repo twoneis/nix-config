@@ -7,7 +7,6 @@
     ./gnome
     ./home
     ./niri
-    ./nvidia
     ./virt
   ];
 
@@ -20,6 +19,9 @@
     };
   };
 
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
 
   nix = {
     nixPath = ["nixpkgs=${inputs.nixpkgs}"];
@@ -73,15 +75,6 @@
 
   # Needed for some features in nautilus such as auto-mounting and trash
   services.gvfs.enable = true;
-
-  security.rtkit.enable = true;
-
-  services.upower = {
-    enable = true;
-  };
-
-
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   users.users.twoneis = {
     isNormalUser = true;

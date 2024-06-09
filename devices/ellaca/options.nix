@@ -3,7 +3,6 @@
 
   withAudio = true;
   withBluetooth = true;
-  withNvidia = true;
 
   withNiri = true;
   withGnome = false;

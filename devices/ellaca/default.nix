@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   imports = [
     ./options.nix
   ];
@@ -50,10 +50,21 @@
     };
   };
 
+  services = {
+    xserver.videoDrivers = ["nvidia"];
+  };
+
   hardware = {
     enableRedistributableFirmware = true;
     enableAllFirmware = true;
     cpu.amd.updateMicrocode = true;
+
+
+    nvidia = {
+      modesetting.enable = true;
+      nvidiaSettings = false;
+      package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
+    };
 
     opengl = {
       enable = true;

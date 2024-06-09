@@ -4,7 +4,6 @@
 
     withAudio = mkEnableOption "Enable support for audio";
     withBluetooth = mkEnableOption "Enable bluetooth";
-    withNvidia = mkEnableOption "Enable proprietary nvidia drivers";
 
     withNiri = mkEnableOption "Enable niri compositor";
     withGnome =mkEnableOption "Enable gnome DE";

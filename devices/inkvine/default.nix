@@ -49,7 +49,10 @@
   };
   swapDevices = [ { device = "/swap/swapfile"; } ];
 
-  services.thermald.enable = true;
+  services = {
+    thermald.enable = true;
+    upower.enable = true;
+  };
 
   hardware = {
     enableRedistributableFirmware = true;
