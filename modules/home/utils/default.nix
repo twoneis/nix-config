@@ -92,6 +92,7 @@
     ga = "git add";
     gc = "git commit";
     gp = "git push";
+    gs = "git submodule sync --recursive && git submodule update --init --recursive";
     gpl = "git pull --recurse-submodules";
     gst = "git status";
 
