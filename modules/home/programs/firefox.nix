@@ -15,7 +15,7 @@
           "Wikipedia (en)".metaData.hidden = true;
           "Startpage" = {
             urls = [{
-              template = "https://startpage.com/do/search";
+              template = "https://startpage.com/sp/search";
               params = [
                 { name = "query"; value = "{searchTerms}"; }
               ];
