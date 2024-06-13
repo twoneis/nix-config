@@ -13,6 +13,15 @@
     libreoffice-qt6-fresh
   ];
 
+  home.file = {
+    ".config/vesktop/settings.json" = {
+      source = ./vesktop-settings.json;
+    };
+    ".config/vesktop/settings/settings.json" = {
+      source = ./vencord-settings.json;
+    };
+  };
+
   programs.pandoc = {
     enable = true;
   };
