@@ -35,7 +35,9 @@
       ];
     };
 
-    # Lenovo Thinkpad
+    # Lenovo Thinkpad T540p
+    # Intel i7-4710MQ
+    # 8GB RAM
     inkvine = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {

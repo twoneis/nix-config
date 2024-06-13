@@ -11,5 +11,10 @@
     withVM = mkEnableOption "Enable VM related configuration";
     withContainers = mkEnableOption "Enable container support";
     withGames = mkEnableOption "Enable games";
+
+    hwmonPath = mkOption {
+      type = with types; nullOr str;
+      default = null;
+    };
   };
 }

@@ -10,4 +10,6 @@
   withVM = false;
   withContainers = true;
   withGames = false;
+
+  hwmonPath = "/sys/class/hwmon/hwmon1/temp1_input";
 }
