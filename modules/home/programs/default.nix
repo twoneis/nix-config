@@ -8,6 +8,7 @@
     vesktop
     fractal
     loupe
+    snapshot
     gnome.nautilus
     libreoffice-qt6-fresh
   ];
