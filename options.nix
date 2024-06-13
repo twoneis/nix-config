@@ -15,6 +15,7 @@
     hwmonPath = mkOption {
       type = with types; nullOr str;
       default = null;
+      example = "/sys/class/hwmon/hwmon1/temp1_input";
     };
   };
 }
