@@ -63,11 +63,6 @@
     enable = true;
   };
 
-  programs.lsd = {
-    enable = true;
-    enableAliases = true;
-  };
-
   programs.hyfetch = {
     enable = true;
     settings = {
@@ -77,14 +72,9 @@
       lightness = 0.65;
       color_align = {
           mode = "horizontal";
-          custom_colors = [];
-          fore_back = null;
       };
       backend = "neofetch";
-      args = null;
       distro = "nixos_old";
-      pride_month_shown = [];
-      pride_month_disable = false;
     };
   };
 
