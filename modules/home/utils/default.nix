@@ -88,34 +88,30 @@
     };
   };
 
-  home.shellAliases = {
-    ga = "git add";
-    gc = "git commit";
-    gp = "git push";
-    gs = "git submodule sync --recursive && git submodule update --init --recursive";
-    gpl = "git pull --recurse-submodules";
-    gst = "git status";
-
-    repl = "nix repl --expr 'import <nixpkgs>{}'";
-
-    nrb = "sudo nixos-rebuild switch --flake . --cores 0";
-    nd = "nix develop";
-
-    neofetch = "hyfetch";
-  };
-
-  # For direnv and shell aliases the shell needs to be managed by hm
-  programs.bash.enable = true;
-
   programs.fish = {
     enable = true;
     plugins = with pkgs.fishPlugins; [
       { name = "tide"; src = pure.src; }
+      { name = "bass"; src = bass.src; }
+      { name = "sponge"; src = sponge.src; }
     ];
     functions = {
       start = "
         niri-session
       ";
+    };
+    shellAbbrs = {
+      ga = "git add";
+      gc = "git commit";
+      gp = "git push";
+      gs = "git submodule sync --recursive && git submodule update --init --recursive";
+      gpl = "git pull --recurse-submodules";
+      gst = "git status";
+
+      repl = "nix repl --expr 'import <nixpkgs>{}'";
+
+      nrb = "sudo nixos-rebuild switch --cores 0 --flake .";
+      nd = "nix develop";
     };
   };
 }
