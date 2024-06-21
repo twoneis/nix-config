@@ -89,6 +89,12 @@
       start = "
         niri-session
       ";
+      gnome-init = "
+        gnome-randr modify DP-1 -m 5120x2160@59.940
+      ";
+      start-gnome = "
+        gnome-shell --wayland
+      ";
     };
     shellAbbrs = {
       ga = "git add";

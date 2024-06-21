@@ -1,11 +1,4 @@
 { pkgs, lib, config, ... }: lib.mkIf (config.withGnome) {
-  services.xserver.desktopManager.gnome.enable = true;
-
-  services.gnome.core-utilities.enable = false;
-  environment.gnome.excludePackages = [ pkgs.gnome-tour ];
-
-  environment.systemPackages = with pkgs; [
-    gnomeExtensions.paperwm
-    gnome.gnome-characters
-  ];
+  services.xserver.displayManager.sessionPackages = [ pkgs.gnome.gnome-session.sessions ];
+  environment.systemPackages = [ pkgs.gnome.gnome-shell pkgs.gnome-randr ];
 }
