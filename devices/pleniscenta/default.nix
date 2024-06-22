@@ -59,11 +59,7 @@
     enableAllFirmware = true;
     cpu.intel.updateMicrocode = true;
 
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-    };
+    opengl.enable = true;
   };
 
   system.stateVersion = "24.05";

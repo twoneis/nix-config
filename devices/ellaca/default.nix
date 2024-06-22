@@ -66,11 +66,7 @@
       package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
     };
 
-    opengl = {
-      enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
-    };
+    opengl.enable = true;
   };
 
   system.stateVersion = "23.05";
