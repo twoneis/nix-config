@@ -63,7 +63,7 @@
     nvidia = {
       modesetting.enable = true;
       nvidiaSettings = false;
-      package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
 
     graphics = {
