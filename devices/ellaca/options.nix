@@ -9,7 +9,7 @@
 
   withVM = false;
   withContainers = true;
-  withGames = false;
+  withGames = true;
 
   hwmonPath = "/sys/class/hwmon/hwmon1/temp1_input";
 }
