@@ -85,7 +85,7 @@
             clip-to-geometry = true;
           } {
             matches = [{app-id = "gamescope";}];
-            open-maximized = true;
+            open-fullscreen = true;
           }
         ];
 
