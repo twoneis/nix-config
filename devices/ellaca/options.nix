@@ -5,7 +5,8 @@
   withBluetooth = true;
 
   withNiri = true;
-  withGnome = true;
+  withGnome = false;
+  withPlasma = true;
 
   withVM = false;
   withContainers = true;

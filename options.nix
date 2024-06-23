@@ -6,7 +6,8 @@
     withBluetooth = mkEnableOption "Enable bluetooth";
 
     withNiri = mkEnableOption "Enable niri compositor";
-    withGnome = mkEnableOption "Enable gnome DE";
+    withGnome = mkEnableOption "Enable Gnome";
+    withPlasma = mkEnableOption "Enable KDE Plasma";
 
     withVM = mkEnableOption "Enable VM related configuration";
     withContainers = mkEnableOption "Enable container support";
