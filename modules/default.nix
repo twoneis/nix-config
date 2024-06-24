@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, lib, ... }: {
   imports = [
     ./audio
     ./bluetooth
@@ -41,7 +41,7 @@
   documentation.nixos.enable = false;
 
   networking = {
-    useDHCP = true;
+    useDHCP = lib.mkDefault true;
     wireless.iwd.enable = true;
     extraHosts = 
     ''
