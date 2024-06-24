@@ -8,7 +8,7 @@
     unzip
     gnutar
     lshw
-    netcat-obenbsd
+    netcat-openbsd
   ];
 
   home.file = {
