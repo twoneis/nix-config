@@ -8,6 +8,7 @@
     ./home
     ./niri
     ./plasma
+    ./sddm
     ./virt
   ];
 
@@ -74,13 +75,14 @@
     };
   };
 
-  # Needed for some features in nautilus such as auto-mounting and trash
-  services.gvfs.enable = true;
-
   users.users.twoneis = {
     isNormalUser = true;
     description = "twoneis";
     extraGroups = [ "networkmanager" "wheel" ];
+  };
+  services = {
+    # Needed for some features in nautilus such as auto-mounting and trash
+    gvfs.enable = true;
   };
 
   programs.fish.enable = true;
