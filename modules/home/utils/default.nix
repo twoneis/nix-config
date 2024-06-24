@@ -7,9 +7,8 @@
     zip
     unzip
     gnutar
-    thefuck
-    halp
     lshw
+    netcat-obenbsd
   ];
 
   home.file = {
