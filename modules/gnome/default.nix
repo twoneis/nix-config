@@ -3,14 +3,9 @@
     desktopManager.gnome.enable = true;
   };
 
-  environment.gnome.excludePackages = (with pkgs.gnome; [
-    nixos-background-info
-    gnome-shell-extensions
-    pkgs.gnome-tour # GNOME Shell detects the .desktop file on first log-in.
-    pkgs.gnome-user-docs
-    pkgs.orca
-    pkgs.gnome-menus
-  ]);
+  services.gnome.core-utilities.enable = true;
+
+  hardware.pulseaudio.enable = false;
 
   programs.dconf.enable = true;
 }
