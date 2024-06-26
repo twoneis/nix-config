@@ -1,5 +1,6 @@
-{ pkgs, lib, config, ... }: lib.mkIf (config.withGnome) {
+{ lib, config, ... }: lib.mkIf (config.withGnome) {
   services.xserver = {
+    enable = true;
     desktopManager.gnome.enable = true;
   };
 
