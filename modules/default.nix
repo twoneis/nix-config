@@ -83,8 +83,11 @@
     # Needed for some features in nautilus such as auto-mounting and trash
     gvfs.enable = true;
 
-    xserver.displayManager.gdm = {
+    xserver = {
       enable = true;
+      displayManager.gdm = {
+        enable = true;
+      };
     };
   };
 
