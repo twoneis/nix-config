@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }: lib.mkIf (config.withGames) {
   programs.steam = {
     enable = true;
-    gamescopeSession.enabe = true;
+    gamescopeSession.enable = true;
   };
 
   programs.gamescope = {

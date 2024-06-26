@@ -8,7 +8,6 @@
     ./home
     ./niri
     ./plasma
-    ./sddm
     ./virt
   ];
 
@@ -83,6 +82,11 @@
   services = {
     # Needed for some features in nautilus such as auto-mounting and trash
     gvfs.enable = true;
+
+    xserver.displayManage.gdm = {
+      enable = true;
+      wayland = true;
+    };
   };
 
   programs.fish.enable = true;
