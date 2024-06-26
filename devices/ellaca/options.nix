@@ -5,12 +5,12 @@
   withBluetooth = true;
 
   withNiri = true;
-  withGnome = true;
+  withGnome = false;
   withPlasma = false;
 
   withVM = false;
   withContainers = true;
-  withGames = true;
+  withGames = false;
 
   hwmonPath = "/sys/class/hwmon/hwmon1/temp1_input";
 }
