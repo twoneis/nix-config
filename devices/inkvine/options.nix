@@ -6,11 +6,11 @@
 
   withNiri = true;
   withGnome = false;
-  withPlasma = true;
+  withPlasma = false;
 
   withVM = false;
-  withContainers = true;
-  withGames = true;
+  withContainers = false;
+  withGames = false;
 
   hwmonPath = "/sys/class/hwmon/hwmon4/temp1_input";
 }
