@@ -367,22 +367,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-xwayland": {
-      "locked": {
-        "lastModified": 1719695479,
-        "narHash": "sha256-B6MAGOvfLFemhyMGyjR/ljvaXAgUg5pWMP8KGSlYb54=",
-        "owner": "if-loop69420",
-        "repo": "nixpkgs",
-        "rev": "d4292ba2c05e5ae2477a192e14e2e6329fd32e22",
-        "type": "github"
-      },
-      "original": {
-        "owner": "if-loop69420",
-        "ref": "add-xwayland-satellite",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1712026416,
@@ -467,7 +451,6 @@
         "home-manager": "home-manager",
         "niri": "niri",
         "nixpkgs": "nixpkgs_3",
-        "nixpkgs-xwayland": "nixpkgs-xwayland",
         "nur": "nur"
       }
     },
