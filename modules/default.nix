@@ -7,7 +7,6 @@
     ./gnome
     ./home
     ./niri
-    ./plasma
     ./virt
   ];
 
