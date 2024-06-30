@@ -19,7 +19,9 @@ in {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+    sharedModules = with inputs; [ 
+      plasma-manager.homeManagerModules.plasma-manager
+    ];
 
     users.twoneis = {
       imports = [
