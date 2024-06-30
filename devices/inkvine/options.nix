@@ -6,7 +6,6 @@
 
   withNiri = true;
   withGnome = false;
-  withPlasma = false;
 
   withVM = false;
   withContainers = false;

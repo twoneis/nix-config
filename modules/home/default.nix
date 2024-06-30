@@ -7,10 +7,6 @@
     (if config.withGnome then [
       ./themes
     ] else [])
-    (if config.withPlasma then [
-      ./plasma
-      ./themes
-    ] else [])
     (if config.full then [
       ./programs
     ] else [])
