@@ -1,4 +1,4 @@
-{ inputs, config, lib, ... }: let
+{ config, lib, ... }: let
   modules = lib.lists.flatten [
     (if config.withNiri then [
       ./niri-setup
@@ -15,9 +15,6 @@ in {
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    sharedModules = with inputs; [ 
-      plasma-manager.homeManagerModules.plasma-manager
-    ];
 
     users.twoneis = {
       imports = [
