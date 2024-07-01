@@ -7,7 +7,7 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "adwaita";
+    platformTheme.name = "kde";
     style.name = "adwaita-dark";
   };
 
