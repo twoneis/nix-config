@@ -1,12 +1,13 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     gnome.adwaita-icon-theme
+    adwaita-qt
   ];
 
   qt = {
     enable = true;
     platformTheme.name = "gtk3";
-    style.package = pkgs.adwaita-qt;
+    style.package = pkgs.adwaita-qt6;
     style.name = "adwaita-dark";
   };
 
