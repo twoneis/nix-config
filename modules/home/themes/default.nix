@@ -2,12 +2,12 @@
   home.packages = with pkgs; [
     gnome.adwaita-icon-theme
     adwaita-qt
+    adwaita-qt6
   ];
 
   qt = {
     enable = true;
-    platformTheme.name = "gtk3";
-    style.package = pkgs.adwaita-qt6;
+    platformTheme.name = "adwaita";
     style.name = "adwaita-dark";
   };
 
