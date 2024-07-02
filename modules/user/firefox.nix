@@ -116,10 +116,7 @@
             bitwarden
             sponsorblock
             ublock-origin
-            consent-o-matic
             pronoundb
-            web-scrobbler
-            return-youtube-dislikes
             youtube-nonstop
             enhancer-for-youtube
           ];
