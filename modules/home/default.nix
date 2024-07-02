@@ -4,12 +4,6 @@
     useUserPackages = true;
 
     users.twoneis = {
-      imports = [
-        ./utils
-        ./programs
-        ./themes
-      ];
-
       home = {
         username = "twoneis";
         homeDirectory = "/home/twoneis";

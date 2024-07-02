@@ -8,17 +8,17 @@
     ];
 
     programs.niri = {
-      settings = import ./niri-settings.nix { config = config; };
+      settings = import ./niri.conf.nix { config = config; };
     };
 
     programs.fuzzel= {
       enable = true;
-      settings = import ./fuzzel-settings.nix { lib = lib; config = config; };
+      settings = import ./fuzzel.conf.nix { lib = lib; config = config; };
     };
 
     programs.waybar = {
       enable = true;
-      settings = import ./waybar-settings.nix { config = config; };
+      settings = import ./waybar.conf.nix { config = config; };
       style = builtins.readFile(./waybar.css);
     };
 
@@ -38,7 +38,7 @@
     programs.swaylock = {
       enable = true;
       package = pkgs.swaylock-effects;
-      settings = import ./swaylock-settings.nix { lib = lib; config = config; };
+      settings = import ./swaylock.conf.nix { lib = lib; config = config; };
     };
   };
 }

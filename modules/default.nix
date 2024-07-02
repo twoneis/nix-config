@@ -1,13 +1,14 @@
 { inputs, pkgs, lib, ... }: {
   imports = [
     ./colors.nix
-    ./audio
-    ./bluetooth
     ./containers
     ./games
+    ./gnome
     ./home
     ./niri
-    ./virt
+    ./user
+    ./utils
+    ./vm
   ];
 
   nixpkgs = {
@@ -45,10 +46,6 @@
     ''
       10.10.11.245 surveillance.htb
     '';
-    # 57621: spotifyd
-    firewall.allowedTCPPorts = [
-      57621
-    ];
   };
 
   time.timeZone = "Europe/Amsterdam";
@@ -78,18 +75,4 @@
     description = "twoneis";
     extraGroups = [ "networkmanager" "wheel" ];
   };
-  services = {
-    # Needed for some features in nautilus such as auto-mounting and trash
-    gvfs.enable = true;
-
-    xserver = {
-      enable = true;
-      displayManager.gdm = {
-        enable = true;
-      };
-    };
-  };
-
-  programs.fish.enable = true;
-  users.defaultUserShell = pkgs.fish;
 }
