@@ -48,8 +48,8 @@
       focus-ring = {
           width = 4;
           active.gradient = {
-            from=config.theme.rose;
-            to=config.theme.pine;
+            to=config.theme.rose;
+            from=config.theme.pine;
             angle=135;
           };
           inactive.color = config.theme.iris;
