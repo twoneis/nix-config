@@ -1,13 +1,12 @@
 { inputs, pkgs, lib, ... }: {
   imports = [
+    ./colors.nix
     ./audio
     ./bluetooth
     ./containers
     ./games
-    ./gnome
     ./home
     ./niri
-    ./plasma
     ./virt
   ];
 
