@@ -119,6 +119,7 @@
             pronoundb
             youtube-nonstop
             enhancer-for-youtube
+            firefox-color
           ];
         };
       };
