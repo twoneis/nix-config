@@ -19,7 +19,7 @@
     programs.waybar = {
       enable = true;
       settings = import ./waybar.conf.nix { config = config; };
-      style = builtins.readFile(./waybar.css);
+      style = builtins.readFile(./waybar.conf.css);
     };
 
     services.mako = {
