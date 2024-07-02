@@ -1,4 +1,8 @@
 { config, pkgs, ... }: {
+  imports = [
+    ./firefox.nix
+  ];
+
   networking.firewall.allowedTCPPorts = [
     57621 # spotifyd
   ];
@@ -9,10 +13,6 @@
   };
 
   home-manager.users.twoneis = {
-    imports = [
-      ./firefox.nix
-    ];
-
     home.packages = with pkgs; [
       signal-desktop
       vesktop
