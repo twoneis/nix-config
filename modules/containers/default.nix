@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }: lib.mkIf(config.withContainers) {
+{ lib, config, pkgs, ... }: lib.mkIf config.withContainers {
   virtualisation.podman = {
     enable = true;
     dockerCompat = true;

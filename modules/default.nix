@@ -1,6 +1,5 @@
 { inputs, pkgs, lib, ... }: {
   imports = [
-    ./colors.nix
     ./containers
     ./games
     ./gnome

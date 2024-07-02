@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }: lib.mkIf (config.withNiri) {
+{ lib, config, pkgs, ... }: lib.mkIf config.withNiri {
   programs.niri.enable = true;
 
   home-manager.users.twoneis = {

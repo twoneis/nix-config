@@ -12,6 +12,7 @@
         ./devices/ellaca
         ./modules
         ./options.nix
+        ./colors.nix
         niri.nixosModules.niri
         home-manager.nixosModules.home-manager
       ];
@@ -30,6 +31,7 @@
         ./devices/pleniscenta
         ./modules
         ./options.nix
+        ./colors.nix
         niri.nixosModules.niri
         home-manager.nixosModules.home-manager
       ];
@@ -47,6 +49,7 @@
         ./devices/inkvine
         ./modules
         ./options.nix
+        ./colors.nix
         niri.nixosModules.niri
         home-manager.nixosModules.home-manager
       ];

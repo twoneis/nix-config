@@ -17,7 +17,7 @@
 
     home.file = {
       ".gdbinit" = {
-        source = ./gdbinit;
+        source = ./gdbinit.conf;
       };
     };
 
