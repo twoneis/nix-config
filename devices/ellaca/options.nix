@@ -1,15 +1,12 @@
 { ... }: {
-  full = true;
-
-  withAudio = true;
-  withBluetooth = true;
+  user = true;
 
   withNiri = true;
   withGnome = false;
-  withPlasma = true;
 
   withVM = false;
   withContainers = true;
+
   withGames = true;
 
   hwmonPath = "/sys/class/hwmon/hwmon1/temp1_input";

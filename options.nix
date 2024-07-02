@@ -1,16 +1,13 @@
 { lib, ... }: {
   options = with lib; {
-    full = mkEnableOption "Full home manager configuration with all programs";
-
-    withAudio = mkEnableOption "Enable support for audio";
-    withBluetooth = mkEnableOption "Enable bluetooth";
+    user = mkEnableOption "Enable complete configuration for end-user machine";
 
     withNiri = mkEnableOption "Enable niri compositor";
     withGnome = mkEnableOption "Enable Gnome";
-    withPlasma = mkEnableOption "Enable KDE Plasma";
 
     withVM = mkEnableOption "Enable VM related configuration";
     withContainers = mkEnableOption "Enable container support";
+
     withGames = mkEnableOption "Enable games";
 
     hwmonPath = mkOption {
