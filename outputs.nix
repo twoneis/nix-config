@@ -1,4 +1,4 @@
-{ nixpkgs, home-manager, niri, ... }@inputs: {
+{ nixpkgs, lix, home-manager, niri, ... }@inputs: {
   nixosConfigurations = {
     # AMD Ryzen 5600X
     # Nvidia GeForce GTX 1060 (6GB)
@@ -15,6 +15,7 @@
         ./colors.nix
         niri.nixosModules.niri
         home-manager.nixosModules.home-manager
+        lix.nixosModules.default
       ];
     };
 
@@ -34,6 +35,7 @@
         ./colors.nix
         niri.nixosModules.niri
         home-manager.nixosModules.home-manager
+        lix.nixosModules.default
       ];
     };
 
@@ -52,6 +54,7 @@
         ./colors.nix
         niri.nixosModules.niri
         home-manager.nixosModules.home-manager
+        lix.nixosModules.default
       ];
     };
   };
