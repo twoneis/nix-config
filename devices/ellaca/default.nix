@@ -30,16 +30,16 @@
 
   fileSystems = {
     "/boot" = {
-      device = "/dev/disk/by-uuid/7ABC-9C12";
+      device = "/dev/disk/by-uuid/12CE-A600";
       fsType = "vfat";
     };
     "/" = {
-      device = "/dev/disk/by-uuid/b6e6bca7-1435-4b41-b174-8550eace7c32";
+      device = "/dev/disk/by-uuid/b4a61b48-017f-4d16-ab05-d5c867f2ca6f";
       fsType = "btrfs";
       options = [ "subvol=rootfs" "compress=zstd" "noatime" ];
     };
     "/nix" = {
-      device = "/dev/disk/by-uuid/b6e6bca7-1435-4b41-b174-8550eace7c32";
+      device = "/dev/disk/by-uuid/b4a61b48-017f-4d16-ab05-d5c867f2ca6f";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
