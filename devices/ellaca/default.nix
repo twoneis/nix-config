@@ -36,7 +36,7 @@
     "/" = {
       device = "/dev/disk/by-uuid/b4a61b48-017f-4d16-ab05-d5c867f2ca6f";
       fsType = "btrfs";
-      options = [ "subvol=rootfs" "compress=zstd" "noatime" ];
+      options = [ "subvol=root" "compress=zstd" "noatime" ];
     };
     "/nix" = {
       device = "/dev/disk/by-uuid/b4a61b48-017f-4d16-ab05-d5c867f2ca6f";
