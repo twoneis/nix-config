@@ -69,7 +69,10 @@
     };
   };
 
-  services.xserver.displayManager.gdm.enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+  };
 
   users.users.twoneis = {
     isNormalUser = true;
