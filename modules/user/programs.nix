@@ -20,9 +20,8 @@
         fractal
         loupe
         snapshot
-        gnome.nautilus
+        nautilus
         libreoffice-qt6-fresh
-        blender
       ];
 
       home.file = {

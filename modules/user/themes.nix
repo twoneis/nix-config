@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   home-manager.users.twoneis = {
     home.packages = with pkgs; [
-      gnome.adwaita-icon-theme
+      adwaita-icon-theme
       adwaita-qt
       adwaita-qt6
     ];

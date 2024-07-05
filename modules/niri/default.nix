@@ -5,6 +5,7 @@
     home.packages = with pkgs; [
       brightnessctl
       swaybg
+      xwayland-satellite
     ];
 
     programs.niri = {
