@@ -22,7 +22,7 @@
         snapshot
         gnome.nautilus
         libreoffice-qt6-fresh
-        blender
+        freecad
       ];
 
       home.file = {
