@@ -22,6 +22,7 @@
         snapshot
         nautilus
         libreoffice-qt6-fresh
+        freecad
       ];
 
       home.file = {

@@ -6,6 +6,7 @@
       brightnessctl
       swaybg
       xwayland-satellite
+      xwayland
     ];
 
     programs.niri = {
