@@ -10,38 +10,27 @@
           tap = true;
           natural-scroll = true;
       };
-      tablet = {
-          map-to-output = "DP-3";
-      };
-      touch = {
-          map-to-output = "eDP-1";
-      };
       power-key-handling.enable = false;
   };
-  outputs."eDP-1" = {
-      scale = 1.0;
-      mode = {
-        width = 2736;
-        height = 1824;
-        refresh = 59.959;
-      };
-      position = {
-        x=0;
-        y=0;
-      };
-  };
 
-  outputs."DP-1"  = {
-      scale = 1.0;
-      mode = {
-        width = 5120;
-        height = 2160;
-        refresh = 59.940;
-      };
-      position = {
-        x=2736;
-        y=0;
-      };
+  outputs = {
+    "eDP-1" = {
+        scale = 1.0;
+        mode = {
+          width = 2736;
+          height = 1824;
+          refresh = 59.959;
+        };
+    };
+
+    "DP-1"  = {
+        scale = 1.0;
+        mode = {
+          width = 5120;
+          height = 2160;
+          refresh = 59.940;
+        };
+    };
   };
 
   layout = {
@@ -74,9 +63,6 @@
         bottom-right= 8.0;
       };
       clip-to-geometry = true;
-    } {
-      matches = [{app-id = "gamescope";}];
-      open-fullscreen = true;
     }
   ];
 
