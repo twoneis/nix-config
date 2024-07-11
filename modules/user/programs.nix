@@ -22,7 +22,7 @@
         snapshot
         nautilus
         libreoffice-qt6-fresh
-        freecad
+        # freecad -- broken dependency
       ];
 
       home.file = {
