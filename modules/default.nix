@@ -1,4 +1,4 @@
-{ inputs, pkgs, lib, ... }: {
+{ inputs, pkgs, lib, config, ... }: {
   imports = [
     ./containers
     ./games
@@ -79,4 +79,6 @@
     description = "twoneis";
     extraGroups = [ "networkmanager" "wheel" ];
   };
+
+  system.stateVersion = config.stateVersion;
 }

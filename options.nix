@@ -15,5 +15,17 @@
       default = null;
       example = "/sys/class/hwmon/hwmon1/temp1_input";
     };
+
+    stateVersion = mkOption {
+      type = with types; nullOr str;
+      default = null;
+      example = "24.05";
+    };
+
+    hmStateVersion = mkOption {
+      type = with types; nullOr str;
+      default = null;
+      example = "24.11";
+    };
   };
 }
