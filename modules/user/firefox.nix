@@ -63,11 +63,23 @@
               urls = [{
                 template = "https://search.nixos.org/packages";
                 params = [
+                  { name = "channel"; value = "unstable"; }
                   { name = "type"; value = "packages"; }
                   { name = "query"; value = "{searchTerms}"; }
                 ];
               }];
               definedAliases = [ "@np" ];
+            };
+            "Nix Options" = {
+              urls = [{
+                template = "https://search.nixos.org/options";
+                params = [
+                  { name = "channel"; value = "unstable"; }
+                  { name = "type"; value = "packages"; }
+                  { name = "query"; value = "{searchTerms}"; }
+                ];
+              }];
+              definedAliases = [ "@no" ];
             };
             "Github" = {
               urls = [{
@@ -88,6 +100,7 @@
             "Wikipedia"
             "YouTube"
             "Nix Packages"
+            "Nix Options"
             "Github"
           ];
 
