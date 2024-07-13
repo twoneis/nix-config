@@ -2,12 +2,12 @@
   user = true;
 
   withNiri = true;
-  withGnome = false;
+  withGnome = true;
 
   withVM = false;
   withContainers = false;
 
-  withGames = false;
+  withGames = true;
 
   hwmonPath = "/sys/class/hwmon/hwmon4/temp1_input";
 
