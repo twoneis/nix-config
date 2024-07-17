@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   imports = [
     ./options.nix
   ];
@@ -65,5 +65,25 @@
       enable = true;
       enable32Bit = true;
     };
+
+    nvidia = {
+      package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
+       modesetting.enable = true;
+      powerManagement = {
+        enable = false;
+        finegrained = false;
+      };
+      open = false;
+      nvidiaSettings = true;
+
+      prime = {
+        sync.enable = true;
+
+        intelBusId = "PCI:0:2:0";
+        nvidiaBusId = "PCI:1:0:0";
+      };
+    };
   };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
 }
