@@ -2,7 +2,7 @@
   user = true;
 
   withNiri = true;
-  withGnome = true;
+  withGnome = false;
 
   withVM = false;
   withContainers = false;

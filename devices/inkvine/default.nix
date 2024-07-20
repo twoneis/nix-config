@@ -5,7 +5,6 @@
 
   nixpkgs = {
     hostPlatform = "x86_64-linux";
-    config.nvidia.acceptLicense = true;
   };
 
   networking = {
@@ -66,28 +65,5 @@
       enable = true;
       enable32Bit = true;
     };
-
-    nvidia = {
-      package = config.boot.kernelPackages.nvidiaPackages.legacy_470;
-      modesetting.enable = true;
-      powerManagement = {
-        enable = false;
-        finegrained = false;
-      };
-      open = false;
-      nvidiaSettings = true;
-
-      prime = {
-        offload = {
-          enable = true;
-          enableOffloadCmd = true;
-        };
-
-        intelBusId = "PCI:0:2:0";
-        nvidiaBusId = "PCI:1:0:0";
-      };
-    };
   };
-
-  services.xserver.videoDrivers = [ "nvidia" ];
 }
