@@ -7,7 +7,7 @@
 in{
   imports = [
     ./options.nix
-    ./impermanece
+    ./impermanence.nix
   ];
 
   nixpkgs = {
