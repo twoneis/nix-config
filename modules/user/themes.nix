@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ lib, config, pkgs, ... }: lib.mkIf config.full {
   home-manager.users.${config.username} = {
     home.packages = with pkgs; [
       adwaita-icon-theme

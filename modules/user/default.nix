@@ -4,7 +4,7 @@
     ./themes.nix
   ];
 
-  config = lib.mkIf config.user{
+  config = lib.mkIf config.full {
 
     # Audio
     security.rtkit.enable = true;

@@ -3,7 +3,7 @@
     ./firefox.nix
   ];
 
-  config = lib.mkIf config.user {
+  config = lib.mkIf config.full {
     networking.firewall.allowedTCPPorts = [
       57621 # spotifyd
     ];

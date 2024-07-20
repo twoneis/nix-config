@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }: lib.mkIf config.user {
+{ lib, config, pkgs, ... }: lib.mkIf config.full {
   home-manager.users.${config.username} = {
     programs.firefox = {
       enable = true;
