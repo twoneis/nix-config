@@ -1,6 +1,7 @@
 { pkgs, config, ... }: {
   imports = [
     ./options.nix
+    ./disks.nix
   ];
 
   nixpkgs = {

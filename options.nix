@@ -1,7 +1,7 @@
 { lib, ... }: {
   options = let 
     inherit (lib) mkOption mkEnableOption;
-    inherit (lib.types) nullOr str attrsOf;
+    inherit (lib.types) nullOr attrsOf str;
   in {
     full = mkEnableOption "Enable complete configuration for end-user machine";
 
@@ -17,11 +17,7 @@
 
     disks = mkOption {
       type = attrsOf str;
-      default = {
-        boot = "";
-        crypt = "";
-        root = "";
-      };
+      default = { };
       example = {
         boot = "4672-C1A9";
         crypt = "747ae319-f189-44f5-9737-a42672e2c02d";
