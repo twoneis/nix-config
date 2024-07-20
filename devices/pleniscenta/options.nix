@@ -1,5 +1,5 @@
 { ... }: {
-  user = false;
+  full = false;
 
   withNiri = false;
   withGnome = false;

@@ -1,13 +1,6 @@
-{ lib, pkgs, ... }: let
-  disks = {
-    boot = "";
-    crypt = "";
-    root = "";
-  };
-in{
+{ lib, config, pkgs, ... }: {
   imports = [
     ./options.nix
-    ./impermanence.nix
   ];
 
   nixpkgs = {
@@ -21,10 +14,10 @@ in{
   boot = {
     initrd = {
       availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" ];
-      luks.devices.root.device = "/dev/disk/by-uuid/${disks.crypt}";
+      luks.devices.root.device = "/dev/disk/by-uuid/${config.disks.crypt}";
       postDeviceCommands = lib.mkAfter ''
         mkdir /btrfs_tmp
-        mount /dev/disk/by-uuid/${disks.root} /btrfs_tmp
+        mount /dev/disk/by-uuid/${config.disks.root} /btrfs_tmp
         if [[ -e /btrfs_tmp/root ]]; then
             mkdir -p /btrfs_tmp/old_roots
             timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%-d_%H:%M:%S")
@@ -61,28 +54,28 @@ in{
 
   fileSystems = {
     "/boot" = {
-      device = "/dev/disk/by-uuid/${disks.boot}";
+      device = "/dev/disk/by-uuid/${config.disks.boot}";
       fsType = "vfat";
     };
     "/" = {
-      device = "/dev/disk/by-uuid/${disks.root}";
+      device = "/dev/disk/by-uuid/${config.disks.root}";
       fsType = "btrfs";
       options = [ "subvol=root" "compress=zstd" "noatime" ];
     };
     "/nix" = {
-      device = "/dev/disk/by-uuid/${disks.root}";
+      device = "/dev/disk/by-uuid/${config.disks.root}";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
       neededForBoot = true;
     };
     "/persist" = {
-      device = "/dev/disk/by-uuid/${disks.root}";
+      device = "/dev/disk/by-uuid/${config.disks.root}";
       fsType = "btrfs";
       options = [ "subvol=persist" "compress=zstd" "noatime" ];
       neededForBoot = true;
     };
     "/swap" = {
-      device = "/dev/disk/by-uuid/${disks.root}";
+      device = "/dev/disk/by-uuid/${config.disks.root}";
       fsType = "btrfs";
       options = [ "subvol=swap" "noatime" ];
     };
