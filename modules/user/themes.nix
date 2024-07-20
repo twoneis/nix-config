@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  home-manager.users.twoneis = {
+{ config, pkgs, ... }: {
+  home-manager.users.${config.username} = {
     home.packages = with pkgs; [
       adwaita-icon-theme
       adwaita-qt

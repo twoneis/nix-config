@@ -13,7 +13,7 @@
       gvfs.enable = true;
     };
 
-    home-manager.users.twoneis = {
+    home-manager.users.${config.username} = {
       home.packages = with pkgs; [
         signal-desktop
         vesktop

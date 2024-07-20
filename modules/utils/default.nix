@@ -1,8 +1,8 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
-  home-manager.users.twoneis = {
+  home-manager.users.${config.username} = {
     home.packages = with pkgs; [
       man-pages
       man-pages-posix

@@ -1,5 +1,5 @@
 { lib, config, pkgs, ... }: lib.mkIf config.user {
-  home-manager.users.twoneis = {
+  home-manager.users.${config.username} = {
     programs.firefox = {
       enable = true;
       profiles = {

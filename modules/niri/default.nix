@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }: lib.mkIf config.withNiri {
   programs.niri.enable = true;
 
-  home-manager.users.twoneis = {
+  home-manager.users.${config.username} = {
     home.packages = with pkgs; [
       brightnessctl
       swaybg

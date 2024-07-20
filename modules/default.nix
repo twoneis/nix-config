@@ -74,9 +74,9 @@
     displayManager.gdm.enable = true;
   };
 
-  users.users.twoneis = {
+  users.users.${config.username}= {
     isNormalUser = true;
-    description = "twoneis";
+    description = config.username;
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
