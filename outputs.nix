@@ -1,4 +1,4 @@
-{ nixpkgs, lix, home-manager, niri, ... }@inputs: {
+{ nixpkgs, lix, home-manager, niri, impermanence, ... }@inputs: {
   nixosConfigurations = {
     # AMD Ryzen 5600X
     # Nvidia GeForce GTX 1060 (6GB)
@@ -55,6 +55,27 @@
         niri.nixosModules.niri
         home-manager.nixosModules.home-manager
         lix.nixosModules.default
+      ];
+    };
+
+    # Framework Laptop 13
+    # AMD Ryzen 5 7640U
+    # AMD Radeon 760M
+    # 16GB RAM
+    tunyon = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = {
+        inherit inputs;
+      };
+      modules = [
+        ./devices/tunyon
+        ./modules
+        ./options.nix
+        ./colors.nix
+        niri.nixosModules.niri
+        home-manager.nixosModules.home-manager
+        lix.nixosModules.default
+        impermanence.nixosModules.impermanence
       ];
     };
   };
