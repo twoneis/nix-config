@@ -14,7 +14,7 @@
   boot = {
     initrd = {
       availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "sd_mod" "sr_mod" "rtsx_pci_sdmmc" ];
-      luks.devices.root.device = "/dev/disk/by-uuid/747ae319-f189-44f5-9737-a42672e2c02d";
+      luks.devices.root.device = "/dev/disk/by-uuid/${config.disks.crypt}";
     };
 
     kernelModules = [ "kvm-intel" ];
@@ -30,21 +30,21 @@
 
   fileSystems = {
     "/boot" = {
-      device = "/dev/disk/by-uuid/4672-C1A9";
+      device = "/dev/disk/by-uuid/${config.disks.boot}";
       fsType = "vfat";
     };
     "/" = {
-      device = "/dev/disk/by-uuid/04255623-c061-4cf0-89fa-b3d8eb239d59";
+      device = "/dev/disk/by-uuid/${config.disks.root}";
       fsType = "btrfs";
       options = [ "subvol=root" "compress=zstd" "noatime" ];
     };
     "/nix" = {
-      device = "/dev/disk/by-uuid/04255623-c061-4cf0-89fa-b3d8eb239d59";
+      device = "/dev/disk/by-uuid/${config.disks.root}";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
     "/swap" = {
-      device = "/dev/disk/by-uuid/04255623-c061-4cf0-89fa-b3d8eb239d59";
+      device = "/dev/disk/by-uuid/${config.disks.root}";
       fsType = "btrfs";
       options = [ "subvol=swap" "noatime" ];
     };
