@@ -10,14 +10,8 @@
     ./vm
   ];
 
-  nixpkgs = {
-    overlays = [
-      inputs.nur.overlay
-    ];
-    config = {
-      allowUnfree = true;
-    };
-  };
+
+    nixpkgs.config.allowUnfree = true;
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";

@@ -5,7 +5,6 @@
   ];
 
   config = lib.mkIf config.full {
-
     # Audio
     security.rtkit.enable = true;
 

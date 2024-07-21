@@ -1,5 +1,10 @@
-{ lib, config, pkgs, ... }: lib.mkIf config.withNiri {
-  programs.niri.enable = true;
+{ inputs, lib, config, pkgs, ... }: lib.mkIf config.withNiri {
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri-unstable;
+  };
 
   home-manager.users.${config.username} = {
     home.packages = with pkgs; [
