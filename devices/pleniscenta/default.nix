@@ -46,7 +46,7 @@
       options = [ "subvol=persist" "compress=zstd" "noatime" ];
     }; 
     "/swap" = {
-      device = "/dev/disk/by-uuid/${config.disk.root}";
+      device = "/dev/disk/by-uuid/${config.disks.root}";
       fsType = "btrfs";
       options = [ "subvol=swap" "noatime" ];
     };
