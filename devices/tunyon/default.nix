@@ -1,5 +1,6 @@
 { lib, config, pkgs, ... }: {
   imports = [
+    ./disks.nix
     ./options.nix
   ];
 
