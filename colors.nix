@@ -1,7 +1,10 @@
-{ lib, ... }: {
-  options = with lib; {
+{ lib, ... }: let
+  inherit (lib) mkOption;
+  inherit (lib.types) attrsOf str;
+in {
+  options = {
     theme = mkOption {
-      type = with types; attrsOf str;
+      type = attrsOf str;
       default = {
         base = "#191724";
         surface = "#1f1d2e";
