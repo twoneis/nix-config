@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
   imports = [
     ./options.nix
+    ./disks.nix
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";
@@ -30,21 +31,21 @@
 
   fileSystems = {
     "/boot" = {
-      device = "/dev/disk/by-uuid/12CE-A600";
+      device = "/dev/disk/by-uuid/${config.disks.boot}";
       fsType = "vfat";
     };
     "/" = {
-      device = "/dev/disk/by-uuid/b4a61b48-017f-4d16-ab05-d5c867f2ca6f";
+      device = "/dev/disk/by-uuid/${config.disks.root}";
       fsType = "btrfs";
       options = [ "subvol=root" "compress=zstd" "noatime" ];
     };
     "/nix" = {
-      device = "/dev/disk/by-uuid/b4a61b48-017f-4d16-ab05-d5c867f2ca6f";
+      device = "/dev/disk/by-uuid/${config.disks.root}";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
     "/ext" = {
-      device = "/dev/disk/by-uuid/3ed92a26-775a-4e39-ac1c-84b2822cd3dd";
+      device = "/dev/disk/by-uuid/${config.disks.ext}";
       fsType = "btrfs";
       options = [ "subvol=ext" "compress=zstd" "noatime" ];
     };
