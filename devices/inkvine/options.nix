@@ -2,10 +2,6 @@
   full = true;
 
   withNiri = true;
-  withGnome = false;
-
-  withVM = false;
-  withContainers = false;
 
   withGames = true;
 

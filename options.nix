@@ -6,7 +6,6 @@
     full = mkEnableOption "Enable complete configuration for end-user machine";
 
     withNiri = mkEnableOption "Enable niri compositor";
-    withGnome = mkEnableOption "Enable Gnome";
 
     withVM = lib.mkEnableOption "Enable VM related configuration";
     withContainers = mkEnableOption "Enable container support";
@@ -14,6 +13,8 @@
     withGames = mkEnableOption "Enable games";
 
     withImpermanence = mkEnableOption "Use impermanence module";
+
+    withSecureBoot = mkEnableOption "Enable secure boot utilities (manual key-enrolling required)";
 
     disks = mkOption {
       type = attrsOf str;

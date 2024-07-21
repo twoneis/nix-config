@@ -2,7 +2,6 @@
   imports = [
     ./containers
     ./games
-    ./gnome
     ./home
     ./niri
     ./user

@@ -6,6 +6,7 @@
       "/var/lib/bluetooth"
       "/var/lib/nixos"
       "/var/lib/iwd"
+      "/etc/secureboot"
     ];
     files = [
       "/etc/machine-id"
@@ -18,7 +19,6 @@
         "Documents"
         "Pictures"
         "Videos"
-        "Games"
         "code"
         { directory = ".local/share/keyrings"; mode = "0700"; }
         ".local/share/direnv"
