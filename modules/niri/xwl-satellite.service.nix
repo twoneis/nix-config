@@ -1,6 +1,6 @@
 { lib, config, pkgs, ... }: lib.mkIf config.withNiri {
   environment.systemPackages = with pkgs; [ xwayland-satellite xwayland ];
-  systemd.services.xwayland-satellite = {
+  systemd.user.services.xwayland-satellite = {
     description = "Xwayland outside your Wayland";
 
     wantedBy = [ "graphical-session.target" ];
@@ -16,7 +16,7 @@
       StandardOutput = "journal";
 
       Restart = "on-failure";
-      RestartSec = "5s";
+      RestartSec = "2s";
     };
   };
 }
