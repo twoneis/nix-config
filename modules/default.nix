@@ -6,7 +6,9 @@ in {
     ./containers
     ./games
     ./home
+    ./impermanence
     ./niri
+    ./secureboot
     ./user
     ./utils
     ./vm
