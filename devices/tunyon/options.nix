@@ -5,6 +5,8 @@
 
   withGames = true;
 
+  withVm = true;
+
   hwmonPath = "/sys/class/hwmon/hwmon1/temp1_input";
 
   stateVersion = "24.05";
