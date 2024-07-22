@@ -48,6 +48,12 @@ in {
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
       neededForBoot = true;
     };
+    "/vm" = {
+      device = "/dev/disk/by-uuid/${config.disks.root}";
+      fsType = "btrfs";
+      options = [ "subvol=vm" "compress=zstd" "noatime" ];
+      neededForBoot = true;
+    };
     "/persist" = {
       device = "/dev/disk/by-uuid/${config.disks.root}";
       fsType = "btrfs";
