@@ -1,4 +1,4 @@
-{ lib, config, ... }: {
+{ lib, config, pkgs, ... }: {
   imports = [
     ./programs.nix
     ./themes.nix
@@ -27,6 +27,8 @@
         };
       };
     };
+
+    home-manager.users.${config.username}.home.packages = [ pkgs.blueberry ];
 
     services.blueman.enable = true;
   };
