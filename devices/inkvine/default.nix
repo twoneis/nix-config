@@ -1,7 +1,9 @@
-{ pkgs, config, ... }: {
+{ lib, config, pkgs, ... }: let
+  inherit (lib) mkDefault;
+in {
   imports = [
-    ./options.nix
     ./disks.nix
+    ./options.nix
   ];
 
   nixpkgs = {
@@ -14,17 +16,18 @@
 
   boot = {
     initrd = {
-      availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "sd_mod" "sr_mod" "rtsx_pci_sdmmc" ];
+      availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
       luks.devices.root.device = "/dev/disk/by-uuid/${config.disks.crypt}";
     };
-
-    kernelModules = [ "kvm-intel" ];
+    kernelModules = [ "kvm-amd" ];
     kernelPackages = pkgs.linuxPackages_zen;
 
     loader = {
       systemd-boot = {
-        enable = true;
+        enable = mkDefault true;
+        editor = false;
       };
+      timeout = 1;
       efi.canTouchEfiVariables = true;
     };
   };
@@ -43,6 +46,13 @@
       device = "/dev/disk/by-uuid/${config.disks.root}";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
+      neededForBoot = true;
+    };
+    "/persist" = {
+      device = "/dev/disk/by-uuid/${config.disks.root}";
+      fsType = "btrfs";
+      options = [ "subvol=persist" "compress=zstd" "noatime" ];
+      neededForBoot = true;
     };
     "/swap" = {
       device = "/dev/disk/by-uuid/${config.disks.root}";
@@ -53,14 +63,14 @@
   swapDevices = [ { device = "/swap/swapfile"; } ];
 
   services = {
-    thermald.enable = true;
-    upower.enable = true;
+    fwupd.enable = true;
+    power-profiles-daemon.enable = true;
   };
 
   hardware = {
     enableRedistributableFirmware = true;
     enableAllFirmware = true;
-    cpu.intel.updateMicrocode = true;
+    cpu.amd.updateMicrocode = true;
 
     graphics = {
       enable = true;

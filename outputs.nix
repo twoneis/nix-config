@@ -38,9 +38,10 @@ in {
       ] ++ modules;
     };
 
-    # Lenovo Thinkpad T540p
-    # Intel i7-4710MQ
-    # 8GB RAM
+    # Framework Laptop 13
+    # AMD Ryzen 5 7640U
+    # AMD Radeon 760M
+    # 16GB RAM
     inkvine = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
@@ -51,18 +52,7 @@ in {
       ] ++ modules;
     };
 
-    # Framework Laptop 13
-    # AMD Ryzen 5 7640U
-    # AMD Radeon 760M
-    # 16GB RAM
-    tunyon = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = {
-        inherit inputs;
-      };
-      modules = [
-        ./devices/tunyon
-      ] ++ modules;
-    };
+    # VM for luks-on-sleep
+
   };
 }
