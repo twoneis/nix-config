@@ -11,6 +11,7 @@ in mkIf config.withGames (mkMerge [
     };
   }) {
     programs.steam.enable = true;
+    programs.gamescope.enable = true;
     programs.gamemode.enable = true;
 
     home-manager.users.${config.username} = {
