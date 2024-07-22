@@ -8,7 +8,7 @@
 
     qt = {
       enable = true;
-      platformTheme.name = "kde";
+      platformTheme.name = "gnome";
       style.name = "adwaita-dark";
     };
 
