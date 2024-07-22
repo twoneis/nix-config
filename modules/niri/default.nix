@@ -12,7 +12,7 @@
     };
 
     services.logind = {
-      powerKey = "shutdown";
+      powerKey = "poweroff";
       powerKeyLongPress = "reboot";
       lidSwitch = "poweroff";
     };
