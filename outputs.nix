@@ -1,4 +1,4 @@
-{ nixpkgs, lix, home-manager, niri, impermanence, ... }@inputs: let
+{ nixpkgs, lix, home-manager, niri, impermanence, lanzaboote, ... }@inputs: let
   modules = [
     ./modules
     ./options.nix
@@ -7,6 +7,7 @@
     home-manager.nixosModules.home-manager
     lix.nixosModules.default
     impermanence.nixosModules.impermanence
+    lanzaboote.nixosModules.lanzaboote
   ];
 in {
   nixosConfigurations = {
