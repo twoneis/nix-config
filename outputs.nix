@@ -51,8 +51,5 @@ in {
         ./devices/inkvine
       ] ++ modules;
     };
-
-    # VM for luks-on-sleep
-
   };
 }
