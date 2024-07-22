@@ -11,6 +11,12 @@
       package = pkgs.niri-unstable;
     };
 
+    services.logind = {
+      powerKey = "shutdown";
+      powerKeyLongPress = "reboot";
+      lidSwitch = "poweroff";
+    };
+
     home-manager.users.${config.username} = {
       home.packages = with pkgs; [
         brightnessctl
