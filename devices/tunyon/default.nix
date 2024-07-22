@@ -16,7 +16,7 @@ in {
 
   boot = {
     initrd = {
-      availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" ];
+      availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
       luks.devices.root.device = "/dev/disk/by-uuid/${config.disks.crypt}";
     };
     kernelModules = [ "kvm-amd" ];
