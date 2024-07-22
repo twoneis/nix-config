@@ -1,4 +1,14 @@
-{ nixpkgs, lix, home-manager, niri, impermanence, ... }@inputs: {
+{ nixpkgs, lix, home-manager, niri, impermanence, ... }@inputs: let
+  modules = [
+    ./modules
+    ./options.nix
+    ./colors.nix
+    niri.nixosModules.niri
+    home-manager.nixosModules.home-manager
+    lix.nixosModules.default
+    impermanence.nixosModules.impermanence
+  ];
+in {
   nixosConfigurations = {
     # AMD Ryzen 5600X
     # Nvidia GeForce GTX 1060 (6GB)
@@ -10,13 +20,7 @@
       };
       modules = [
         ./devices/ellaca
-        ./modules
-        ./options.nix
-        ./colors.nix
-        niri.nixosModules.niri
-        home-manager.nixosModules.home-manager
-        lix.nixosModules.default
-      ];
+      ] ++ modules;
     };
 
     # Zotac ZBOX-CI327NANO
@@ -30,13 +34,7 @@
       };
       modules = [
         ./devices/pleniscenta
-        ./modules
-        ./options.nix
-        ./colors.nix
-        niri.nixosModules.niri
-        home-manager.nixosModules.home-manager
-        lix.nixosModules.default
-      ];
+      ] ++ modules;
     };
 
     # Lenovo Thinkpad T540p
@@ -49,13 +47,7 @@
       };
       modules = [
         ./devices/inkvine
-        ./modules
-        ./options.nix
-        ./colors.nix
-        niri.nixosModules.niri
-        home-manager.nixosModules.home-manager
-        lix.nixosModules.default
-      ];
+      ] ++ modules;
     };
 
     # Framework Laptop 13
@@ -69,14 +61,7 @@
       };
       modules = [
         ./devices/tunyon
-        ./modules
-        ./options.nix
-        ./colors.nix
-        niri.nixosModules.niri
-        home-manager.nixosModules.home-manager
-        lix.nixosModules.default
-        impermanence.nixosModules.impermanence
-      ];
+      ] ++ modules;
     };
   };
 }

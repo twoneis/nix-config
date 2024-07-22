@@ -1,4 +1,6 @@
-{ lib, config, pkgs, ... }: {
+{ lib, config, pkgs, ... }: let
+  inherit (lib) mkDefault;
+in {
   imports = [
     ./disks.nix
     ./options.nix
@@ -16,39 +18,16 @@
     initrd = {
       availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" ];
       luks.devices.root.device = "/dev/disk/by-uuid/${config.disks.crypt}";
-      postDeviceCommands = lib.mkAfter ''
-        mkdir /btrfs_tmp
-        mount /dev/disk/by-uuid/${config.disks.root} /btrfs_tmp
-        if [[ -e /btrfs_tmp/root ]]; then
-            mkdir -p /btrfs_tmp/old_roots
-            timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%-d_%H:%M:%S")
-            mv /btrfs_tmp/root "/btrfs_tmp/old_roots/$timestamp"
-        fi
-
-        delete_subvolume_recursively() {
-            IFS=$'\n'
-            for i in $(btrfs subvolume list -o "$1" | cut -f 9- -d ' '); do
-                delete_subvolume_recursively "/btrfs_tmp/$i"
-            done
-            btrfs subvolume delete "$1"
-        }
-
-        for i in $(find /btrfs_tmp/old_roots/ -maxdepth 1 -mtime +30); do
-            delete_subvolume_recursively "$i"
-        done
-
-        btrfs subvolume create /btrfs_tmp/root
-        umount /btrfs_tmp
-      '';
     };
-
     kernelModules = [ "kvm-amd" ];
     kernelPackages = pkgs.linuxPackages_zen;
 
     loader = {
       systemd-boot = {
-        enable = true;
+        enable = mkDefault true;
+        editor = false;
       };
+      timeout = 1;
       efi.canTouchEfiVariables = true;
     };
   };
@@ -84,7 +63,6 @@
   swapDevices = [ { device = "/swap/swapfile"; } ];
 
   services = {
-    upower.enable = true;
     fwupd.enable = true;
     power-profiles-daemon.enable = true;
   };

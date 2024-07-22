@@ -146,7 +146,6 @@
     "Mod+Shift+Ctrl+S".action.screenshot-window = [];
     "Print".action.screenshot-screen = [];
 
-    "Mod+Shift+L".action.spawn = "swaylock";
     "Mod+Shift+Q".action.quit = [];
   };
 }

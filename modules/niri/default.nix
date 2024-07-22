@@ -44,12 +44,6 @@
         borderRadius = 8;
         icons = false;
       };
-
-      programs.swaylock = {
-        enable = true;
-        package = pkgs.swaylock-effects;
-        settings = import ./swaylock.conf.nix { lib = lib; config = config; };
-      };
     };
   };
 }

@@ -2,7 +2,7 @@
   inherit (lib) mkIf mkMerge;
 in mkIf config.withGames (mkMerge [
   (mkIf config.withImpermanence {
-    users.${config.username}= {
+    environment.persistence."/persist".users.${config.username}= {
       directories = [
         "Games"
         ".steam"

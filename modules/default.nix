@@ -1,4 +1,7 @@
-{ inputs, pkgs, lib, config, ... }: {
+{ inputs, pkgs, lib, config, ... }: 
+let
+  inherit (lib) mkDefault;
+in {
   imports = [
     ./containers
     ./games
@@ -32,7 +35,7 @@
   documentation.nixos.enable = false;
 
   networking = {
-    useDHCP = lib.mkDefault true;
+    useDHCP = mkDefault true;
     wireless.iwd.enable = true;
     extraHosts = 
     ''
@@ -62,9 +65,11 @@
     };
   };
 
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
+  services = {
+    xserver = {
+      enable = true;
+      displayManager.gdm.enable = true;
+    };
   };
 
   users.users.${config.username}= {
