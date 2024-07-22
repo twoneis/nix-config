@@ -1,9 +1,9 @@
 { ... }: {
-  full = false;
+  full = true;
 
-  withNiri = false;
+  withNiri = true;
 
-  withGames = false;
+  withGames = true;
 
   hwmonPath = "/sys/class/hwmon/hwmon1/temp1_input";
 
