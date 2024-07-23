@@ -82,6 +82,16 @@
               }];
               definedAliases = [ "@no" ];
             };
+            "Arch Wiki" = {
+              urls = [{
+                template = "https://wiki.archlinux.org/index.php";
+                params = [
+                  { name = "search"; value = "{searchTerms}"; }
+                  { name = "fulltext"; value = "1"; }
+                ];
+              }];
+              definedAliases = [ "@aw" ];
+            };
             "Github" = {
               urls = [{
                 template = "https://github.com/search";
