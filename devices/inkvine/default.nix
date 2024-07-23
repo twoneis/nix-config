@@ -71,6 +71,10 @@ in {
   services = {
     fwupd.enable = true;
     power-profiles-daemon.enable = true;
+    btrfs.autoScrub = {
+      enable = true;
+      fileSystems = [ "/" ];
+    };
   };
 
   hardware = {
