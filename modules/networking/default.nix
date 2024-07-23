@@ -1,9 +1,9 @@
-{ lib, ... }: let
-  inherit (lib) mkDefault;
-in {
+{ ... }: {
   networking = {
-    useDHCP = mkDefault true;
-    wireless.iwd.enable = true;
+    networkmanager = {
+      enable = true;
+      wifi.backend = "iwd";
+    };
     extraHosts = 
     ''
       10.10.11.245 surveillance.htb
