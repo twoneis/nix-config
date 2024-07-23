@@ -20,6 +20,7 @@
       home.packages = with pkgs; [
         brightnessctl
         swaybg
+        swayidle
       ];
 
       programs.niri = {
@@ -41,16 +42,6 @@
         enable = true;
         package = pkgs.swaylock-effects;
         settings = import ./swaylock.conf.nix { lib = lib; config = config; };
-      };
-
-      services.swayidle = {
-        enable = true;
-        events = [
-          { event = "before-sleep"; command = "swaylock"; }
-        ];
-        timeouts = [
-          { timeout = 5; command = "swaylock"; }
-        ];
       };
 
       services.mako = {
