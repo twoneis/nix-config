@@ -13,8 +13,7 @@
 
     services.logind = {
       powerKey = "poweroff";
-      powerKeyLongPress = "reboot";
-      lidSwitch = "poweroff";
+      lidSwitch = "suspend";
     };
 
     home-manager.users.${config.username} = {
@@ -36,6 +35,19 @@
         enable = true;
         settings = import ./waybar.conf.nix { config = config; };
         style = builtins.readFile(./waybar.conf.css);
+      };
+
+      programs.swaylock = {
+        enable = true;
+        package = pkgs.swaylock-effects;
+        settings = import ./swaylock.conf.nix { lib = lib; config = config; };
+      };
+
+      programs.swayidle = {
+        enable = true;
+        events = [
+          { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock"; }
+        ];
       };
 
       services.mako = {
