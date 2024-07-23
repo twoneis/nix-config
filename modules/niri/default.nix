@@ -1,10 +1,16 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ lib, config, pkgs, ... }: let
+  inherit (lib) mkIf;
+  inherit (config) withNiri username;
+in {
   imports = [
     ./xwl-satellite.service.nix
   ];
 
-  config = lib.mkIf config.withNiri {
-    nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  config = mkIf withNiri {
+    environment.sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+    };
+
 
     programs.niri = {
       enable = true;
@@ -16,7 +22,7 @@
       lidSwitch = "suspend";
     };
 
-    home-manager.users.${config.username} = {
+    home-manager.users.${username} = {
       home.packages = with pkgs; [
         brightnessctl
         swaybg
