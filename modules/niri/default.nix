@@ -43,7 +43,7 @@
         settings = import ./swaylock.conf.nix { lib = lib; config = config; };
       };
 
-      programs.swayidle = {
+      services.swayidle = {
         enable = true;
         events = [
           { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock"; }
