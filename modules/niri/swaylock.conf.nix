@@ -18,7 +18,7 @@
   ring-caps-lock-color = config.theme.gold;
   ring-ver-color = config.theme.pine;
   ring-wrong-color = config.theme.love;
-  seperator-color = config.theme.base;
+  separator-color = config.theme.base;
   key-hl-color = config.theme.iris;
   bs-hl-color = config.theme.love;
   caps-lock-key-hl-color = config.theme.iris;
