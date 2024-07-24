@@ -41,7 +41,7 @@
       };
       format = "{icon}";
       format-alt = "{capacity}%";
-      format-icons = ["" "" "" "" ""];
+      format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
       tooltip = false;
     };
     "network" = {
