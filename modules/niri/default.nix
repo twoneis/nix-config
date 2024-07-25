@@ -41,7 +41,7 @@ in {
       programs.waybar = {
         enable = true;
         settings = import ./waybar.conf.nix { config = config; };
-        style = builtins.readFile(./waybar.conf.css);
+        style = (import ./waybar.css.nix { config = config; }).style;
       };
 
       programs.swaylock = {

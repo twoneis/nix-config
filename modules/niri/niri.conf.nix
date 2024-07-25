@@ -50,8 +50,8 @@
         { proportion = 0.75; }
       ];
 
-      default-column-width = { proportion = 0.25; };
-      gaps = 4;
+      default-column-width = { proportion = 0.5; };
+      gaps = 16;
   };
 
   window-rules = [
@@ -78,7 +78,7 @@
     { command = ["waybar"]; }
     { command = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0"]; }
     { command = ["brightnessctl" "s" "50%"]; }
-    { command = ["swaybg" "-c" "1f1d2e"]; }
+    { command = ["swaybg" "-i" "${./wallpaper.png}"]; }
     { command = ["swayidle" "-w" "before-sleep" "swaylock"]; }
   ];
 
