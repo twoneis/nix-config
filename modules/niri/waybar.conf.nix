@@ -55,7 +55,7 @@
     "wireplumber" = {
       format = "{icon}";
       format-alt = "{volume}%";
-      format-muted = "";
+      format-muted = "";
       format-icons = ["" "" ""];
       tooltip = false;
     };
