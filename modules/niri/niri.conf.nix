@@ -77,7 +77,7 @@
 
   spawn-at-startup = [
     { command = ["waybar"]; }
-    { command = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0"]; }
+    { command = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "1"]; }
     { command = ["brightnessctl" "s" "50%"]; }
     { command = ["swaybg" "-i" "${./wallpaper.png}"]; }
     { command = ["swayidle" "-w" "before-sleep" "swaylock"]; }
@@ -90,6 +90,8 @@
 
     "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "5%+"];
     "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"];
+    "XF86AudioMute".action.spawn = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
+
     "XF86MonBrightnessDown".action.spawn = ["brightnessctl" "-n=10%" "s" "5%-"];
     "XF86MonBrightnessUp".action.spawn = ["brightnessctl" "s" "5%+"];
 
