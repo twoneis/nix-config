@@ -14,11 +14,9 @@
         signal-desktop
         vesktop
         fractal
-        loupe
         snapshot
         nautilus
         libreoffice-qt6-fresh
-        spotify
         # freecad -- broken dependency
       ];
 
@@ -32,10 +30,6 @@
       };
 
       programs.pandoc = {
-        enable = true;
-      };
-
-      programs.mpv = {
         enable = true;
       };
 
