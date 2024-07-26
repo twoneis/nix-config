@@ -1,11 +1,16 @@
 { lib, config, pkgs, ... }: let
   inherit (lib) mkIf mkMerge;
-  holo = pkgs.writeShellApplication {
-    name = "holo";
+  holo-script = pkgs.writeShellApplication {
+    name = "holo-script";
     runtimeInputs = [ pkgs.steam pkgs.gamescope ];
     text = ''
       gamescope -f -h 1504 -w 2256 -r 60 -F fsr -e -- steam
     '';
+  };
+  holo = pkgs.makeDesktopItem {
+    name = "holo";
+    desktopName = "Holo";
+    exec = "${holo-script}/bin/holo-script";
   };
 in mkIf config.withGames (mkMerge [
   (mkIf config.withImpermanence {
