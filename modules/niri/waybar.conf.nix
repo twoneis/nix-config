@@ -36,8 +36,8 @@
     "battery" = {
       states = {
         good = 80;
-        warning = 50;
-        critical = 20;
+        warning = 30;
+        critical = 10;
       };
       format = "{icon}";
       format-alt = "{capacity}%";
