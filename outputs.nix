@@ -1,4 +1,4 @@
-{ nixpkgs, lix, home-manager, niri, impermanence, lanzaboote, ... }@inputs: let
+{ nixpkgs, lix, home-manager, nixos-hardware, niri, impermanence, lanzaboote, ... }@inputs: let
   modules = [
     ./modules
     ./options.nix
@@ -49,6 +49,7 @@ in {
       };
       modules = [
         ./devices/inkvine
+        nixos-hardware.nixosModules.framework-13-7040-amd
       ] ++ modules;
     };
   };
