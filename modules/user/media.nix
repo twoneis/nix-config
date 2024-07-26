@@ -4,21 +4,11 @@
     home.packages = with pkgs; [
       loupe
       spotify
+      amberol
     ];
 
     programs.mpv = {
       enable = true;
-    };
-
-    services.mopidy = {
-      enable = true;
-      extensionPackages = with pkgs; [
-        mopidy-mpd
-        mopidy-mpris
-        mopidy-muse
-        mopidy-spotify
-        mopidy-local
-      ];
     };
   };
 }
