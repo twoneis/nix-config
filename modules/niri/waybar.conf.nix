@@ -3,35 +3,43 @@
     layer = "top";
     position = "top";
     modules-left = [
-      "memory"
-      "cpu"
-      "temperature"
+      "backlight"
+      "wireplumber"
     ];
     modules-center = [
       "clock"
     ];
     modules-right = [
       "network"
-      "wireplumber"
       "battery"
     ];
-    "cpu" = {
-      interval = 10;
-      format = "{usage}%";
-    };
-    "temperature" = {
-      hwmon-path = config.hwmonPath;
-      format = "{temperatureC}°C ";
-      interval = 10;
+
+    "backlight" = {
+      format = "{icon}";
+      format-alt = "{percent}%";
+      format-icons = [ "" "" "" "" "" "" "" "" "" "" "" "" "" ];
       tooltip = false;
     };
-    "memory" = {
-      interval = 30;
-      format = "{percentage}% ";
+    "wireplumber" = {
+      format = "{icon}";
+      format-alt = "{volume}%";
+      format-muted = "";
+      format-icons = ["" "" ""];
+      tooltip = false;
     };
+
     "clock" = {
       format = "{:%H:%M}";
       format-alt = "{:%a, %Y-%m-%d}";
+    };
+  
+    "network" = {
+      format-wifi = "{icon}";
+      format-alt = "{essid}";
+      format-ethernet = "󰈁";
+      format-disconnected = "󰤭";
+      format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
+      tooltip = false;
     };
     "battery" = {
       states = {
@@ -42,21 +50,6 @@
       format = "{icon}";
       format-alt = "{capacity}%";
       format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
-      tooltip = false;
-    };
-    "network" = {
-      format-wifi = "{icon}";
-      format-alt = "{essid}";
-      format-ethernet = "󰈁";
-      format-disconnected = "󰤭";
-      format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
-      tooltip = false;
-    };
-    "wireplumber" = {
-      format = "{icon}";
-      format-alt = "{volume}%";
-      format-muted = "";
-      format-icons = ["" "" ""];
       tooltip = false;
     };
   };

@@ -32,17 +32,12 @@ in {
             background-color: ${background};
         }
 
-        #clock,
+        #backlight,
         #battery,
-        #memory,
+        #clock,
         #network,
-        #temperature,
         #wireplumber {
             padding: 0 15px;
-        }
-
-        #cpu {
-            padding: 0 0 0 15px;
         }
 
         /*-----Indicators----*/
@@ -53,10 +48,6 @@ in {
         	color: ${warning};
         }
         #battery.critical:not(.charging) {
-            color: ${critical};
-        }
-
-        #temperature.critical {
             color: ${critical};
         }
     '';
