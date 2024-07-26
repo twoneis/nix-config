@@ -35,9 +35,12 @@ in {
         #backlight,
         #battery,
         #clock,
-        #network,
-        #wireplumber {
+        #network {
             padding: 0 15px;
+        }
+
+        #wireplumber {
+            padding: 0 20px 0 0;
         }
 
         /*-----Indicators----*/
