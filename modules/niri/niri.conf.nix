@@ -9,6 +9,7 @@
       touchpad = {
           tap = true;
           natural-scroll = true;
+          dwt = true;
       };
       power-key-handling.enable = false;
   };
