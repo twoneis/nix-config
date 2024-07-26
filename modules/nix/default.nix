@@ -1,8 +1,4 @@
 { inputs, ... }: {
-  imports = [
-    ./nixpkgs.nix
-  ];
-
   nix = {
     nixPath = ["nixpkgs=${inputs.nixpkgs}"];
     gc = {
@@ -16,4 +12,9 @@
     };
   };
 
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+    };
+  };
 }

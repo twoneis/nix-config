@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }: let
+{ inputs, lib, config, pkgs, ... }: let
   inherit (lib) mkIf;
   inherit (config) withNiri username;
 in {
@@ -7,6 +7,10 @@ in {
   ];
 
   config = mkIf withNiri {
+    nixpkgs.overlays = mkIf config.withNiri [
+      inputs.niri.overlays.niri
+    ];
+
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
     };
