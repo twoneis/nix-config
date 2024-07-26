@@ -4,10 +4,6 @@
   ];
 
   config = lib.mkIf config.full {
-    networking.firewall.allowedTCPPorts = [
-      57621 # spotifyd
-    ];
-
     services = {
       # Needed for some features in nautilus such as auto-mounting and trash
       gvfs.enable = true;
@@ -22,6 +18,7 @@
         snapshot
         nautilus
         libreoffice-qt6-fresh
+        spotify
         # freecad -- broken dependency
       ];
 
@@ -40,19 +37,6 @@
 
       programs.mpv = {
         enable = true;
-      };
-
-      services.spotifyd = {
-        enable = true;
-        settings = {
-          global = {
-            device_name = config.networking.hostName;
-            bitrate = 320;
-            volume_normalisation = true;
-            autoplay = false;
-            zeroconf_port = 57621;
-          };
-        };
       };
 
       programs.thunderbird = {
