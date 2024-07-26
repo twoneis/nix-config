@@ -10,7 +10,7 @@
       enable = true;
     };
 
-    programs.mopidy = {
+    services.mopidy = {
       enable = true;
       extensionPackages = with pkgs; [
         mopidy-mpd
