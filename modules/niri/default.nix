@@ -44,7 +44,7 @@ in {
 
       programs.waybar = {
         enable = true;
-        settings = import ./waybar.conf.nix { config = config; };
+        settings = import ./waybar.conf.nix { };
         style = (import ./waybar.css.nix { config = config; }).style;
       };
 
