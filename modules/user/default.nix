@@ -1,6 +1,7 @@
 { lib, config, pkgs, ... }: {
   imports = [
     ./media.nix
+    ./notes.nix
     ./programs.nix
     ./themes.nix
   ];

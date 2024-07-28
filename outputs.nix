@@ -3,6 +3,7 @@
     ./modules
     ./options.nix
     ./colors.nix
+    ./keys.nix
     niri.nixosModules.niri
     home-manager.nixosModules.home-manager
     lix.nixosModules.default

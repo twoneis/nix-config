@@ -1,4 +1,4 @@
-{
+{...}: {
   language-server = {
     asm-lsp = {
       command = "asm-lsp";

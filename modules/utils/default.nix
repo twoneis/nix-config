@@ -52,8 +52,8 @@
       enable = true;
       defaultEditor = true;
       extraPackages = with pkgs; [ nil marksman ];
-      settings = import ./helix.conf.nix;
-      languages = import ./helix-languages.conf.nix;
+      settings = import ./helix.conf.nix { config = config; };
+      languages = import ./helix-languages.conf.nix { };
     };
 
     programs.direnv = {

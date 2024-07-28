@@ -1,4 +1,4 @@
-{
+{ config, ... }: {
   theme = "rose_pine";
 
   editor = {
@@ -30,19 +30,19 @@
   };
 
   keys.normal  = {
-    h = "move_char_left";
-    t = "move_line_up";
-    n = "move_line_down";
-    s = "move_char_right";
+    ${config.keys.up} = "move_line_up";
+    ${config.keys.down} = "move_line_down";
+    ${config.keys.left} = "move_char_left";
+    ${config.keys.right} = "move_char_right";
 
     C-n = "search_next";
     C-t = "search_prev";
   };
 
   keys.select = {
-    h = "extend_char_left";
-    t = "extend_line_up";
-    n = "extend_line_down";
-    s = "extend_char_right";
+    ${config.keys.up} = "extend_line_up";
+    ${config.keys.down} = "extend_line_down";
+    ${config.keys.left} = "extend_char_left";
+    ${config.keys.right} = "extend_char_right";
   };
 }
