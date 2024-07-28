@@ -29,7 +29,7 @@
       };
     };
 
-    home-manager.users.${config.username}.home.packages = [ pkgs.blueberry ];
+    home-manager.users.${config.username}.home.packages = [ pkgs.overskride ];
 
     services.blueman.enable = true;
   };
