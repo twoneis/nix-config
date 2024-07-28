@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ ... }: {
   mainBar = {
     layer = "top";
     position = "top";
@@ -31,6 +31,7 @@
     "clock" = {
       format = "{:%H:%M}";
       format-alt = "{:%a, %Y-%m-%d}";
+      tooltip = false;
     };
   
     "network" = {
