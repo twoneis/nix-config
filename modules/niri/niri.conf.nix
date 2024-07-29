@@ -88,7 +88,7 @@ in {
     # Shortcuts
     "Mod+A".action.spawn = "alacritty";
     "Mod+B".action.spawn = "firefox";
-    "Mod+U".action.spawn = ["fuzzel" "-I" "-T" "alacritty" "-p" ""];
+    "Mod+D".action.spawn = ["fuzzel" "-I" "-T" "alacritty" "-p" ""];
 
     "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "5%+"];
     "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"];
@@ -132,7 +132,6 @@ in {
     "Mod+Ctrl+${down}".action.focus-monitor-down = [];
     "Mod+Ctrl+${left}".action.focus-monitor-left = [];
     "Mod+Ctrl+${right}".action.focus-monitor-right = [];
-
     # Move columns between monitors
     "Mod+Shift+Ctrl+Up".action.move-column-to-monitor-up = [];
     "Mod+Shift+Ctrl+Down".action.move-column-to-monitor-down = [];
