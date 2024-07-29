@@ -4,7 +4,6 @@
 in {
   main = {
     font = "FiraCodeNerdFont:size=18";
-    prompt = "";
     icons-enabled = false;
     terminal = "alacritty -e";
     list-executables-in-path = true;
