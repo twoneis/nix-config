@@ -1,11 +1,24 @@
-{ lib, config, ... }: {
-  colors = with lib; with strings; {
-    background = concatStrings [ config.theme.base "ee" ];
-    text = concatStrings [ config.theme.text "ff" ];
-    match = concatStrings [ config.theme.gold "ff" ];
-    selection = concatStrings [ config.theme.highlight-med "ee" ];
-    selection-text = concatStrings [ config.theme.text "ff" ];
-    selection-match = concatStrings [ config.theme.gold "ff" ];
-    border = concatStrings [ config.theme.overlay "ff" ];
+{ lib, config, ... }: let
+  inherit (lib.strings) concatStrings;
+  inherit (config) theme;
+in {
+  main = {
+    font = "FiraCodeNerdFont:size=18";
+    prompt = "";
+    icons-enabled = false;
+    terminal = "alacritty -e";
+    list-executables-in-path = true;
+  };
+  colors = {
+    background = concatStrings [ theme.base "ee" ];
+    text = concatStrings [ theme.text "ff" ];
+    match = concatStrings [ theme.gold "ff" ];
+    selection = concatStrings [ theme.highlight-med "ee" ];
+    selection-text = concatStrings [ theme.text "ff" ];
+    selection-match = concatStrings [ theme.gold "ff" ];
   }; 
+  border = {
+    width = 0;
+    radius = 8;
+  };
 }

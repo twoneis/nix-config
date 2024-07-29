@@ -81,14 +81,14 @@ in {
     { command = ["waybar"]; }
     { command = ["brightnessctl" "s" "50%"]; }
     { command = ["swaybg" "-i" "${./wallpaper.png}"]; }
-    { command = ["swayidle" "-w" "before-sleep" "swaylock"]; }
+    { command = ["swayidle" "-w" "before-sleep" "swaylock" ]; }
   ];
 
   binds = {
     # Shortcuts
     "Mod+Z".action.spawn = "alacritty";
     "Mod+B".action.spawn = "firefox";
-    "Mod+Semicolon".action.spawn = ["fuzzel" "-I" "-T" "alacritty" "-p" ""];
+    "Mod+Space".action.spawn = "fuzzel";
 
     "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "5%+"];
     "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"];

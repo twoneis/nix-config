@@ -2,6 +2,7 @@
   inherit (lib.strings) concatStrings;
   inherit (config) theme;
 in {
+  daemonize = true;
   ignore-empty-password = true;
   submit-on-touch = true;
 
