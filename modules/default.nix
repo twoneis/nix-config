@@ -1,10 +1,11 @@
-{ pkgs, config, ... }: {
+{ lib, config, ... }: {
   imports = [
     ./containers
     ./fonts
     ./games
     ./home
     ./impermanence
+    ./layout
     ./networking
     ./niri
     ./nix
