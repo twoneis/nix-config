@@ -86,9 +86,9 @@ in {
 
   binds = {
     # Shortcuts
-    "Mod+A".action.spawn = "alacritty";
+    "Mod+Z".action.spawn = "alacritty";
     "Mod+B".action.spawn = "firefox";
-    "Mod+D".action.spawn = ["fuzzel" "-I" "-T" "alacritty" "-p" ""];
+    "Mod+Semicolon".action.spawn = ["fuzzel" "-I" "-T" "alacritty" "-p" ""];
 
     "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "5%+"];
     "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"];
@@ -98,7 +98,6 @@ in {
     "XF86MonBrightnessUp".action.spawn = ["brightnessctl" "s" "5%+"];
 
     "Mod+Backspace".action.close-window = [];
-    "Mod+K".action.center-column = [];
 
     # Move focus
     "Mod+Up".action.focus-window-up = [];
@@ -148,9 +147,11 @@ in {
     "Mod+BracketRight".action.expel-window-from-column = [];
 
     # Resize windows
-    "Mod+Z".action.switch-preset-column-width = [];
+    "Mod+G".action.switch-preset-column-width = [];
     "Mod+F".action.maximize-column = [];
     "Mod+Shift+F".action.fullscreen-window = [];
+
+    "Mod+C".action.center-column = [];
 
     "Mod+Plus".action.set-column-width = "+10%";
     "Mod+Minus".action.set-column-width = "-10%";
