@@ -7,6 +7,7 @@ in {
     icons-enabled = false;
     terminal = "alacritty -e";
     list-executables-in-path = true;
+    prompt = "'󱄅 '";
   };
   colors = {
     background = concatStrings [ theme.base "ee" ];
