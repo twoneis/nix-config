@@ -159,8 +159,8 @@ in {
     "Mod+Shift+Minus".action.set-window-height = "-10%";
 
     # Change Layout
-    "Mod+Comma".action.switch-layout = "prev";
-    "Mod+Period".action.switch-layout = "next";
+    "Mod+Shift+Comma".action.switch-layout = "prev";
+    "Mod+Shift+Period".action.switch-layout = "next";
 
     # Screenshot
     "Mod+Shift+P".action.screenshot = [];
