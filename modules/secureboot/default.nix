@@ -1,6 +1,7 @@
 { lib, config, pkgs, ... }: let
   inherit (lib) mkIf mkForce;
-in mkIf config.withSecureBoot {
+  inherit (config) conf;
+in mkIf conf.secureboot.enable {
   environment.systemPackages = [ pkgs.sbctl ];
 
   boot.loader.systemd-boot.enable = mkForce false;

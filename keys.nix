@@ -1,7 +1,7 @@
 { lib, ... }: let
   inherit (lib) mkOption;
   inherit (lib.types) attrsOf str;
-in {
+in{
   options = {
     keys = mkOption {
       type = attrsOf str;

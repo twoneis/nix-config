@@ -1,4 +1,7 @@
-{ lib, config, ... }: lib.mkIf config.withImpermanence {
+{ lib, config, ... }: let
+  inherit (lib) mkIf;
+  inherit (config) conf;
+in mkIf conf.impermanence.enable {
   environment.persistence."/persist" = {
     enable = true;
     directories = [
@@ -14,7 +17,7 @@
       "/etc/shadow"
     ];
 
-    users.${config.username}= {
+    users.${conf.username}= {
       directories = [
         "Documents"
         "Pictures"

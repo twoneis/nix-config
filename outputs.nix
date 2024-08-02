@@ -1,9 +1,10 @@
 { nixpkgs, lix, home-manager, nixos-hardware, niri, impermanence, lanzaboote, ... }@inputs: let
   modules = [
     ./modules
-    ./options.nix
     ./colors.nix
+    ./disks.nix
     ./keys.nix
+    ./options.nix
     niri.nixosModules.niri
     home-manager.nixosModules.home-manager
     lix.nixosModules.default

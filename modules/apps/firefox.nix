@@ -1,6 +1,9 @@
-{ inputs, lib, config, pkgs, ... }: lib.mkIf config.full {
+{ inputs, lib, config, pkgs, ... }: let
+  inherit (lib) mkIf;
+  inherit (config) conf;
+in mkIf conf.apps.enable {
   nixpkgs.overlays = [ inputs.nur.overlay ];
-  home-manager.users.${config.username} = {
+  home-manager.users.${conf.username} = {
     programs.firefox = {
       enable = true;
       profiles = {

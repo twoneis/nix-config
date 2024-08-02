@@ -1,5 +1,8 @@
-{ lib, config, ... }: {
+{ config, ... }: let
+  inherit (config) conf;
+in {
   imports = [
+    ./apps
     ./containers
     ./fonts
     ./games
@@ -10,7 +13,6 @@
     ./niri
     ./nix
     ./secureboot
-    ./user
     ./utils
     ./vm
   ];
@@ -29,11 +31,11 @@
     };
   };
 
-  users.users.${config.username}= {
+  users.users.${conf.username}= {
     isNormalUser = true;
-    description = config.username;
+    description = conf.username;
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  system.stateVersion = config.stateVersion;
+  system.stateVersion = conf.stateVersion;
 }

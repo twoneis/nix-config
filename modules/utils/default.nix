@@ -1,8 +1,10 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }: let
+  inherit (config) conf;
+in {
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
-  home-manager.users.${config.username} = {
+  home-manager.users.${conf.username} = {
     home.packages = with pkgs; [
       man-pages
       man-pages-posix

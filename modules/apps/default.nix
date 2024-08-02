@@ -1,4 +1,7 @@
-{ lib, config, pkgs, ... }: {
+{ lib, config, pkgs, ... }: let
+  inherit (lib) mkIf;
+  inherit (config) conf;
+in {
   imports = [
     ./media.nix
     ./notes.nix
@@ -6,7 +9,7 @@
     ./themes.nix
   ];
 
-  config = lib.mkIf config.full {
+  config = mkIf conf.apps.enable {
     # Audio
     security.rtkit.enable = true;
 
@@ -30,7 +33,7 @@
       };
     };
 
-    home-manager.users.${config.username}.home.packages = [ pkgs.overskride ];
+    home-manager.users.${conf.username}.home.packages = [ pkgs.overskride ];
 
     services.blueman.enable = true;
   };

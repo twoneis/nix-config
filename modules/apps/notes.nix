@@ -1,5 +1,8 @@
-{ lib, config, ... }: lib.mkIf config.full {
-  home-manager.users.${config.username} = {
+{ lib, config, ... }: let
+  inherit (lib) mkIf;
+  inherit (config) conf;
+in mkIf conf.apps.enable {
+  home-manager.users.${conf.username} = {
     home.packages = [
     ];
 

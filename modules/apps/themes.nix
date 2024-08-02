@@ -1,5 +1,8 @@
-{ lib, config, pkgs, ... }: lib.mkIf config.full {
-  home-manager.users.${config.username} = {
+{ lib, config, pkgs, ... }: let
+  inherit (lib) mkIf;
+  inherit (config) conf;
+in mkIf conf.apps.enable {
+  home-manager.users.${conf.username} = {
     home.packages = with pkgs; [
       adwaita-icon-theme
       adwaita-qt

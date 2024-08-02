@@ -1,5 +1,7 @@
-{ config, pkgs, ... }: {
-  home-manager.users.${config.username}.home.packages = [ pkgs.networkmanagerapplet ];
+{ config, pkgs, ... }: let
+  inherit (config) conf;
+in{
+  home-manager.users.${conf.username}.home.packages = [ pkgs.networkmanagerapplet ];
   networking = {
     networkmanager = {
       enable = true;

@@ -1,5 +1,6 @@
 { lib, config, pkgs, ... }: let
   inherit (lib) mkIf mkMerge;
+  inherit (config) conf;
   holo-script = pkgs.writeShellApplication {
     name = "holo-script";
     runtimeInputs = [ pkgs.steam pkgs.gamescope ];
@@ -12,9 +13,9 @@
     desktopName = "Holo";
     exec = "${holo-script}/bin/holo-script";
   };
-in mkIf config.withGames (mkMerge [
-  (mkIf config.withImpermanence {
-    environment.persistence."/persist".users.${config.username}= {
+in mkIf conf.games.enable (mkMerge [
+  (mkIf conf.impermanence.enable {
+    environment.persistence."/persist".users.${conf.username}= {
       directories = [
         "Games"
         ".steam"
@@ -26,7 +27,7 @@ in mkIf config.withGames (mkMerge [
     programs.gamescope.enable = true;
     programs.gamemode.enable = true;
 
-    home-manager.users.${config.username} = {
+    home-manager.users.${conf.username} = {
       home.packages = [
         pkgs.prismlauncher
         holo

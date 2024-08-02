@@ -1,15 +1,18 @@
-{ lib, config, pkgs, ... }: {
+{ lib, config, pkgs, ... }: let
+  inherit (lib) mkIf;
+  inherit (config) conf;
+in {
   imports = [
     ./firefox.nix
   ];
 
-  config = lib.mkIf config.full {
+  config = mkIf conf.apps.enable {
     services = {
       # Needed for some features in nautilus such as auto-mounting and trash
       gvfs.enable = true;
     };
 
-    home-manager.users.${config.username} = {
+    home-manager.users.${conf.username} = {
       home.packages = with pkgs; [
         signal-desktop
         vesktop

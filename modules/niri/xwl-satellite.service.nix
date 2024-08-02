@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }: let
   inherit (lib) mkIf;
-  inherit (config) withNiri;
-in mkIf withNiri {
+  inherit (config) conf;
+in mkIf conf.niri.enable {
   environment.systemPackages = with pkgs; [ xwayland-satellite xwayland ];
   systemd.user.services.xwayland-satellite = {
     description = "Xwayland outside your Wayland";
