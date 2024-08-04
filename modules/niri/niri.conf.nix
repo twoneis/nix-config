@@ -27,7 +27,7 @@ in {
     };
 
     "DP-1"  = {
-        scale = 1.0;
+        scale = 1.15;
         mode = {
           width = 5120;
           height = 2160;
@@ -66,6 +66,9 @@ in {
         bottom-right= 8.0;
       };
       clip-to-geometry = true;
+    } {
+      excludes = [{is-focused = true;}];
+      opacity = 0.95;
     }
   ];
 
