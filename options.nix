@@ -6,7 +6,7 @@ in {
     conf = {
       apps.enable = mkEnableOption "Enable complete configuration for end-user machine.";
       niri.enable = mkEnableOption "Enable niri compositor.";
-      vm.enable = lib.mkEnableOption "Enable VM related configuration.";
+      vm.enable = mkEnableOption "Enable VM related configuration.";
       containers.enable = mkEnableOption "Enable container support.";
       games.enable = mkEnableOption "Enable games.";
       impermanence.enable = mkEnableOption "Use impermanence module.";
@@ -22,18 +22,21 @@ in {
 
       stateVersion = mkOption {
         type = nullOr str;
+        description = "Nixos state version. Set to newest on first install and then don't change.";
         default = null;
         example = "24.05";
       };
 
       hmStateVersion = mkOption {
         type = nullOr str;
+        description = "Home-Manager state version. Set to newest on first install and then don't change.";
         default = null;
         example = "24.11";
       };
 
       keys = mkOption {
         type = attrsOf str;
+        description =- "Default key binds.";
         default = {
           up = "t";
           down = "n";
@@ -58,6 +61,7 @@ in {
 
     theme = mkOption {
       type = attrsOf str;
+      description = "Colors to be used for theming, the names and colors are from the rose-pine theme.";
       default = {
         base = "#191724";
         surface = "#1f1d2e";
