@@ -68,7 +68,7 @@ in {
       clip-to-geometry = true;
     } {
       excludes = [{is-focused = true;}];
-      opacity = 0.95;
+      opacity = 0.98;
     }
   ];
 
@@ -93,8 +93,8 @@ in {
     "Mod+B".action.spawn = "firefox";
     "Mod+Space".action.spawn = "fuzzel";
 
-    "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "5%+"];
-    "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"];
+    "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "10%+"];
+    "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "10%-"];
     "XF86AudioMute".action.spawn = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
 
     "XF86MonBrightnessDown".action.spawn = ["brightnessctl" "s" "5%-"];
