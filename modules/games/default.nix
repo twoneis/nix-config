@@ -31,6 +31,7 @@ in mkIf conf.games.enable (mkMerge [
       home.packages = [
         pkgs.prismlauncher
         pkgs.heroic
+        pkgs.itch
         holo
       ];
     };
