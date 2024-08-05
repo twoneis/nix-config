@@ -1,10 +1,10 @@
 { config, ... }: let
-  inherit (config.conf) keys;
+  inherit (config.conf) keys extraLayout;
 in {
   input = {
       keyboard = { 
           xkb = {
-            layout = "us,custom";
+            layout = if extraLayout.enable then "us,custom" else "us";
             options = "compose:ralt";
           };
       };

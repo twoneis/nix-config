@@ -1,4 +1,7 @@
-{ ... }: {
+{ lib, config, ... }: let
+  inherit (lib) mkIf;
+  inherit (config.conf) extraLayout;
+in mkIf extraLayout.enable {
   services.xserver.xkb = {
     layout = "us,custom";
     options = "compose:ralt";
