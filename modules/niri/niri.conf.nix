@@ -1,5 +1,5 @@
 { config, ... }: let
-  inherit (config.keys) up down left right;
+  inherit (config.conf) keys;
 in {
   input = {
       keyboard = { 
@@ -108,10 +108,10 @@ in {
     "Mod+Left".action.focus-column-left = [];
     "Mod+Right".action.focus-column-right = [];
 
-    "Mod+${up}".action.focus-window-up = [];
-    "Mod+${down}".action.focus-window-down = [];
-    "Mod+${left}".action.focus-column-left = [];
-    "Mod+${right}".action.focus-column-right = [];
+    "Mod+${keys.up}".action.focus-window-up = [];
+    "Mod+${keys.down}".action.focus-window-down = [];
+    "Mod+${keys.left}".action.focus-column-left = [];
+    "Mod+${keys.right}".action.focus-column-right = [];
 
     # Move column/window
     "Mod+Shift+Up".action.move-window-up = [];
@@ -119,10 +119,10 @@ in {
     "Mod+Shift+Left".action.move-column-left = [];
     "Mod+Shift+Right".action.move-column-right = [];
 
-    "Mod+Shift+${up}".action.move-window-up = [];
-    "Mod+Shift+${down}".action.move-window-down = [];
-    "Mod+Shift+${left}".action.move-column-left = [];
-    "Mod+Shift+${right}".action.move-column-right = [];
+    "Mod+Shift+${keys.up}".action.move-window-up = [];
+    "Mod+Shift+${keys.down}".action.move-window-down = [];
+    "Mod+Shift+${keys.left}".action.move-column-left = [];
+    "Mod+Shift+${keys.right}".action.move-column-right = [];
 
     # Move monitor focus
     "Mod+Ctrl+Up".action.focus-monitor-up = [];
@@ -130,20 +130,20 @@ in {
     "Mod+Ctrl+Left".action.focus-monitor-left = [];
     "Mod+Ctrl+Right".action.focus-monitor-right = [];
 
-    "Mod+Ctrl+${up}".action.focus-monitor-up = [];
-    "Mod+Ctrl+${down}".action.focus-monitor-down = [];
-    "Mod+Ctrl+${left}".action.focus-monitor-left = [];
-    "Mod+Ctrl+${right}".action.focus-monitor-right = [];
+    "Mod+Ctrl+${keys.up}".action.focus-monitor-up = [];
+    "Mod+Ctrl+${keys.down}".action.focus-monitor-down = [];
+    "Mod+Ctrl+${keys.left}".action.focus-monitor-left = [];
+    "Mod+Ctrl+${keys.right}".action.focus-monitor-right = [];
     # Move columns between monitors
     "Mod+Shift+Ctrl+Up".action.move-column-to-monitor-up = [];
     "Mod+Shift+Ctrl+Down".action.move-column-to-monitor-down = [];
     "Mod+Shift+Ctrl+Left".action.move-column-to-monitor-left = [];
     "Mod+Shift+Ctrl+Right".action.move-column-to-monitor-right = [];
 
-    "Mod+Shift+Ctrl+${up}".action.move-column-to-monitor-up = [];
-    "Mod+Shift+Ctrl+${down}".action.move-column-to-monitor-down = [];
-    "Mod+Shift+Ctrl+${left}".action.move-column-to-monitor-left = [];
-    "Mod+Shift+Ctrl+${right}".action.move-column-to-monitor-right = [];
+    "Mod+Shift+Ctrl+${keys.up}".action.move-column-to-monitor-up = [];
+    "Mod+Shift+Ctrl+${keys.down}".action.move-column-to-monitor-down = [];
+    "Mod+Shift+Ctrl+${keys.left}".action.move-column-to-monitor-left = [];
+    "Mod+Shift+Ctrl+${keys.right}".action.move-column-to-monitor-right = [];
 
     # Stack windows
     "Mod+BracketLeft".action.consume-window-into-column = [];

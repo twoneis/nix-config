@@ -1,5 +1,6 @@
 { config, pkgs, ... }: let
   inherit (config) conf;
+  inherit (config.conf) keys;
 in {
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
@@ -30,8 +31,8 @@ in {
     programs.less = {
       enable = true;
       keys = ''
-        t back-line
-        n forw-line
+        ${keys.up} back-line
+        ${keys.down} forw-line
       '';
     };
 

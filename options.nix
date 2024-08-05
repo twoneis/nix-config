@@ -1,27 +1,23 @@
 { lib, ... }: let
   inherit (lib) mkOption mkEnableOption;
-  inherit (lib.types) nullOr str;
+  inherit (lib.types) nullOr attrsOf str;
 in {
   options = {
     conf = {
-      apps.enable = mkEnableOption "Enable complete configuration for end-user machine";
-      niri.enable = mkEnableOption "Enable niri compositor";
-      vm.enable = lib.mkEnableOption "Enable VM related configuration";
-      containers.enable = mkEnableOption "Enable container support";
-      games.enable = mkEnableOption "Enable games";
-      impermanence.enable = mkEnableOption "Use impermanence module";
-      secureboot.enable = mkEnableOption "Enable secure boot utilities (manual key-enrolling required)";
+      apps.enable = mkEnableOption "Enable complete configuration for end-user machine.";
+      niri.enable = mkEnableOption "Enable niri compositor.";
+      vm.enable = lib.mkEnableOption "Enable VM related configuration.";
+      containers.enable = mkEnableOption "Enable container support.";
+      games.enable = mkEnableOption "Enable games.";
+      impermanence.enable = mkEnableOption "Use impermanence module.";
+      secureboot.enable = mkEnableOption "Enable secure boot utilities (manual key-enrolling required).";
+      extraLayout.enable = mkEnableOption "Enable additional custom layout.";
 
       username = mkOption {
         type = str;
+        description = "Username of the default user (single user setup).";
         default = "twoneis";
         example = "anna";
-      };
-
-      hwmonPath = mkOption {
-        type = nullOr str;
-        default = null;
-        example = "/sys/class/hwmon/hwmon1/temp1_input";
       };
 
       stateVersion = mkOption {
@@ -34,6 +30,67 @@ in {
         type = nullOr str;
         default = null;
         example = "24.11";
+      };
+
+      keys = mkOption {
+        type = attrsOf str;
+        default = {
+          up = "t";
+          down = "n";
+          left = "h";
+          right = "s";
+        };
+      };
+    };
+
+    device = {
+      disks = mkOption {
+        type = attrsOf str;
+        description = "A set of UUIDs of the partitions/lvms/... that can be used easily reused in the config. In this config boot and root are assumed to be always present.";
+        default = { };
+        example = {
+          boot = "4672-C1A9";
+          crypt = "747ae319-f189-44f5-9737-a42672e2c02d";
+          root = "04255623-c061-4cf0-89fa-b3d8eb239d59";
+        };
+      };
+    };
+
+    theme = mkOption {
+      type = attrsOf str;
+      default = {
+        base = "#191724";
+        surface = "#1f1d2e";
+        overlay = "#26233a";
+        muted = "#6e6a86";
+        subtle = "#908caa";
+        text = "#e0def4";
+        love = "#eb6f92";
+        gold = "#f6c177";
+        rose = "#ebbcba";
+        pine = "#31748f";
+        foam = "#9ccfd8";
+        iris = "#c4a7e7";
+        highlight-low = "#21202e";
+        highlight-med = "#403d52";
+        highlight-high = "#524f67";
+      };
+      example = {
+        base = "#191724";
+        surface = "#1f1d2e";
+        overlay = "#26233a";
+        muted = "#6e6a86";
+        subtle = "#908caa";
+        text = "#e0def4";
+        love = "#eb6f92";
+        gold = "#f6c177";
+        rose = "#ebbcba";
+        pine = "#31748f";
+        foam = "#9ccfd8";
+        iris = "#c4a7e7";
+        highlight-low = "#21202e";
+        highlight-med = "#403d52";
+        highlight-high = "#524f67";
       };
     };
   };

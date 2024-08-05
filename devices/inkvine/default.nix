@@ -1,5 +1,6 @@
 { lib, config, pkgs, ... }: let
   inherit (lib) mkDefault;
+  inherit (config.device) disks;
 in {
   imports = [
     ./disks.nix
@@ -17,7 +18,7 @@ in {
   boot = {
     initrd = {
       availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
-      luks.devices.root.device = "/dev/disk/by-uuid/${config.disks.crypt}";
+      luks.devices.root.device = "/dev/disk/by-uuid/${disks.crypt}";
     };
     kernelModules = [ "kvm-amd" ];
     kernelPackages = pkgs.linuxPackages_zen;
@@ -34,34 +35,34 @@ in {
 
   fileSystems = {
     "/boot" = {
-      device = "/dev/disk/by-uuid/${config.disks.boot}";
+      device = "/dev/disk/by-uuid/${disks.boot}";
       fsType = "vfat";
     };
     "/" = {
-      device = "/dev/disk/by-uuid/${config.disks.root}";
+      device = "/dev/disk/by-uuid/${disks.root}";
       fsType = "btrfs";
       options = [ "subvol=root" "compress=zstd" "noatime" ];
     };
     "/nix" = {
-      device = "/dev/disk/by-uuid/${config.disks.root}";
+      device = "/dev/disk/by-uuid/${disks.root}";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
       neededForBoot = true;
     };
     "/vm" = {
-      device = "/dev/disk/by-uuid/${config.disks.root}";
+      device = "/dev/disk/by-uuid/${disks.root}";
       fsType = "btrfs";
       options = [ "subvol=vm" "compress=zstd" "noatime" ];
       neededForBoot = true;
     };
     "/persist" = {
-      device = "/dev/disk/by-uuid/${config.disks.root}";
+      device = "/dev/disk/by-uuid/${disks.root}";
       fsType = "btrfs";
       options = [ "subvol=persist" "compress=zstd" "noatime" ];
       neededForBoot = true;
     };
     "/swap" = {
-      device = "/dev/disk/by-uuid/${config.disks.root}";
+      device = "/dev/disk/by-uuid/${disks.root}";
       fsType = "btrfs";
       options = [ "subvol=swap" "noatime" ];
     };

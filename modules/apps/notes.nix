@@ -1,6 +1,7 @@
 { lib, config, ... }: let
   inherit (lib) mkIf;
   inherit (config) conf;
+  inherit (config.conf) keys;
 in mkIf conf.apps.enable {
   home-manager.users.${conf.username} = {
     home.packages = [
@@ -9,10 +10,10 @@ in mkIf conf.apps.enable {
     programs.sioyek = {
       enable = true;
       bindings = {
-        "move_up" = config.keys.up;
-        "move_down" = config.keys.down;
-        "move_left" = config.keys.left;
-        "move_right" = config.keys.right;
+        "move_up" = keys.up;
+        "move_down" = keys.down;
+        "move_left" = keys.left;
+        "move_right" = keys.right;
       };
     };
   };

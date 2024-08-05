@@ -1,4 +1,6 @@
-{ config, ... }: {
+{ config, ... }: let
+  inherit (config.conf) keys;
+in {
   theme = "rose_pine";
 
   editor = {
@@ -30,19 +32,19 @@
   };
 
   keys.normal  = {
-    ${config.keys.up} = "move_line_up";
-    ${config.keys.down} = "move_line_down";
-    ${config.keys.left} = "move_char_left";
-    ${config.keys.right} = "move_char_right";
+    ${keys.up} = "move_line_up";
+    ${keys.down} = "move_line_down";
+    ${keys.left} = "move_char_left";
+    ${keys.right} = "move_char_right";
 
-    C-n = "search_next";
-    C-t = "search_prev";
+    "C-${keys.up}" = "search_prev";
+    "C-${keys.down}" = "search_next";
   };
 
   keys.select = {
-    ${config.keys.up} = "extend_line_up";
-    ${config.keys.down} = "extend_line_down";
-    ${config.keys.left} = "extend_char_left";
-    ${config.keys.right} = "extend_char_right";
+    ${keys.up} = "extend_line_up";
+    ${keys.down} = "extend_line_down";
+    ${keys.left} = "extend_char_left";
+    ${keys.right} = "extend_char_right";
   };
 }

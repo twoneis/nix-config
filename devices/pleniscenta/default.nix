@@ -1,4 +1,6 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }: let
+  inherit (config.device) disks;
+in {
   imports = [
     ./options.nix
     ./disks.nix
@@ -11,7 +13,7 @@
   boot = {
     initrd = {
       availableKernelModules = [ "ahci" "xhci_pci" "ums_realtek" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
-      luks.devices."root".device = "/dev/disk/by-uuid/${config.disks.crypt}";
+      luks.devices.root.device = "/dev/disk/by-uuid/${disks.crypt}";
     };
 
     kernelModules = [ "kvm-intel" ];
@@ -27,26 +29,26 @@
 
   fileSystems = {
     "/boot" = {
-      device = "/dev/disk/by-uuid/${config.disks.boot}";
+      device = "/dev/disk/by-uuid/${disks.boot}";
       fsType = "vfat";
     };
     "/" = {
-      device = "/dev/disk/by-uuid/${config.disks.root}";
+      device = "/dev/disk/by-uuid/${disks.root}";
       fsType = "btrfs";
       options = [ "subvol=root" "compress=zstd" "noatime" ];
     };
     "/nix" = {
-      device = "/dev/disk/by-uuid/${config.disks.root}";
+      device = "/dev/disk/by-uuid/${disks.root}";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
     "/persist" = {
-      device = "/dev/disk/by-uuid/${config.disks.root}";
+      device = "/dev/disk/by-uuid/${disks.root}";
       fsType = "btrfs";
       options = [ "subvol=persist" "compress=zstd" "noatime" ];
     }; 
     "/swap" = {
-      device = "/dev/disk/by-uuid/${config.disks.root}";
+      device = "/dev/disk/by-uuid/${disks.root}";
       fsType = "btrfs";
       options = [ "subvol=swap" "noatime" ];
     };

@@ -1,4 +1,6 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }: let
+  inherit (config.device) disks;
+in{
   imports = [
     ./options.nix
     ./disks.nix
@@ -31,21 +33,21 @@
 
   fileSystems = {
     "/boot" = {
-      device = "/dev/disk/by-uuid/${config.disks.boot}";
+      device = "/dev/disk/by-uuid/${disks.boot}";
       fsType = "vfat";
     };
     "/" = {
-      device = "/dev/disk/by-uuid/${config.disks.root}";
+      device = "/dev/disk/by-uuid/${disks.root}";
       fsType = "btrfs";
       options = [ "subvol=root" "compress=zstd" "noatime" ];
     };
     "/nix" = {
-      device = "/dev/disk/by-uuid/${config.disks.root}";
+      device = "/dev/disk/by-uuid/${disks.root}";
       fsType = "btrfs";
       options = [ "subvol=nix" "compress=zstd" "noatime" ];
     };
     "/ext" = {
-      device = "/dev/disk/by-uuid/${config.disks.ext}";
+      device = "/dev/disk/by-uuid/${disks.ext}";
       fsType = "btrfs";
       options = [ "subvol=ext" "compress=zstd" "noatime" ];
     };
