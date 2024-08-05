@@ -1,4 +1,4 @@
-{ config, ... }: let
+{ config, pkgs, ... }: let
   inherit (config) conf;
 in {
   imports = [
@@ -28,6 +28,7 @@ in {
     xserver = {
       enable = true;
       displayManager.gdm.enable = true;
+      excludePackages = [ pkgs.xterm ];
     };
   };
 

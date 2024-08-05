@@ -30,6 +30,7 @@ in mkIf conf.games.enable (mkMerge [
     home-manager.users.${conf.username} = {
       home.packages = [
         pkgs.prismlauncher
+        pkgs.heroic
         holo
       ];
     };
