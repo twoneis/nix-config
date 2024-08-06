@@ -13,5 +13,5 @@ in mkIf extraLayout.enable {
     };
  };
 
-  console.keyMap = "custom";
+  console.keyMap = "us";
 }
