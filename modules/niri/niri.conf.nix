@@ -166,8 +166,8 @@ in {
     "Mod+Shift+Period".action.switch-layout = "next";
 
     # Screenshot
-    "Mod+Shift+P".action.screenshot = [];
-    "Mod+Shift+Ctrl+P".action.screenshot-window = [];
+    "Mod+P".action.screenshot = [];
+    "Mod+Shift+P".action.screenshot-window = [];
     "Print".action.screenshot-screen = [];
 
     # Exit
