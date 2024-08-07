@@ -10,8 +10,8 @@ in mkIf conf.apps.enable {
         "default" = {
           id = 0;
 
-          search.default = "Startpage";
-          search.privateDefault = "Startpage";
+          search.default = "Googlee";
+          search.privateDefault = "Googlee";
           search.engines = {
             "DuckDuckGo".metaData.hidden = true;
             "Google".metaData.hidden = true;
