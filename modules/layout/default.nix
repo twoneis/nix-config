@@ -3,7 +3,7 @@
   inherit (config.conf) extraLayout;
 in mkIf extraLayout.enable {
   services.xserver.xkb = {
-    layout = "us,custom";
+    layout = "custom,us";
     options = "compose:ralt";
 
     extraLayouts."custom" = {

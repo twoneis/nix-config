@@ -4,7 +4,7 @@ in {
   input = {
       keyboard = { 
           xkb = {
-            layout = if extraLayout.enable then "us,custom" else "us";
+            layout = if extraLayout.enable then "custom,us" else "us";
             options = "compose:ralt";
           };
       };
