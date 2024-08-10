@@ -79,13 +79,16 @@ in {
 
   hotkey-overlay.skip-at-startup = true;
 
-  environment."DISPLAY" = ":0";
+  environment = {
+    "DISPLAY" = ":0"; 
+  };
 
   spawn-at-startup = [
-    { command = ["waybar"]; }
-    { command = ["brightnessctl" "s" "50%"]; }
-    { command = ["swaybg" "-i" "${./wallpaper.png}"]; }
-    { command = ["swayidle" "-w" "before-sleep" "swaylock" ]; }
+    { command = [ "waybar" ]; }
+    { command = [ "brightnessctl" "s" "50%" ]; }
+    { command = [ "swaybg" "-i" "${./wallpaper.png}" ]; }
+    { command = [ "swayidle" "-w" "before-sleep" "swaylock" ]; }
+    { command = [ "gammastep" "-O" "5400" ]; }
   ];
 
   binds = {
@@ -94,12 +97,12 @@ in {
     "Mod+B".action.spawn = "firefox";
     "Mod+Space".action.spawn = "fuzzel";
 
-    "XF86AudioRaiseVolume".action.spawn = ["wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "10%+"];
-    "XF86AudioLowerVolume".action.spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "10%-"];
-    "XF86AudioMute".action.spawn = ["wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"];
+    "XF86AudioRaiseVolume".action.spawn = [ "wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "10%+" ];
+    "XF86AudioLowerVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "10%-" ];
+    "XF86AudioMute".action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" ];
 
-    "XF86MonBrightnessDown".action.spawn = ["brightnessctl" "s" "5%-"];
-    "XF86MonBrightnessUp".action.spawn = ["brightnessctl" "s" "5%+"];
+    "XF86MonBrightnessDown".action.spawn = [ "brightnessctl" "s" "5%-" ];
+    "XF86MonBrightnessUp".action.spawn = [ "brightnessctl" "s" "5%+" ];
 
     "Mod+Backspace".action.close-window = [];
 

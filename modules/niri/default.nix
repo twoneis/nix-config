@@ -31,6 +31,7 @@ in {
         brightnessctl
         swaybg
         swayidle
+        gammastep
       ];
 
       programs.niri = {
