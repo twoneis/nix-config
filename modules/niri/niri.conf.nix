@@ -40,8 +40,9 @@ in {
       focus-ring = {
           width = 4;
           active.gradient = {
-            to=config.theme.rose;
-            from=config.theme.pine;
+            to = config.theme.rose;
+            from = config.theme.pine;
+            in' = "oklch shorter hue";
             angle=135;
           };
           inactive.color = config.theme.iris;
