@@ -5,7 +5,7 @@
     name = "holo-script";
     runtimeInputs = [ pkgs.steam pkgs.gamescope ];
     text = ''
-      gamescope -f -h 1504 -w 2256 -r 60 -F fsr -e -- steam
+      gamescope -f -r 60 -F fsr -e -- steam
     '';
   };
   holo = pkgs.makeDesktopItem {
