@@ -34,5 +34,10 @@
     formatter = { command = "clang-format"; args = [ "-style=file" ]; };
     indent = { tab-width = 8; unit = " "; };
     file-types = [ "cpp" "hpp" ];
+  } {
+    name = "typst";
+    auto-format = true;
+    formatter = { command = "typstfmt"; };
+    file-types = [ "typ" ];
   }];
 }
