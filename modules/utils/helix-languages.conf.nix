@@ -28,5 +28,11 @@
     formatter = { command = "clang-format"; args = [ "-style=file" ]; };
     indent = { tab-width = 8; unit = " "; };
     file-types = [ "c" "h" ];
+  } {
+    name = "cpp";
+    auto-format = true;
+    formatter = { command = "clang-format"; args = [ "-style=file" ]; };
+    indent = { tab-width = 8; unit = " "; };
+    file-types = [ "cpp" "hpp" ];
   }];
 }
