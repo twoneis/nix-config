@@ -106,31 +106,9 @@ in mkIf conf.apps.enable {
               "YouTube"
               "Nix Packages"
               "Nix Options"
+              "Arch Wiki"
               "Github"
             ];
-          };
-
-          containers = {
-            personal = {
-              color = "purple";
-              icon = "fingerprint";
-              id = 1;
-            };
-            student = {
-              color = "turquoise";
-              icon = "circle";
-              id = 2;
-            };
-            work = {
-              color = "yellow";
-              icon = "briefcase";
-              id = 3;
-            };
-            shopping = {
-              color = "green";
-              icon = "cart";
-              id = 4;
-            };
           };
 
           bookmarks = { };
@@ -163,7 +141,6 @@ in mkIf conf.apps.enable {
             youtube-nonstop
             enhancer-for-youtube
             firefox-color
-            multi-account-containers
           ];
         };
       };
