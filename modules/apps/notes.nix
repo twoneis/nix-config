@@ -4,9 +4,6 @@
   inherit (config.conf) keys;
 in mkIf conf.apps.enable {
   home-manager.users.${conf.username} = {
-    home.packages = [
-    ];
-
     programs.sioyek = {
       enable = true;
       bindings = {

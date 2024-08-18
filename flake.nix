@@ -11,9 +11,7 @@
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixos-hardware = {
@@ -26,9 +24,7 @@
 
     niri = {
       url = "github:sodiboo/niri-flake";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     impermanence = {
