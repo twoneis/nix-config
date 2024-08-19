@@ -131,6 +131,8 @@ in mkIf conf.apps.enable {
             "media.cache_resume_threshold" = 9999;
             "privacy.userContext.newTabContainerOnLeftClick.enabled" = true;
             "browser.aboutConfig.showWarning" = false;
+            "gfx.webrender.all" = true;
+            "medai.ffmpeg.vaapi.enabled" = true;
           };
 
           extensions = with pkgs.nur.repos.rycee.firefox-addons; [
