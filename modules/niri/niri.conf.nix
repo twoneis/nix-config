@@ -55,7 +55,14 @@ in {
       ];
 
       default-column-width = { proportion = 0.5; };
+
       gaps = 16;
+      struts = {
+        left = -8;
+        right = -8;
+        top = -8;
+        bottom = -8;
+      };
   };
 
   window-rules = [
