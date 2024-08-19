@@ -22,8 +22,10 @@ in {
     };
 
     services.logind = {
-      powerKey = "poweroff";
+      powerKey = "ignore";
+      powerKeyLongPress = "poweroff";
       lidSwitch = "suspend";
+      lidSwitchDocked = "ignore";
     };
 
     home-manager.users.${conf.username} = {
