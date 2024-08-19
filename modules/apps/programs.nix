@@ -47,7 +47,7 @@ in {
 
       programs.alacritty = {
         enable = true;
-        settings = import ./alacritty.conf.nix;
+        settings = import ./alacritty.conf.nix { config = config; };
       };
     };
   };
