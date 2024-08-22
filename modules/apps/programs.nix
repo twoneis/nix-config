@@ -20,6 +20,7 @@ in {
         snapshot
         nautilus
         libreoffice-qt6-fresh
+        inkscape
         # freecad -- broken dependency
       ];
 
