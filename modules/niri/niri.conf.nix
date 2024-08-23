@@ -24,15 +24,27 @@ in {
           height = 1824;
           refresh = 59.959;
         };
+        background-color = config.theme.base;
     };
 
     "DP-1"  = {
-        scale = 1.15;
+        scale = 1;
         mode = {
           width = 5120;
           height = 2160;
           refresh = 59.940;
         };
+        background-color = config.theme.base;
+    };
+
+    "DP-2"  = {
+        scale = 1;
+        mode = {
+          width = 1920;
+          height = 1080;
+          refresh = 60.0;
+        };
+        background-color = config.theme.base;
     };
   };
 
