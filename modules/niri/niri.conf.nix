@@ -18,7 +18,7 @@ in {
 
   outputs = {
     "eDP-1" = {
-        scale = 1.15;
+        scale = 1;
         mode = {
           width = 2736;
           height = 1824;
@@ -56,13 +56,7 @@ in {
 
       default-column-width = { proportion = 0.5; };
 
-      gaps = 16;
-      struts = {
-        left = -8;
-        right = -8;
-        top = -8;
-        bottom = -8;
-      };
+      gaps = 2;
   };
 
   window-rules = [
@@ -74,9 +68,6 @@ in {
         bottom-right= 8.0;
       };
       clip-to-geometry = true;
-    } {
-      excludes = [{is-focused = true;}];
-      opacity = 0.98;
     }
   ];
 
@@ -92,11 +83,7 @@ in {
 
   spawn-at-startup = [
     { command = [ "waybar" ]; }
-    { command = [ "brightnessctl" "s" "50%" ]; }
-    { command = [ "swaybg" "-i" "${./wallpaper.png}" ]; }
     { command = [ "swayidle" "-w" "before-sleep" "swaylock" ]; }
-    { command = [ "swayosd-server" ]; }
-    { command = [ "gammastep" "-O" "5400" ]; }
   ];
 
   binds = {

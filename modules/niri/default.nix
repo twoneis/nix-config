@@ -1,6 +1,8 @@
 { inputs, lib, config, pkgs, ... }: let
   inherit (lib) mkIf;
   inherit (config) conf;
+  swayosd-style = pkgs.writeText "swayosd.css" 
+    (import ./swayosd.css.nix { config = config; }).style;
 in {
   imports = [
     ./xwl-satellite.service.nix
@@ -30,12 +32,14 @@ in {
 
     home-manager.users.${conf.username} = {
       home.packages = with pkgs; [
-        brightnessctl
-        swaybg
         swayidle
-        swayosd
-        gammastep
       ];
+
+      services.swayosd = {
+        enable = true;
+        topMargin = 0.8;
+        stylePath = swayosd-style; 
+      };
 
       programs.niri = {
         settings = import ./niri.conf.nix { config = config; };
