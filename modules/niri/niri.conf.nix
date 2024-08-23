@@ -38,7 +38,7 @@ in {
 
   layout = {
       focus-ring = {
-          width = 4;
+          width = 2;
           active.gradient = {
             to = config.theme.rose;
             from = config.theme.pine;
@@ -57,6 +57,9 @@ in {
       default-column-width = { proportion = 0.5; };
 
       gaps = 2;
+      struts = {
+        top = 4;
+      };
   };
 
   window-rules = [

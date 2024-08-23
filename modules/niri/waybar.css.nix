@@ -1,52 +1,62 @@
 { config, ... }: let
-    background = config.theme.base;
-    font = config.theme.text;
-    charging = config.theme.pine;
-    warning = config.theme.rose;
-    critical = config.theme.love;
+    best = config.theme.pine;
+    better = config.theme.foam;
+    good = config.theme.iris;
+    bad = config.theme.rose;
+    worse = config.theme.gold;
+    worst = config.theme.love;
+    charging = config.theme.highlight-high;
 in {
     style = ''
         * {
-            border: none;
-            font-family: FiraCodeNerdFont;
-            font-size: 18px;
-            color: ${font};
-            border-radius: 20px;
+            font-size: 1px;
         }
 
         window#waybar {
             background: rgba(0, 0, 0, 0);
         }
 
-        /*-----module groups----*/
-        .modules-right {
-            background-color: ${background};
-            margin: 2px 10px 0 0;
+        #battery {
+            border: none;
+            border-radius: 4px;
+            min-height: 4px;
+            min-width: 720px;
+            margin: 2px;
+            background: ${best};
         }
-        .modules-center {
-            background-color: ${background};
-            margin: 2px 0 0 0;
+        #battery.better {
+            background: ${better};
         }
-        .modules-left {
-            margin: 2px 0 0 10px;
-            background-color: ${background};
+        #battery.good {
+            background: ${good};
+        }
+        #battery.bad {
+            background: ${bad};
+        }
+        #battery.worse {
+            background: ${worse};
+        }
+        #battery.worst {
+            background: ${worst};
         }
 
-        #battery,
-        #clock,
-        #network {
-            padding: 0 15px;
-        }
-
-        /*-----Indicators----*/
         #battery.charging {
-            color: ${charging};
+            background: linear-gradient(0deg, ${charging}, ${best});
         }
-        #battery.warning:not(.charging) {
-        	color: ${warning};
+        #battery.better.charging {
+            background: linear-gradient(0deg, ${best}, ${better});
         }
-        #battery.critical:not(.charging) {
-            color: ${critical};
+        #battery.good.charging {
+            background: linear-gradient(0deg, ${better}, ${good});
+        }
+        #battery.bad.charging {
+            background: linear-gradient(0deg, ${good}, ${bad});
+        }
+        #battery.worse.charging {
+            background: linear-gradient(0deg, ${bad}, ${worse});
+        }
+        #battery.worst.charging {
+            background: linear-gradient(0deg, ${worse}, ${worst});
         }
     '';
 }

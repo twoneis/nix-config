@@ -3,7 +3,7 @@
   inherit (config) theme;
 in {
   main = {
-    font = "FiraCodeNerdFont:size=18";
+    font = "FiraCodeNerdFont:size=8";
     icons-enabled = false;
     terminal = "alacritty -e";
     prompt = "'󱄅 '";

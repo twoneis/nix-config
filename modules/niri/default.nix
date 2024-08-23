@@ -23,6 +23,10 @@ in {
       package = pkgs.niri-unstable;
     };
 
+    services.upower = {
+      enable = true;
+    };
+
     services.logind = {
       powerKey = "ignore";
       powerKeyLongPress = "poweroff";
