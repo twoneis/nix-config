@@ -95,6 +95,7 @@ in {
     { command = [ "brightnessctl" "s" "50%" ]; }
     { command = [ "swaybg" "-i" "${./wallpaper.png}" ]; }
     { command = [ "swayidle" "-w" "before-sleep" "swaylock" ]; }
+    { command = [ "swayosd-server" ]; }
     { command = [ "gammastep" "-O" "5400" ]; }
   ];
 
@@ -104,12 +105,22 @@ in {
     "Mod+B".action.spawn = "firefox";
     "Mod+Space".action.spawn = "fuzzel";
 
-    "XF86AudioRaiseVolume".action.spawn = [ "wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "10%+" ];
-    "XF86AudioLowerVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "10%-" ];
-    "XF86AudioMute".action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" ];
+    "XF86AudioRaiseVolume".action.spawn = [ 
+      "swayosd-client" "--output-volume" "raise"
+    ];
+    "XF86AudioLowerVolume".action.spawn = [
+      "swayosd-client" "--output-volume" "lower"
+    ];
+    "XF86AudioMute".action.spawn = [
+      "swayosd-client" "--output-volume" "mute-toggle"
+    ];
 
-    "XF86MonBrightnessDown".action.spawn = [ "brightnessctl" "s" "5%-" ];
-    "XF86MonBrightnessUp".action.spawn = [ "brightnessctl" "s" "5%+" ];
+    "XF86MonBrightnessDown".action.spawn = [
+      "swayosd-client" "--brightness" "lower"
+    ];
+    "XF86MonBrightnessUp".action.spawn = [
+      "swayosd-client" "--brightness" "raise"
+    ];
 
     "Mod+Backspace".action.close-window = [];
 

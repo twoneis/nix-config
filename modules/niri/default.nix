@@ -33,6 +33,7 @@ in {
         brightnessctl
         swaybg
         swayidle
+        swayosd
         gammastep
       ];
 
