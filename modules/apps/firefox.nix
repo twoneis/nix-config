@@ -129,7 +129,6 @@ in mkIf conf.apps.enable {
             "browser.translation.enable" = false;
             "media.cache_readhead_limit" = 9999;
             "media.cache_resume_threshold" = 9999;
-            "privacy.userContext.newTabContainerOnLeftClick.enabled" = true;
             "browser.aboutConfig.showWarning" = false;
             "gfx.webrender.all" = true;
             "medai.ffmpeg.vaapi.enabled" = true;
