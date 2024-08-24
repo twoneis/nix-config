@@ -8,9 +8,9 @@
 
     "battery" = {
       states = {
-        better = 70;
+        better = 75;
         good = 50;
-        bad = 30;
+        bad = 25;
         worse = 10;
         worst = 5;
       };
