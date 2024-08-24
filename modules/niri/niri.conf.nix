@@ -70,7 +70,7 @@ in {
 
       gaps = 2;
       struts = {
-        top = 4;
+        top = 2;
       };
   };
 
