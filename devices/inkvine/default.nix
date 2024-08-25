@@ -15,6 +15,7 @@ in {
     initrd = {
       availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
       luks.devices.root.device = "/dev/disk/by-uuid/${disks.crypt}";
+      kernelModules = [ "amdgpu" ];
     };
     kernelModules = [ "kvm-amd" ];
     kernelPackages = pkgs.linuxPackages_zen;
