@@ -1,6 +1,7 @@
 { ... }: {
   conf = {
     apps.enable = true;
+    games.enable = true;
     niri.enable = true;
     containers.enable = true;
 

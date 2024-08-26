@@ -21,7 +21,7 @@ in {
         nautilus
         libreoffice-qt6-fresh
         inkscape
-        cura
+        prusa-slicer
         # freecad -- broken dependency
       ];
 

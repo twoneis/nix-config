@@ -13,5 +13,9 @@ in mkIf conf.apps.enable {
         "move_right" = keys.right;
       };
     };
+
+    programs.fish.shellAbbrs = {
+      pdf = "sioyek";
+    };
   };
 }
