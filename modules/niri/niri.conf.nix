@@ -92,10 +92,6 @@ in {
 
   hotkey-overlay.skip-at-startup = true;
 
-  environment = {
-    "DISPLAY" = ":0"; 
-  };
-
   spawn-at-startup = [
     { command = [ "waybar" ]; }
     { command = [ "swayidle" "-w" "before-sleep" "swaylock" ]; }

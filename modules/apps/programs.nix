@@ -1,6 +1,12 @@
 { lib, config, pkgs, ... }: let
   inherit (lib) mkIf;
   inherit (config) conf;
+  # Ugly workaround xwl-satellite crashes and prusa not being wayland-native
+  prusa-wrapper = pkgs.makeDesktopItem {
+    name = "prusa-wrapper";
+    desktopName = "Prusa";
+    exec = "${pkgs.xwayland-run}/bin/xwayland-run -- i3";
+  };
 in {
   imports = [
     ./firefox.nix
@@ -21,9 +27,14 @@ in {
         nautilus
         libreoffice-qt6-fresh
         inkscape
-        prusa-slicer
+        prusa-wrapper
         # freecad -- broken dependency
       ];
+
+      xsession.windowManager.i3 = {
+        enable = true;
+        config.startup = [{ command = "${pkgs.prusa-slicer}/bin/prusa-slicer"; }];
+      };
 
       home.file = {
         ".config/vesktop/settings.json" = {
