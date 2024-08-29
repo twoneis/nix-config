@@ -38,5 +38,9 @@ in {
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
+  hardware.opentabletdriver = {
+    enable = true;
+  };
+
   system.stateVersion = conf.stateVersion;
 }

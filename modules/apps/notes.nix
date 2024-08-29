@@ -1,9 +1,13 @@
-{ lib, config, ... }: let
+{ lib, config, pkgs, ... }: let
   inherit (lib) mkIf;
   inherit (config) conf;
   inherit (config.conf) keys;
 in mkIf conf.apps.enable {
   home-manager.users.${conf.username} = {
+    home.packages = with pkgs; [
+      rnote
+    ];
+
     programs.sioyek = {
       enable = true;
       bindings = {
