@@ -62,7 +62,9 @@ in {
 
       programs.swaylock = {
         enable = true;
-        package = pkgs.swaylock-effects;
+        package = (pkgs.swaylock-effects.overrideAttrs (final: prev: {
+          buildInputs = prev.buildInputs ++ [ pkgs.wayland-scanner ];
+        }));
         settings = import ./swaylock.conf.nix { lib = lib; config = config; };
       };
 
