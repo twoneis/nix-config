@@ -28,6 +28,7 @@ in {
         libreoffice-qt6-fresh
         inkscape
         prusa-wrapper
+        planify
         # freecad -- broken dependency
       ];
 
