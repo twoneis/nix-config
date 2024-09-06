@@ -33,6 +33,27 @@ in {
       };
     };
 
+    # Regularly clean download folder
+    systemd = {
+      timers."clean-download" = {
+        wantedBy = [ "timers.target" ];
+        timerConfig = {
+          OnCalendar = "*-*-* 03:00:00";
+          Unit = "clean-download.service";
+        };
+      };
+
+      services."clean-download" = {
+        script = ''
+          ${pkgs.coreutils}/bin/rm -rf /home/user/${conf.username}/Downloads
+        '';
+        serviceConfig = {
+          Type = "oneshot";
+          User = "root";
+        };
+      };
+    };
+
     home-manager.users.${conf.username}.home.packages = [ pkgs.overskride ];
 
     services.blueman.enable = true;
