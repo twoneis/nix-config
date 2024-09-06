@@ -45,7 +45,7 @@ in {
 
       services."clean-download" = {
         script = ''
-          ${pkgs.coreutils}/bin/rm -rf /home/user/${conf.username}/Downloads
+          ${pkgs.coreutils}/bin/rm -rf /home/user/${conf.username}/Downloads/*
         '';
         serviceConfig = {
           Type = "oneshot";
