@@ -24,14 +24,6 @@ in {
     defaultLocale = "en_US.UTF-8";
   };
 
-  services = {
-    xserver = {
-      enable = true;
-      displayManager.gdm.enable = true;
-      excludePackages = [ pkgs.xterm ];
-    };
-  };
-
   users.users.${conf.username}= {
     isNormalUser = true;
     description = conf.username;
