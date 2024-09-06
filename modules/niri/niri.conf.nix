@@ -68,7 +68,7 @@ in {
 
       default-column-width = { proportion = 0.5; };
 
-      gaps = 2;
+      gaps = 4;
       struts = {
         top = 2;
       };

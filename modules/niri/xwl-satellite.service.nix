@@ -2,7 +2,7 @@
   inherit (lib) mkIf;
   inherit (config) conf;
 in mkIf conf.niri.enable {
-  environment.systemPackages = with pkgs; [ xwayland-satellite xwayland ];
+  environment.systemPackages = with pkgs; [ xwayland-satellite-unstable xwayland ];
   systemd.user.services.xwayland-satellite = {
     description = "Xwayland outside your Wayland";
 
@@ -19,7 +19,7 @@ in mkIf conf.niri.enable {
       StandardOutput = "journal";
 
       Restart = "on-failure";
-      RestartSec = "2s";
+      RestartSec = "1s";
     };
   };
 }
