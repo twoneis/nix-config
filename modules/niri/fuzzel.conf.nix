@@ -9,7 +9,7 @@ in {
     prompt = "'󱄅 '";
   };
   colors = {
-    background = concatStrings [ theme.base "ee" ];
+    background = concatStrings [ theme.surface "ee" ];
     text = concatStrings [ theme.text "ff" ];
     match = concatStrings [ theme.gold "ff" ];
     selection = concatStrings [ theme.highlight-med "ee" ];
