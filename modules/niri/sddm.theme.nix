@@ -19,7 +19,7 @@ in {
     passwordInputCursorVisible=false
     # Font size of password (in points)
     passwordFontSize=96
-    passwordCursorColor=random
+    passwordCursorColor=${text}
     passwordTextColor=
 
     # Show or not sessions choose label
