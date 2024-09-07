@@ -18,7 +18,10 @@ in {
     };
 
     environment.systemPackages = [
-      (pkgs.where-is-my-sddm-theme.override ({ themeConfig = (import ./sddm.theme.nix { config = config; }).style; variants = [ "qt5" ]; }))
+      (pkgs.where-is-my-sddm-theme.override ({
+        themeConfig = (import ./sddm.theme.nix { config = config; }).style;
+        variants = [ "qt5" ];
+      }))
     ];
 
     services.displayManager.sddm = {
