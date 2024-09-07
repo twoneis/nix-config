@@ -5,7 +5,7 @@
     games.enable = true;
     secureboot.enable = true;
     extraLayout.enable = true;
-    containers.enable = true;
+    vm.enable = true;
 
     stateVersion = "24.05";
     hmStateVersion = "24.11";
