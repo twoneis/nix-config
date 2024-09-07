@@ -37,7 +37,7 @@ in {
     };
 
     services.logind = {
-      powerKey = "suspend";
+      powerKey = "ignore";
       powerKeyLongPress = "poweroff";
       lidSwitch = "suspend";
       lidSwitchDocked = "ignore";
