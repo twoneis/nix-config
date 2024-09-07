@@ -17,6 +17,15 @@ in {
       NIXOS_OZONE_WL = "1";
     };
 
+    environment.systemPackages = [
+      (pkgs.where-is-my-sddm-theme.override ({ themeConfig = (import ./sddm.theme.nix { config = config; }).style; }))
+    ];
+
+    services.displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+      theme = "where_is_my_sddm_theme";
+    };
 
     programs.niri = {
       enable = true;
