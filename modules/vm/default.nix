@@ -1,8 +1,11 @@
-{ lib, config, ... }: let
+{ lib, config, pkgs, ... }: let
   inherit (lib) mkIf;
   inherit (config) conf;
 in mkIf conf.vm.enable {
-  virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu.vhostUserPackages = [ pkgs.virtiofsd ];
+  };
   programs.virt-manager.enable = true;
 
   users.users.${conf.username}.extraGroups = [ "libvirtd" ];
