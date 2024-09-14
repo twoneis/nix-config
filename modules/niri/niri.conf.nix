@@ -17,12 +17,12 @@ in {
   };
 
   outputs = {
-    "eDP-1" = {
+    "BOE 0x0BCA Unknown" = {
         scale = 1;
         mode = {
-          width = 2736;
-          height = 1824;
-          refresh = 59.959;
+          width = 2256;
+          height = 1504;
+          refresh = 59.999;
         };
         background-color = config.theme.base;
     };
