@@ -27,22 +27,12 @@ in {
         background-color = config.theme.base;
     };
 
-    "DP-1"  = {
+    "Microstep MSI PS341WU 0000000000000"  = {
         scale = 1;
         mode = {
           width = 5120;
           height = 2160;
           refresh = 59.940;
-        };
-        background-color = config.theme.base;
-    };
-
-    "DP-2"  = {
-        scale = 1;
-        mode = {
-          width = 1920;
-          height = 1080;
-          refresh = 60.0;
         };
         background-color = config.theme.base;
     };
