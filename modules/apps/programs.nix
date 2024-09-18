@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }: let
   inherit (lib) mkIf;
   inherit (config) conf;
-  mkSwayWrapper = import ./sway-wrapper.nix;
+  mkXwlWrapper = import ../niri/xwl-wrapper.nix;
 in {
   imports = [
     ./firefox.nix
@@ -23,7 +23,7 @@ in {
         libreoffice-qt6-fresh
         inkscape
         # freecad -- broken dependency
-      ] ++ [(mkSwayWrapper { lib = lib; pkgs = pkgs; app = "${pkgs.prusa-slicer}/bin/prusa-slicer"; name = "Prusa"; })];
+      ] ++ [(mkXwlWrapper { lib = lib; pkgs = pkgs; app = "${pkgs.prusa-slicer}/bin/prusa-slicer"; name = "Prusa"; })];
 
       home.file = {
         ".config/vesktop/settings.json" = {
