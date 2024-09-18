@@ -10,6 +10,7 @@ in {
   };
   colors = {
     background = concatStrings [ theme.surface "ee" ];
+    prompt = concatStrings [ theme.text "ff" ];
     text = concatStrings [ theme.text "ff" ];
     match = concatStrings [ theme.gold "ff" ];
     selection = concatStrings [ theme.highlight-med "ee" ];
