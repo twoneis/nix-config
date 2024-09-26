@@ -43,7 +43,7 @@ in {
       powerKey = "ignore";
       powerKeyLongPress = "poweroff";
       lidSwitch = "suspend";
-      lidSwitchDocked = "ignore";
+      lidSwitchDocked = "suspend";
     };
 
     home-manager.users.${conf.username} = {
