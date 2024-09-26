@@ -17,6 +17,7 @@ in {
   };
 
   outputs = {
+    # Framework builtin Display
     "BOE 0x0BCA Unknown" = {
         scale = 1;
         mode = {
@@ -27,6 +28,7 @@ in {
         background-color = config.theme.base;
     };
 
+    # Home Monitor
     "Microstep MSI PS341WU 0000000000000"  = {
         scale = 1;
         mode = {
@@ -39,7 +41,7 @@ in {
 
     # Uni Monitors
     "HP Inc. HP E24i G4 6CM1090CPF" = {
-      scale = 0.8;
+      scale = 1;
       mode = {
         width = 1920;
         height = 1200;
