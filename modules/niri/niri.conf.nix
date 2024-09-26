@@ -36,6 +36,17 @@ in {
         };
         background-color = config.theme.base;
     };
+
+    # Uni Monitors
+    "HP Inc. HP E24i G4 6CM1090CPF" = {
+      scale = 0.8;
+      mode = {
+        width = 1920;
+        height = 1200;
+        refresh = 59.950;
+      };
+      background-color = config.theme.base;
+    };
   };
 
   layout = {
