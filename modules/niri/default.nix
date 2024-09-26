@@ -44,6 +44,7 @@ in {
       powerKeyLongPress = "poweroff";
       lidSwitch = "suspend";
       lidSwitchDocked = "suspend";
+      lidSwitchExternalPower = "suspend";
     };
 
     home-manager.users.${conf.username} = {
