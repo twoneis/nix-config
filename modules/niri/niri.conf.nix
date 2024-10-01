@@ -49,6 +49,16 @@ in {
       };
       background-color = config.theme.base;
     };
+
+    "Dell Inc. DELL U2415 7MT019A90F1U" = {
+      scale = 1;
+      mode = {
+        width = 1920;
+        height = 1200;
+        refresh = 59.950;
+      };
+      background-color = config.theme.base;
+    };
   };
 
   layout = {
