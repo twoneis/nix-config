@@ -136,24 +136,24 @@ in {
     "Mod+Backspace".action.close-window = [];
 
     # Move focus
-    "Mod+Up".action.focus-window-up = [];
-    "Mod+Down".action.focus-window-down = [];
+    "Mod+Up".action.focus-window-or-workspace-up = [];
+    "Mod+Down".action.focus-window-or-workspace-down = [];
     "Mod+Left".action.focus-column-left = [];
     "Mod+Right".action.focus-column-right = [];
 
-    "Mod+${keys.up}".action.focus-window-up = [];
-    "Mod+${keys.down}".action.focus-window-down = [];
+    "Mod+${keys.up}".action.focus-window-or-workspace-up = [];
+    "Mod+${keys.down}".action.focus-window-or-workspace-down = [];
     "Mod+${keys.left}".action.focus-column-left = [];
     "Mod+${keys.right}".action.focus-column-right = [];
 
     # Move column/window
-    "Mod+Shift+Up".action.move-window-up = [];
-    "Mod+Shift+Down".action.move-window-down = [];
+    "Mod+Shift+Up".action.move-window-up-or-to-workspace-up = [];
+    "Mod+Shift+Down".action.move-window-down-or-to-workspace-down = [];
     "Mod+Shift+Left".action.move-column-left = [];
     "Mod+Shift+Right".action.move-column-right = [];
 
-    "Mod+Shift+${keys.up}".action.move-window-up = [];
-    "Mod+Shift+${keys.down}".action.move-window-down = [];
+    "Mod+Shift+${keys.up}".action.move-window-up-or-to-workspace-up = [];
+    "Mod+Shift+${keys.down}".action.move-window-down-or-to-workspace-down = [];
     "Mod+Shift+${keys.left}".action.move-column-left = [];
     "Mod+Shift+${keys.right}".action.move-column-right = [];
 
