@@ -22,6 +22,7 @@ in {
       lshw
       peaclock
       netcat-openbsd
+      wl-clipboard
     ] ++ [
       time
     ];
