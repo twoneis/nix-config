@@ -22,6 +22,7 @@ in {
         nautilus
         libreoffice-qt6-fresh
         inkscape
+        blender
         # freecad -- broken dependency
       ] ++ [(mkXwlWrapper { lib = lib; pkgs = pkgs; app = "${pkgs.prusa-slicer}/bin/prusa-slicer"; name = "Prusa"; })];
 

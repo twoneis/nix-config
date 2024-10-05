@@ -6,7 +6,7 @@
     name = "holo-script";
     runtimeInputs = [ pkgs.steam pkgs.gamescope ];
     text = ''
-      gamescope -f -r 60 -h 720 -F fsr -e -- steam
+      gamescope -f -r 60 -h 720 -F fsr -e --mangoapp -- steam
     '';
   };
   holo = pkgs.makeDesktopItem {
@@ -34,6 +34,11 @@ in mkIf conf.games.enable (mkMerge [
     programs.gamescope.enable = true;
     programs.gamemode.enable = true;
 
+    environment.sessionVariables = {
+      MANGOHUD_CONFIGFILE = "$HOME/.config/MangoHud/MangoHud.conf";
+      MANGOHUD_CONFIG = "read_cfg";
+    };
+
     home-manager.users.${conf.username} = {
       home.packages = [
         pkgs.prismlauncher
@@ -42,6 +47,16 @@ in mkIf conf.games.enable (mkMerge [
         holo
         steam-wrapped
       ];
+
+      programs.mangohud = {
+        enable = true;
+        settings = {
+          gamemode = true;
+          refresh_rate = true;
+          fsr = true;
+          resolution = true;
+        };
+      };
     };
   }
 ])
