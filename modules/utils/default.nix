@@ -92,6 +92,7 @@ in {
       ];
       interactiveShellInit = concatMapStrings (x: "set --universal " + x + "\n") [
         "pure_enable_nixdevshell true"
+        "pure_symbol_nixdevshell "
       ];
       shellAbbrs = {
         ga = "git add";
