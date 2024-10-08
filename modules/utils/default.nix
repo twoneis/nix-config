@@ -1,6 +1,7 @@
-{ config, pkgs, ... }: let
+{ config, lib, pkgs, ... }: let
   inherit (config) conf;
   inherit (config.conf) keys;
+  inherit (lib.strings) concatMapStrings;
   time = pkgs.makeDesktopItem {
     name = "peaclock-desktop";
     desktopName = "Time";
@@ -86,8 +87,11 @@ in {
     programs.fish = {
       enable = true;
       plugins = with pkgs.fishPlugins; [
-        { name = "tide"; src = pure.src; }
+        { name = "pure"; src = pure.src; }
         { name = "bass"; src = bass.src; }
+      ];
+      interactiveShellInit = concatMapStrings (x: "set --universal " + x + "\n") [
+        "pure_enable_nixdevshell true"
       ];
       shellAbbrs = {
         ga = "git add";
