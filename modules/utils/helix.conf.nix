@@ -4,7 +4,6 @@ in {
   theme = "rose_pine";
 
   editor = {
-    line-number = "relative";
     cursorline = true;
     soft-wrap.enable = true;
     color-modes = true;
