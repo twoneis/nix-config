@@ -25,6 +25,10 @@ in {
           height = 1504;
           refresh = 59.999;
         };
+        position = {
+          x = 0;
+          y = 0;
+        };
         background-color = config.theme.base;
     };
 
@@ -35,6 +39,10 @@ in {
           width = 5120;
           height = 2160;
           refresh = 59.940;
+        };
+        position = {
+          x = 0;
+          y = 1504;
         };
         background-color = config.theme.base;
     };
@@ -47,6 +55,10 @@ in {
         height = 1200;
         refresh = 59.950;
       };
+      position = {
+        x = 0;
+        y = 1504;
+      };
       background-color = config.theme.base;
     };
 
@@ -56,6 +68,10 @@ in {
         width = 1920;
         height = 1200;
         refresh = 59.950;
+      };
+      position = {
+        x = 0;
+        y = 1504;
       };
       background-color = config.theme.base;
     };
