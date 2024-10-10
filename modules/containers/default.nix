@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }: let
+{ lib, config, ... }: let
   inherit (lib) mkIf;
   inherit (config) conf;
 in mkIf conf.containers.enable {
@@ -6,6 +6,4 @@ in mkIf conf.containers.enable {
     enable = true;
     dockerCompat = true;
   };
-
-  environment.systemPackages = [ pkgs.distrobox ];
 }

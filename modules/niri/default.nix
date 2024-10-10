@@ -4,10 +4,6 @@
   swayosd-style = pkgs.writeText "swayosd.css" 
     (import ./swayosd.css.nix { config = config; }).style;
 in {
-  imports = [
-    ./xwl-satellite.service.nix
-  ];
-
   config = mkIf conf.niri.enable {
     nixpkgs.overlays = [
       inputs.niri.overlays.niri
