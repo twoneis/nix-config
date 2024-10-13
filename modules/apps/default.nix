@@ -54,8 +54,6 @@ in {
       };
     };
 
-    home-manager.users.${conf.username}.home.packages = [ pkgs.overskride ];
-
     services.blueman.enable = true;
   };
 }

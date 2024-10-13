@@ -9,7 +9,6 @@ in {
       vm.enable = mkEnableOption "Enable VM related configuration.";
       containers.enable = mkEnableOption "Enable container support.";
       games.enable = mkEnableOption "Enable games.";
-      impermanence.enable = mkEnableOption "Use impermanence module.";
       secureboot.enable = mkEnableOption "Enable secure boot utilities (manual key-enrolling required).";
       extraLayout.enable = mkEnableOption "Enable additional custom layout.";
 

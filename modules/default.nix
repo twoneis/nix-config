@@ -7,7 +7,6 @@ in {
     ./fonts
     ./games
     ./home
-    ./impermanence
     ./layout
     ./networking
     ./niri
