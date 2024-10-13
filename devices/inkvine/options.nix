@@ -3,7 +3,6 @@
     apps.enable = false;
     niri.enable = false;
     games.enable = false;
-    secureboot.enable = true;
     extraLayout.enable = true;
     vm.enable = false;
 
