@@ -143,6 +143,7 @@ in mkIf conf.apps.enable {
             youtube-nonstop
             enhancer-for-youtube
             firefox-color
+            purpleadblock
           ];
         };
       };
