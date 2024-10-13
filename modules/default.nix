@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: let
+{ config, ... }: let
   inherit (config) conf;
 in {
   imports = [

@@ -1,5 +1,5 @@
 { lib, config, pkgs, ... }: let
-  inherit (lib) mkIf;
+  inherit (lib) mkIf mkForce;
   inherit (config) conf;
 in {
   imports = [
@@ -15,6 +15,10 @@ in {
 
     services.pipewire = {
       enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = mkForce false;
     };
 
     # Bluetooth

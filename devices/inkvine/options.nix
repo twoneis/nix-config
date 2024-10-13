@@ -2,7 +2,7 @@
   conf = {
     apps.enable = true;
     niri.enable = true;
-    games.enable = false;
+    games.enable = true;
     extraLayout.enable = true;
     vm.enable = false;
 

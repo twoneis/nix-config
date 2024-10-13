@@ -21,7 +21,7 @@
     name = "Steam Wrapped";
   };
 in mkIf conf.games.enable {
-  programs.steam.enable = true;
+  # programs.steam.enable = true;
   programs.gamescope.enable = true;
   programs.gamemode.enable = true;
 
@@ -33,10 +33,8 @@ in mkIf conf.games.enable {
   home-manager.users.${conf.username} = {
     home.packages = [
       pkgs.prismlauncher
-      pkgs.heroic
-      pkgs.itch
-      holo
-      steam-wrapped
+      # holo
+      # steam-wrapped
     ];
 
     programs.mangohud = {
