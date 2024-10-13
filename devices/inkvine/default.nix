@@ -34,30 +34,13 @@ in {
     };
     "/" = {
       device = "/dev/disk/by-uuid/${disks.root}";
-      fsType = "btrfs";
-      options = [ "subvol=root" "compress=zstd" "noatime" ];
-    };
-    "/nix" = {
-      device = "/dev/disk/by-uuid/${disks.root}";
-      fsType = "btrfs";
-      options = [ "subvol=nix" "compress=zstd" "noatime" ];
-      neededForBoot = true;
-    };
-    "/swap" = {
-      device = "/dev/disk/by-uuid/${disks.root}";
-      fsType = "btrfs";
-      options = [ "subvol=swap" "noatime" ];
+      fsType = "ext4";
     };
   };
-  swapDevices = [ { device = "/swap/swapfile"; } ];
 
   services = {
-    fwupd.enable = true;
+    fwupd.enable = true; 
     power-profiles-daemon.enable = true;
-    btrfs.autoScrub = {
-      enable = true;
-      fileSystems = [ "/" ];
-    };
   };
 
   hardware = {
