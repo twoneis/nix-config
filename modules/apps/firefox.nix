@@ -114,24 +114,25 @@ in mkIf conf.apps.enable {
           bookmarks = { };
 
           settings = {
+            "browser.aboutConfig.showWarning" = false;
+            "browser.bookmarks.addedImportButton" = false;
+            "browser.newtabpage.enabled" = false;
+            "browser.preferences.moreFromMozilla" = false;
+            "browser.shell.checkDefaultBrowser" = false;
             "browser.startup.blankWindow" = true;
             "browser.startup.page" = 3;
-            "extensions.pocket.enabled" = false;
-            "identity.fxaccounts.enabled" = false;
-            "browser.bookmarks.addedImportButton" = false;
-            "dom.security.https_only_mode" = true;
-            "browser.newtabpage.enabled" = false;
-            "browser.shell.checkDefaultBrowser" = false;
-            "signon.rememberSignons" = false;
-            "browser.preferences.moreFromMozilla" = false;
+            "browser.tabs.closeWindowWithLastTab" = false;
             "browser.toolbars.bookmarks.visibility" = "never";
-            "media.videocontrols.picture-in-picture.enabled" = false;
             "browser.translation.enable" = false;
+            "dom.security.https_only_mode" = true;
+            "extensions.pocket.enabled" = false;
+            "gfx.webrender.all" = true;
+            "identity.fxaccounts.enabled" = false;
             "media.cache_readhead_limit" = 9999;
             "media.cache_resume_threshold" = 9999;
-            "browser.aboutConfig.showWarning" = false;
-            "gfx.webrender.all" = true;
             "medai.ffmpeg.vaapi.enabled" = true;
+            "media.videocontrols.picture-in-picture.enabled" = false;
+            "signon.rememberSignons" = false;
           };
 
           extensions = with pkgs.nur.repos.rycee.firefox-addons; [
