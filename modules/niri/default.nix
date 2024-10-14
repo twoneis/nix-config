@@ -1,18 +1,10 @@
-{ inputs, lib, config, pkgs, ... }: let
+{ lib, config, pkgs, ... }: let
   inherit (lib) mkIf;
   inherit (config) conf;
   swayosd-style = pkgs.writeText "swayosd.css" 
     (import ./swayosd.css.nix { config = config; }).style;
 in {
-  imports = [
-    ./xwl-satellite.service.nix
-  ];
-
   config = mkIf conf.niri.enable {
-    nixpkgs.overlays = [
-      inputs.niri.overlays.niri
-    ];
-
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
     };
