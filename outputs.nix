@@ -1,10 +1,9 @@
-{ nixpkgs, lix, home-manager, nixos-hardware, niri, lanzaboote, ... }@inputs: let
+{ nixpkgs,  home-manager, nixos-hardware, niri, lanzaboote, ... }@inputs: let
   modules = [
     ./modules
     ./options.nix
     niri.nixosModules.niri
     home-manager.nixosModules.home-manager
-    lix.nixosModules.default
     lanzaboote.nixosModules.lanzaboote
   ];
 in {
