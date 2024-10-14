@@ -4,7 +4,8 @@
     niri.enable = true;
     games.enable = true;
     extraLayout.enable = true;
-    vm.enable = false;
+    vm.enable = true;
+    secureboot.enable = true;
 
     stateVersion = "24.05";
     hmStateVersion = "24.11";

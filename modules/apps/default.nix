@@ -3,6 +3,7 @@
   inherit (config) conf;
 in {
   imports = [
+    ./firefox.nix
     ./media.nix
     ./notes.nix
     ./programs.nix
