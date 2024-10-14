@@ -4,11 +4,6 @@
       url = "github:nixos/nixpkgs/nixos-unstable";
     };
 
-    lix = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/main.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
