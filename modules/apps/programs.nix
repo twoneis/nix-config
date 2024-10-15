@@ -19,7 +19,7 @@ in mkIf conf.apps.enable {
       inkscape
       blender
       gnome-disk-utility
-    ] ++ [(mkXwlWrapper { lib = lib; pkgs = pkgs; app = "${pkgs.prusa-slicer}/bin/prusa-slicer"; name = "Prusa"; })];
+    ] ++ [(mkXwlWrapper { pkgs = pkgs; name = "Prusa"; pkg = "prusa-slicer"; })];
 
     home.file = {
       ".config/vesktop/settings.json" = {

@@ -10,15 +10,14 @@
     '';
   };
   holo = pkgs.makeDesktopItem {
-    name = "holo";
-    desktopName = "Holo";
+    name = "Steam Big Picture";
+    desktopName = "Steam Big Picture";
     exec = "${holo-script}/bin/holo-script";
   };
   steam-wrapped = mkXwlWrapper {
-    lib = lib;
     pkgs = pkgs;
-    app = "${pkgs.steam}/bin/steam";
     name = "Steam Wrapped";
+    pkg = "steam";
   };
 in mkIf conf.games.enable {
   programs.steam.enable = true;
