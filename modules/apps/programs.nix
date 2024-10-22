@@ -19,6 +19,7 @@ in mkIf conf.apps.enable {
       inkscape
       blender
       gnome-disk-utility
+      fragments
     ] ++ [(mkXwlWrapper { pkgs = pkgs; name = "Prusa"; pkg = "prusa-slicer"; })];
 
     home.file = {
