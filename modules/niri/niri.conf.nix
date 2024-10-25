@@ -25,6 +25,10 @@ in {
           height = 1504;
           refresh = 59.999;
         };
+        position = {
+          x = 0;
+          y = 0;
+        };
         background-color = config.theme.base;
     };
 
@@ -32,9 +36,13 @@ in {
     "Microstep MSI PS341WU 0000000000000"  = {
         scale = 1;
         mode = {
-          width = 3440;
-          height = 1440;
-          refresh = 59.973;
+          width = 5120;
+          height = 2160;
+          refresh = 59.940;
+        };
+        position = {
+          x = -1280;
+          y = -2160;
         };
         background-color = config.theme.base;
     };
