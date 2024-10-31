@@ -175,7 +175,8 @@ in {
     "Mod+Ctrl+${keys.down}".action.focus-monitor-down = [];
     "Mod+Ctrl+${keys.left}".action.focus-monitor-left = [];
     "Mod+Ctrl+${keys.right}".action.focus-monitor-right = [];
-    # Move columns between monitors
+
+    # Move workspaces between monitors
     "Mod+Shift+Ctrl+Up".action.move-workspace-to-monitor-up = [];
     "Mod+Shift+Ctrl+Down".action.move-workspace-to-monitor-down = [];
     "Mod+Shift+Ctrl+Left".action.move-workspace-to-monitor-left = [];
@@ -185,6 +186,12 @@ in {
     "Mod+Shift+Ctrl+${keys.down}".action.move-workspace-to-monitor-down = [];
     "Mod+Shift+Ctrl+${keys.left}".action.move-workspace-to-monitor-left = [];
     "Mod+Shift+Ctrl+${keys.right}".action.move-workspace-to-monitor-right = [];
+
+    # Move workspaces
+    "Mod+TouchpadScrollUp".action.move-workspace-down = [];
+    "Mod+TouchpadScrollUp".cooldown-ms = 100;
+    "Mod+TouchpadScrollDown".action.move-workspace-up = [];
+    "Mod+TouchpadScrollDown".cooldown-ms = 100;
 
     # Stack windows
     "Mod+BracketLeft".action.consume-window-into-column = [];
