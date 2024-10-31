@@ -176,15 +176,15 @@ in {
     "Mod+Ctrl+${keys.left}".action.focus-monitor-left = [];
     "Mod+Ctrl+${keys.right}".action.focus-monitor-right = [];
     # Move columns between monitors
-    "Mod+Shift+Ctrl+Up".action.move-column-to-monitor-up = [];
-    "Mod+Shift+Ctrl+Down".action.move-column-to-monitor-down = [];
-    "Mod+Shift+Ctrl+Left".action.move-column-to-monitor-left = [];
-    "Mod+Shift+Ctrl+Right".action.move-column-to-monitor-right = [];
+    "Mod+Shift+Ctrl+Up".action.move-workspace-to-monitor-up = [];
+    "Mod+Shift+Ctrl+Down".action.move-workspace-to-monitor-down = [];
+    "Mod+Shift+Ctrl+Left".action.move-workspace-to-monitor-left = [];
+    "Mod+Shift+Ctrl+Right".action.move-workspace-to-monitor-right = [];
 
-    "Mod+Shift+Ctrl+${keys.up}".action.move-column-to-monitor-up = [];
-    "Mod+Shift+Ctrl+${keys.down}".action.move-column-to-monitor-down = [];
-    "Mod+Shift+Ctrl+${keys.left}".action.move-column-to-monitor-left = [];
-    "Mod+Shift+Ctrl+${keys.right}".action.move-column-to-monitor-right = [];
+    "Mod+Shift+Ctrl+${keys.up}".action.move-workspace-to-monitor-up = [];
+    "Mod+Shift+Ctrl+${keys.down}".action.move-workspace-to-monitor-down = [];
+    "Mod+Shift+Ctrl+${keys.left}".action.move-workspace-to-monitor-left = [];
+    "Mod+Shift+Ctrl+${keys.right}".action.move-workspace-to-monitor-right = [];
 
     # Stack windows
     "Mod+BracketLeft".action.consume-window-into-column = [];
