@@ -12,7 +12,6 @@ in mkIf conf.apps.enable {
     home.packages = with pkgs; [
       signal-desktop
       vesktop
-      fractal
       snapshot
       nautilus
       libreoffice-qt6-fresh
@@ -20,6 +19,7 @@ in mkIf conf.apps.enable {
       blender
       gnome-disk-utility
       fragments
+      element-desktop
     ] ++ [(mkXwlWrapper { pkgs = pkgs; name = "Prusa"; pkg = "prusa-slicer"; })];
 
     home.file = {
