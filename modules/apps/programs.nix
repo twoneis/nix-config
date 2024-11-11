@@ -16,7 +16,7 @@ in mkIf conf.apps.enable {
       nautilus
       libreoffice-qt6-fresh
       inkscape
-      blender
+      # blender
       gnome-disk-utility
       fragments
       element-desktop
