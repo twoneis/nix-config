@@ -210,8 +210,7 @@ in {
     "Mod+Shift+Minus".action.set-window-height = "-10%";
 
     # Change Layout
-    "Mod+Shift+Comma".action.switch-layout = "prev";
-    "Mod+Shift+Period".action.switch-layout = "next";
+    "XF86AudioMedia".action.switch-layout = "prev";
 
     # Screenshot
     "Mod+P".action.screenshot = [];
