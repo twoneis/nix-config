@@ -19,6 +19,7 @@ in mkIf conf.apps.enable {
       gnome-disk-utility
       fragments
       element-desktop
+      tor-browser
     ] ++ [(mkXwlWrapper { pkgs = pkgs; name = "Prusa"; pkg = "prusa-slicer"; })];
 
     home.file = {
