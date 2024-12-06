@@ -3,7 +3,7 @@
     packages = with pkgs; [
       alegreya
       alegreya-sans
-      (nerdfonts.override { fonts = [ "FiraCode" ]; })
+      nerd-fonts.fira-code
       roboto
       ubuntu_font_family
     ];
