@@ -20,6 +20,7 @@ in mkIf conf.apps.enable {
       fragments
       element-desktop
       tor-browser
+      libreoffice-qt6
     ] ++ [(mkXwlWrapper { pkgs = pkgs; name = "Prusa"; pkg = "prusa-slicer"; })];
 
     home.file = {
