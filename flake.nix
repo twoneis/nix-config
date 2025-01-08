@@ -13,6 +13,11 @@
       url = "github:nixos/nixos-hardware";
     };
 
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }
+
     nur = {
       url = "github:nix-community/nur";
     };
