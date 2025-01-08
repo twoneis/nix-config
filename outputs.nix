@@ -1,4 +1,4 @@
-{ nixpkgs,  home-manager, nixos-hardware, niri, lanzaboote, ... }@inputs: let
+{ nixpkgs,  home-manager, nixos-hardware, disko, niri, lanzaboote, ... }@inputs: let
   modules = [
     ./modules
     ./options.nix
