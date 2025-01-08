@@ -3,7 +3,7 @@
   inherit (config.device) disks;
 in {
   imports = [
-    ./disks.nix
+    ./disko.nix
     ./options.nix
   ];
 
@@ -24,17 +24,6 @@ in {
         editor = false;
       };
       efi.canTouchEfiVariables = true;
-    };
-  };
-
-  fileSystems = {
-    "/boot" = {
-      device = "/dev/disk/by-uuid/${disks.boot}";
-      fsType = "vfat";
-    };
-    "/" = {
-      device = "/dev/disk/by-uuid/${disks.root}";
-      fsType = "ext4";
     };
   };
 
