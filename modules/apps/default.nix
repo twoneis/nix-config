@@ -22,6 +22,13 @@ in {
       jack.enable = mkForce false;
     };
 
+    # Run statically linked and more
+    environment.systemPackages = with pkgs; [
+      nix-alien
+    ];
+
+    programs.nix-ld.enable = true;
+
     # Bluetooth
     hardware.bluetooth = {
       enable = true;

@@ -16,6 +16,7 @@
     overlays = [
       inputs.nur.overlays.default
       inputs.niri.overlays.niri
+      inputs.nix-alien.overlays.default
     ];
     config = {
       allowUnfree = true;

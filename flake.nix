@@ -31,6 +31,10 @@
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-alien = {
+      url = "github:thiagokokada/nix-alien";
+    };
   };
 
   outputs = inputs: import ./outputs.nix inputs;
