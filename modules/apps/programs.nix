@@ -45,11 +45,6 @@ in mkIf conf.apps.enable {
       };
     };
 
-    programs.wezterm = {
-      enable = true;
-      # colorSchemes = import ./wezterm.theme.nix { config = config; };
-    };
-
     programs.alacritty = {
       enable = true;
       settings = import ./alacritty.conf.nix { config = config; };
