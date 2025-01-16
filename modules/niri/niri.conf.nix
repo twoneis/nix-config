@@ -59,7 +59,7 @@ in {
     };
 
     "Dell Inc. DELL U2415 7MT019A90F1U" = {
-      scale = 1;
+      scale = 0.8;
       mode = {
         width = 1920;
         height = 1200;
@@ -69,7 +69,7 @@ in {
     };
 
     "Dell Inc. DELL U2415 7MT019A90FRU" = {
-      scale = 1;
+      scale = 0.8;
       mode = {
         width = 1920;
         height = 1200;
@@ -87,6 +87,17 @@ in {
       };
       background-color = config.theme.base;
     };
+
+    "Dell Inc. DELL U2415 7MT019A909GU" = {
+      scale = 0.8;
+      mode = {
+        width = 1920;
+        height = 1200;
+        refresh = 59.950;
+      };
+      background-color = config.theme.base;
+    };
+
   };
 
   layout = {
