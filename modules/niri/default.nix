@@ -54,7 +54,7 @@ in {
       };
 
       programs.niri = {
-        settings = import ./niri.conf.nix { config = config; };
+        settings = import ./niri.conf.nix { lib = lib; config = config; };
       };
 
       programs.fuzzel= {

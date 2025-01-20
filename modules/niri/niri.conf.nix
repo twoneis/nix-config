@@ -1,5 +1,7 @@
-{ config, ... }: let
+{ lib, config, ... }: let
   inherit (config.conf) keys extraLayout;
+  inherit (lib.attrsets) genAttrs;
+  inherit (lib) mkMerge;
 in {
   input = {
       keyboard = { 
@@ -16,89 +18,62 @@ in {
       power-key-handling.enable = false;
   };
 
-  outputs = {
-    # Framework builtin Display
-    "BOE 0x0BCA Unknown" = {
+  outputs = mkMerge [
+    {
+      # Framework builtin Display
+      "BOE 0x0BCA Unknown" = {
+          scale = 1;
+          mode = {
+            width = 2256;
+            height = 1504;
+            refresh = 59.999;
+          };
+          position = {
+            x = 0;
+            y = 0;
+          };
+          background-color = config.theme.base;
+      };
+
+      # Home Monitor
+      "Microstep MSI PS341WU 0000000000000"  = {
+          scale = 1;
+          mode = {
+            width = 5120;
+            height = 2160;
+            refresh = 59.940;
+          };
+          position = {
+            x = -1280;
+            y = -2160;
+          };
+          background-color = config.theme.base;
+      };
+
+      # Uni Monitors
+      "HP Inc. HP E24i G4 6CM1090CPF" = {
         scale = 1;
         mode = {
-          width = 2256;
-          height = 1504;
-          refresh = 59.999;
-        };
-        position = {
-          x = 0;
-          y = 0;
+          width = 1920;
+          height = 1200;
+          refresh = 59.950;
         };
         background-color = config.theme.base;
-    };
-
-    # Home Monitor
-    "Microstep MSI PS341WU 0000000000000"  = {
+      };
+    }
+    (genAttrs
+      (map (id: "Dell Inc. DELL U2415 ${id}")
+        ["7MT019A90F1U" "7MT019A90FRU" "7MT019A90F3U" "7MT019A909GU"])
+      (_: {
         scale = 1;
         mode = {
-          width = 5120;
-          height = 2160;
-          refresh = 59.940;
-        };
-        position = {
-          x = -1280;
-          y = -2160;
+          width = 1920;
+          height = 1200;
+          refresh = 59.950;
         };
         background-color = config.theme.base;
-    };
-
-    # Uni Monitors
-    "HP Inc. HP E24i G4 6CM1090CPF" = {
-      scale = 1;
-      mode = {
-        width = 1920;
-        height = 1200;
-        refresh = 59.950;
-      };
-      background-color = config.theme.base;
-    };
-
-    "Dell Inc. DELL U2415 7MT019A90F1U" = {
-      scale = 0.8;
-      mode = {
-        width = 1920;
-        height = 1200;
-        refresh = 59.950;
-      };
-      background-color = config.theme.base;
-    };
-
-    "Dell Inc. DELL U2415 7MT019A90FRU" = {
-      scale = 0.8;
-      mode = {
-        width = 1920;
-        height = 1200;
-        refresh = 59.950;
-      };
-      background-color = config.theme.base;
-    };
-
-    "Dell Inc. DELL U2415 7MT019A90F3U" = {
-      scale = 0.8;
-      mode = {
-        width = 1920;
-        height = 1200;
-        refresh = 59.950;
-      };
-      background-color = config.theme.base;
-    };
-
-    "Dell Inc. DELL U2415 7MT019A909GU" = {
-      scale = 0.8;
-      mode = {
-        width = 1920;
-        height = 1200;
-        refresh = 59.950;
-      };
-      background-color = config.theme.base;
-    };
-
-  };
+      }))
+  ];
 
   layout = {
       focus-ring = {
