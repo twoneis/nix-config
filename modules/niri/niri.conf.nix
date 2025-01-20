@@ -93,7 +93,7 @@ in {
         { proportion = 0.75; }
       ];
 
-      default-column-width = { proportion = 0.5; };
+      default-column-width = { };
 
       gaps = 4;
       struts = {
