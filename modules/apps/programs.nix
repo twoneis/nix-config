@@ -21,7 +21,11 @@ in mkIf conf.apps.enable {
       element-desktop
       tor-browser
       libreoffice-qt6
-    ] ++ [(mkXwlWrapper { pkgs = pkgs; name = "Prusa"; pkg = "prusa-slicer"; })];
+      chromium
+    ] ++ [
+      (mkXwlWrapper { pkgs = pkgs; name = "Prusa"; pkg = "prusa-slicer"; })
+      (mkXwlWrapper { pkgs = pkgs; name = "Vial"; pkg = "vial"; })
+    ];
 
     home.file = {
       ".config/vesktop/settings.json" = {
