@@ -8,6 +8,7 @@ in {
     ./notes.nix
     ./programs.nix
     ./themes.nix
+    ./android.nix
   ];
 
   config = mkIf conf.apps.enable {
