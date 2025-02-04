@@ -1,6 +1,5 @@
-{ lib, config, pkgs, ... }: let
+{ lib, pkgs, ... }: let
   inherit (lib) mkDefault;
-  inherit (config.device) disks;
 in {
   imports = [
     ./options.nix
