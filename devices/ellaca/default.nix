@@ -1,6 +1,5 @@
-{ lib, pkgs, ... }: let
-  inherit (lib) mkDefault;
-in {
+{ pkgs, ... }:
+{
   imports = [
     ./options.nix
     ./disko.nix
@@ -15,6 +14,8 @@ in {
     kernelPackages = pkgs.linuxPackages_zen;
     loader = {
       grub = {
+        devices = [ "/dev/sda1" ];
+        useOSProber = true;
         efiSupport = true;
         efiInstallAsRemovable = true;
       };
