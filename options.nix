@@ -19,6 +19,7 @@ in {
       ssh.enable = mkEnableOption "Install my public key to allow accessing this machine via ssh.";
       nginx.enable = mkEnableOption "Enable nginx.";
       website.enable = mkEnableOption "Serve website through nginx. Nginx must be enabled to work correctly.";
+      fedi.enable = mkEnableOption "Host a fedi server on this machine.";
 
       # Mixed and more complex options
       username = mkOption {

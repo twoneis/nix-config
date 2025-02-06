@@ -8,7 +8,16 @@ in mkIf conf.website.enable {
       forceSSL = false;
       locations = {
         "/" = {
-          return = "200 \"Faggot\"";
+          return = "200 \"faggot\"";
+        };
+      };
+    };
+    "fedi.twoneis.site" = {
+      serverName = "git.twoneis.site";
+      forceSSL = false;
+      locations = {
+        "/" = {
+          return = "200 \"faggot on fedi?\"";
         };
       };
     };

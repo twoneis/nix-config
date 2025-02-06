@@ -4,6 +4,7 @@ in {
   imports = [
     ./apps
     ./containers
+    ./fedi
     ./fonts
     ./games
     ./home
