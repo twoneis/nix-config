@@ -14,7 +14,7 @@
     kernelPackages = pkgs.linuxPackages_zen;
     loader = {
       grub = {
-        devices = [ "/dev/sda1" ];
+        devices = [ "/dev/sda" ];
         useOSProber = true;
         efiSupport = true;
         efiInstallAsRemovable = true;
