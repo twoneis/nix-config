@@ -9,12 +9,14 @@ in {
     ./home
     ./layout
     ./networking
+    ./nginx
     ./niri
     ./nix
     ./secureboot
     ./ssh
     ./utils
     ./vm
+    ./website
   ];
 
   documentation.nixos.enable = false;
