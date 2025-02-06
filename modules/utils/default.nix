@@ -2,11 +2,6 @@
   inherit (config) conf;
   inherit (config.conf) keys;
   inherit (lib.strings) concatMapStrings;
-  time = pkgs.makeDesktopItem {
-    name = "peaclock-desktop";
-    desktopName = "Time";
-    exec = "alacritty -e ${pkgs.peaclock}/bin/peaclock";
-  };
 in {
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
@@ -21,11 +16,6 @@ in {
       unzip
       gnutar
       lshw
-      peaclock
-      netcat-openbsd
-      wl-clipboard
-    ] ++ [
-      time
     ];
 
     home.file = {

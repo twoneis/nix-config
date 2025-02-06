@@ -28,7 +28,7 @@
       modules = [
         ./options.nix
         ./devices/ellaca
-        ./modules/server
+        ./modules
         disko.nixosModules.disko
       ];
     };

@@ -1,6 +1,7 @@
-{ config, pkgs, ... }: let
+{ config, lib, pkgs, ... }: let
   inherit (config) conf;
-in{
+  inherit (lib) mkIf;
+in mkIf conf.networkmanager.enable {
   home-manager.users.${conf.username}.home.packages = [ pkgs.networkmanagerapplet ];
   networking = {
     networkmanager = {

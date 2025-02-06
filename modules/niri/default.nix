@@ -45,6 +45,7 @@ in {
     home-manager.users.${conf.username} = {
       home.packages = with pkgs; [
         swayidle
+        wl-clipboard
       ];
 
       services.swayosd = {

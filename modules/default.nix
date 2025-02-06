@@ -12,6 +12,7 @@ in {
     ./niri
     ./nix
     ./secureboot
+    ./ssh
     ./utils
     ./vm
   ];
@@ -27,10 +28,6 @@ in {
     isNormalUser = true;
     description = conf.username;
     extraGroups = [ "networkmanager" "wheel" ];
-  };
-
-  hardware.opentabletdriver = {
-    enable = true;
   };
 
   system.stateVersion = conf.stateVersion;

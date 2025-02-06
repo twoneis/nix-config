@@ -4,6 +4,7 @@
 in {
   options = {
     conf = {
+      ssh.enbale = mkEnableOption "Install my public key to allow accessing this machine via ssh.";
       apps.enable = mkEnableOption "Enable complete configuration for end-user machine.";
       niri.enable = mkEnableOption "Enable niri compositor.";
       vm.enable = mkEnableOption "Enable VM related configuration.";
@@ -11,6 +12,8 @@ in {
       games.enable = mkEnableOption "Enable games.";
       secureboot.enable = mkEnableOption "Enable secure boot utilities (manual key-enrolling required).";
       extraLayout.enable = mkEnableOption "Enable additional custom layout.";
+      fonts.enable = mkEnableOption "Install and set preferred fonts";
+      networkmanager.enable = mkEnableOption "Enable network manager and some related configuration";
 
       username = mkOption {
         type = str;

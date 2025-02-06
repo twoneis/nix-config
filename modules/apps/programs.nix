@@ -2,6 +2,11 @@
   inherit (lib) mkIf;
   inherit (config) conf;
   mkXwlWrapper = import ../niri/xwl-wrapper.nix;
+  time = pkgs.makeDesktopItem {
+    name = "peaclock-desktop";
+    desktopName = "Time";
+    exec = "alacritty -e ${pkgs.peaclock}/bin/peaclock";
+  };
 in mkIf conf.apps.enable {
   services = {
     # Needed for some features in nautilus such as auto-mounting and trash
@@ -22,7 +27,9 @@ in mkIf conf.apps.enable {
       tor-browser
       libreoffice-qt6
       chromium
+      peaclock
     ] ++ [
+      time
       (mkXwlWrapper { pkgs = pkgs; name = "Prusa"; pkg = "prusa-slicer"; })
       (mkXwlWrapper { pkgs = pkgs; name = "Vial"; pkg = "vial"; })
     ];
