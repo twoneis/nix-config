@@ -4,7 +4,7 @@
 in {
   options = {
     conf = {
-      ssh.enable = mkEnableOption "Install my public key to allow accessing this machine via ssh.";
+      # Generally client options
       apps.enable = mkEnableOption "Enable complete configuration for end-user machine.";
       niri.enable = mkEnableOption "Enable niri compositor.";
       vm.enable = mkEnableOption "Enable VM related configuration.";
@@ -15,6 +15,11 @@ in {
       fonts.enable = mkEnableOption "Install and set preferred fonts";
       networkmanager.enable = mkEnableOption "Enable network manager and some related configuration";
 
+      # Generally server options
+      ssh.enable = mkEnableOption "Install my public key to allow accessing this machine via ssh.";
+      nginx.enable = mkEnableOption "Enable nginx.";
+
+      # Mixed and more complex options
       username = mkOption {
         type = str;
         description = "Username of the default user (single user setup).";
