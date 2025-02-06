@@ -35,10 +35,6 @@
     nix-alien = {
       url = "github:thiagokokada/nix-alien";
     };
-
-    nixos-facter-modules = {
-      url = "github:numtide/nixos-facter-modules";
-    };
   };
 
   outputs = inputs: import ./outputs.nix inputs;

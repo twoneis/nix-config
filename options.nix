@@ -4,7 +4,7 @@
 in {
   options = {
     conf = {
-      ssh.enbale = mkEnableOption "Install my public key to allow accessing this machine via ssh.";
+      ssh.enable = mkEnableOption "Install my public key to allow accessing this machine via ssh.";
       apps.enable = mkEnableOption "Enable complete configuration for end-user machine.";
       niri.enable = mkEnableOption "Enable niri compositor.";
       vm.enable = mkEnableOption "Enable VM related configuration.";

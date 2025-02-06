@@ -3,7 +3,7 @@
     apps.enable = true;
     niri.enable = true;
     extraLayout.enable = true;
-    fonts.enbale = true;
+    fonts.enable = true;
     secureboot.enable = true;
     containers.enable = true;
     networkmanager.enable = true;
