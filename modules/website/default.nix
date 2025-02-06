@@ -13,4 +13,8 @@ in mkIf conf.website.enable {
       };
     };
   };
+
+  networking.firewall.allowedTCPPorts = [
+    80
+  ];
 }
