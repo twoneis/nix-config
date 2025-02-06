@@ -45,6 +45,12 @@ in {
           left = "h";
           right = "s";
         };
+        example = {
+          up = "k";
+          down = "j";
+          left = "h";
+          right = "l";
+        };
       };
     };
 
