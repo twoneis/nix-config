@@ -1,4 +1,6 @@
-{ pkgs, ... }: {
+{ lib, pkgs, ... }: let
+  inherit (lib) mkDefault;
+in {
   imports = [
     ./options.nix
     ./disko.nix
@@ -9,17 +11,14 @@
   networking.hostName = "ellaca";
 
   boot = {
-    initrd = {
-      availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
-      kernelModules = [ "amdgpu" ];
-    };
+    initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "virtio_pci" "virtio_scsi" "sd_mod" ];
     kernelPackages = pkgs.linuxPackages_zen;
     loader = {
-      systemd-boot = {
-        enable = true;
-        editor = false;
+      grub = {
+        efiSupport = true;
+        efiInstallAsRemovable = true;
       };
-      efi.canTouchEfiVariables = true;
     };
   };
+
 }
