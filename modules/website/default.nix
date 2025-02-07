@@ -13,7 +13,7 @@ in mkIf conf.website.enable {
       };
     };
     "fedi.twoneis.site" = {
-      serverName = "git.twoneis.site";
+      serverName = "fedi.twoneis.site";
       forceSSL = false;
       locations = {
         "/" = {
