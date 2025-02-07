@@ -8,6 +8,7 @@ in mkIf conf.nginx.enable {
     certs = {
       "twoneis.site" = {
         group = "nginx";
+        domain = "twoneis.site";
         extraDomainNames = [ "*.twoneis.site" ];
         dnsProvider = "porkbun";
         email = "mira.cp.0909@gmail.com";
