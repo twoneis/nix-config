@@ -12,24 +12,6 @@ in mkIf conf.website.enable {
         };
       };
     };
-    "fedi.twoneis.site" = {
-      serverName = "fedi.twoneis.site";
-      forceSSL = false;
-      locations = {
-        "/" = {
-          return = "200 \"faggot on fedi?\"";
-        };
-      };
-    };
-    "git.twoneis.site" = {
-      serverName = "git.twoneis.site";
-      forceSSL = false;
-      locations = {
-        "/" = {
-          return = "200 \"faggot on git?\"";
-        };
-      };
-    };
   };
 
   networking.firewall.allowedTCPPorts = [
