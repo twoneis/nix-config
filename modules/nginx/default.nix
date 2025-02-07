@@ -14,6 +14,14 @@ in mkIf conf.nginx.enable {
         email = "mira.cp.0909@gmail.com";
         environmentFile = "/root/porkbun-creds";
       };
+
+      "chpu.eu" = {
+        group = "nginx";
+        domain = "chpu.eu";
+        dnsProvider = "porkbun";
+        email = "mira.cp.0909@gmail.com";
+        environmentFile = "/root/porkbun-creds";
+      };
     };
   };
 
@@ -21,16 +29,6 @@ in mkIf conf.nginx.enable {
 
   services.nginx = {
     enable = true;
-    virtualHosts = {
-      default = {
-        serverName = ".twoneis.site";
-        default = true;
-        rejectSSL = true;
-        locations."/" = {
-          return = "404";
-        };
-      };
-    };
   };
 
   networking.firewall.allowedTCPPorts = [
