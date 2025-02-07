@@ -2,8 +2,14 @@
   inherit (lib) mkIf;
   inherit (config) conf;
 in mkIf conf.fedi.enable {
+  services.postgresql.enable = true;
   services.akkoma = {
     enable = true;
+    initDb = {
+      enable = false;
+      password._secret = "/root/db_password";
+      username = "root";
+    };
     config = {
       ":pleroma" = {
         ":instance" = {
