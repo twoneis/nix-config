@@ -4,6 +4,7 @@
 in mkIf conf.fedi.enable {
   services.akkoma = {
     enable = true;
+    user = "akkoma";
     config = {
       ":pleroma" = {
         ":instance" = {
