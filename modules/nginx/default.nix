@@ -4,12 +4,14 @@
 in mkIf conf.nginx.enable {
   services.nginx = {
     enable = true;
-    "*.twoneis.site" = {
-      serverName = ".twoneis.site";
-      forceSSL = false;
-      locations = {
-        "/" = {
-          return = "200 \"nonexistent faggot\"";
+    virtualHosts = {
+      ".twoneis.site" = {
+        serverName = ".twoneis.site";
+        forceSSL = false;
+        locations = {
+          "/" = {
+            return = "200 \"nonexistent faggot\"";
+          };
         };
       };
     };
