@@ -4,7 +4,7 @@
 in mkIf conf.nginx.enable {
   services.nginx = {
     enable = true;
-    ".twoneis.site" = {
+    "*.twoneis.site" = {
       serverName = ".twoneis.site";
       forceSSL = false;
       locations = {
