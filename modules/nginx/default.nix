@@ -10,7 +10,7 @@ in mkIf conf.nginx.enable {
         forceSSL = false;
         locations = {
           "/" = {
-            return = "200 \"nonexistent faggot\"";
+            return = "404";
           };
         };
       };
