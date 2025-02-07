@@ -20,6 +20,7 @@ in {
       nginx.enable = mkEnableOption "Enable nginx.";
       website.enable = mkEnableOption "Serve website through nginx. Nginx must be enabled to work correctly.";
       fedi.enable = mkEnableOption "Host a fedi server on this machine.";
+      matrix.enable = mkEnableOption "Host a matrix server on this machine";
 
       # Mixed and more complex options
       username = mkOption {

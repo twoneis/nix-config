@@ -9,6 +9,7 @@ in {
     ./games
     ./home
     ./layout
+    ./matrix
     ./networking
     ./nginx
     ./niri
