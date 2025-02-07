@@ -21,6 +21,15 @@ in mkIf conf.website.enable {
         };
       };
     };
+    "git.twoneis.site" = {
+      serverName = "git.twoneis.site";
+      forceSSL = false;
+      locations = {
+        "/" = {
+          return = "200 \"faggot on git?\"";
+        };
+      };
+    };
   };
 
   networking.firewall.allowedTCPPorts = [
