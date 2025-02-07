@@ -4,7 +4,6 @@
 in mkIf conf.fedi.enable {
   services.akkoma = {
     enable = true;
-    user = "akkoma";
     config = {
       ":pleroma" = {
         ":instance" = {
@@ -15,6 +14,10 @@ in mkIf conf.fedi.enable {
         };
         "Pleroma.Upload" = {
           base_url = "https://media.fedi.twoneis.site/media";
+        };
+        "Pleroma.Repo" = {
+          username = "akkoma";
+          password._secret = "/root/db_password";
         };
       };
     };
