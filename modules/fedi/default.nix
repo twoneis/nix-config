@@ -5,7 +5,7 @@ in mkIf conf.fedi.enable {
   services.akkoma = {
     enable = true;
     nginx = {
-      onlySSL = true;
+      serverName = "fedi.twoneis.site";
     };
   };
 }
