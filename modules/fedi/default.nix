@@ -1,4 +1,4 @@
-{ lib, config, ... }: let
+{ lib, pkgs, config, ... }: let
   inherit (lib) mkIf;
   inherit (config) conf;
 in mkIf conf.fedi.enable {
@@ -18,6 +18,9 @@ in mkIf conf.fedi.enable {
         "Pleroma.Repo" = {
           username = "akkoma";
           password._secret = "/root/db_password";
+          database = "akkoma";
+          socket_dir = "/run/postgersql";
+          adapter = (pkgs.formats.elixirConf { }).lib.mkRaw "Ecto.Adapters.Postgres";
         };
       };
     };
