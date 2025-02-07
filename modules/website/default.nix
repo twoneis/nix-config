@@ -5,7 +5,8 @@ in mkIf conf.website.enable {
   services.nginx.virtualHosts = {
     "twoneis.site" = {
       serverName = "twoneis.site";
-      forceSSL = false;
+      useACMEHost = "twoneis.site";
+      forceSSL = true;
       locations = {
         "/" = {
           return = "200 \"faggot\"";
@@ -13,8 +14,4 @@ in mkIf conf.website.enable {
       };
     };
   };
-
-  networking.firewall.allowedTCPPorts = [
-    80
-  ];
 }
