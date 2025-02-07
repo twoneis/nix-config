@@ -7,6 +7,7 @@
 in mkIf conf.fedi.enable {
   services.akkoma = {
     enable = true;
+    initDb.enable = false;
     config = {
       ":pleroma" = {
         ":instance" = {
