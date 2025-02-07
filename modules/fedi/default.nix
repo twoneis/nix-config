@@ -1,19 +1,16 @@
 { lib, config, ... }: let
   inherit (lib) mkIf;
   inherit (config) conf;
-  name = "mira on fedi";
-  description = "miras akkoma instance";
-  email = "akkoma@chpu.eu";
 in mkIf conf.fedi.enable {
   services.akkoma = {
     enable = true;
-    initDb.enable = false;
     config = {
       ":pleroma" = {
         ":instance" = {
-          name = name;
-          email = email;
-          description = description;
+          name = "mira on fedi";
+          email = "akkoma@chpu.eu";
+          description = "miras fedi instance";
+          registration_opn = false;
         };
         "Pleroma.Upload" = {
           base_url = "https://media.fedi.twoneis.site/media";
