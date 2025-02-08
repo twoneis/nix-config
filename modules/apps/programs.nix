@@ -20,7 +20,7 @@ in mkIf conf.apps.enable {
       snapshot
       nautilus
       inkscape
-      blender
+      # blender
       gnome-disk-utility
       fragments
       element-desktop
