@@ -20,7 +20,7 @@ in mkIf conf.matrix.enable {
     enable = true;
     settings.global = {
       server_name = "matrix.twoneis.site";
-      allow_registration = true;
+      allow_registration = false;
     };
   };
 }
