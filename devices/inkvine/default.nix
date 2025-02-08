@@ -15,7 +15,7 @@ in {
       luks.devices.root.device = "/dev/disk/by-label/CRYPT";
       kernelModules = [ "amdgpu" ];
     };
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       systemd-boot = {
         enable = mkDefault true;
