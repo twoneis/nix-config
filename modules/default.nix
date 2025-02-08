@@ -7,6 +7,7 @@ in {
     ./fedi
     ./fonts
     ./games
+    ./git
     ./home
     ./layout
     ./matrix
