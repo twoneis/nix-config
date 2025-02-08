@@ -5,7 +5,8 @@ in mkIf conf.matrix.enable {
   services.nginx.virtualHosts = {
     "matrix.twoneis.site" = {
       serverName = "matrix.twoneis.site";
-      forceSSL = false;
+      forceSSL = true;
+      useACMEHost = "twoneis.site";
       locations = {
         "/" = {
           recommendedProxySettings = true;
@@ -19,6 +20,7 @@ in mkIf conf.matrix.enable {
     enable = true;
     settings.global = {
       server_name = "matrix.twoneis.site";
+      allow_registration = true;
     };
   };
 }
