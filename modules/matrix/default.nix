@@ -23,4 +23,6 @@ in mkIf conf.matrix.enable {
       allow_registration = false;
     };
   };
+
+  networking.firewall.allowedTCPPorts = [ 443 8448 ];
 }
